@@ -14,6 +14,19 @@
        font-size: 18px;
        font-weight: bold;
      }
+     .diractions button {
+       background: #ffc20000;
+     }
+     .diractions button.active {
+       background:#ffc20000;
+    }
+    .diractions button.active:after {
+      background:#ffc20000;
+    }
+    .arrow:before {
+      border-right: 4px #ffc200 solid;
+      border-bottom: 4px #ffc200 solid;
+    }
  }
  /* SPACE  */
 

@@ -41,7 +41,7 @@ $(function() {
     for (var i = 0; i < STARS_COUNT; i++) {
         var randomStar = Math.floor(Math.random() * STARS_ARRAY.length);
         var randomStarSize = Math.floor(Math.random() * STARS_SIZE_ARRAY.length);
-        var star = '<div class="star ' + STARS_SIZE_ARRAY[randomStarSize] + '" style="z-index: 9;animation: twinkle ' + ((Math.random() * 5) + 5) + 's linear ' + ((Math.random() * 5) + 5) + 's infinite; top: ' + Math.random() * ($(window).height() + $(window).height() / 2) + 'px; left: ' + Math.random() * $(window).width() + 'px;"><img src="../sky/' + STARS_ARRAY[randomStar] + '.svg"/></div>';
+        var star = '<div class="star ' + STARS_SIZE_ARRAY[randomStarSize] + '" style="z-index: 9;animation: twinkle ' + ((Math.random() * 5) + 5) + 's linear ' + ((Math.random() * 5) + 5) + 's infinite; top: ' + Math.random() * ($(window).height() + $(window).height() / 2) + 'px; left: ' + Math.random() * $(window).width() + 'px;"><img src="../assets/sky/' + STARS_ARRAY[randomStar] + '.svg"/></div>';
         $('#space').append(star);
     }
     ////////////////////////////////////////////////////// HORIZONTAL SCROll
@@ -458,12 +458,12 @@ $(function() {
         console.log("Scene  EARTH.");
         $('#rocket').removeClass("addSmoke");
         $('#rocket').addClass("submarine");
-        $('#rocket img').attr("src", '../medow/submarine.svg');
+        // $('#rocket img').attr("src", '../medow/submarine.svg');
     });
 
     scene_UNDERWATER.on("leave", function(event) {
         console.log("Scene LEAVE EARTH.");
-        $('#rocket img').attr("src", '../medow/rocket_red.svg');
+        // $('#rocket img').attr("src", '../medow/rocket_red.svg');
         $('#rocket').addClass("addSmoke");
         $('#rocket').removeClass("submarine");
     });
