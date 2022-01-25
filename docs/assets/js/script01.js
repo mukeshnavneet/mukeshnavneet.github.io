@@ -393,7 +393,17 @@ $(function() {
     //     .triggerHook(0.5);
 
     // ------------------- PIPE FOR ROCKET ----------------------
-
+    // ------------------- EARTH NAV ----------------------
+    var scene_SKY_NAV = new ScrollMagic.Scene({
+            triggerElement: "#earth",
+            duration: "50%",
+            offset: WIH / 4
+        })
+         .setClassToggle(".in-earth", "visible")
+        // .addIndicators({ name: "SKY_NAV" })
+        .addTo(controller_EARTH)
+        .triggerHook(0.5);
+    // ------------------- EARTH NAV END ----------------------
     var scene_PIPE = new ScrollMagic.Scene({
             triggerElement: ".pipe-start",
             // duration: 500,
@@ -467,7 +477,17 @@ $(function() {
         $('#rocket').addClass("addSmoke");
         $('#rocket').removeClass("submarine");
     });
-
+    // ------------------- EARTH NAV ----------------------
+    var scene_SEA_NAV = new ScrollMagic.Scene({
+            triggerElement: "#underwater",
+            duration: "50%",
+            offset: WIH / 4
+        })
+         .setClassToggle(".in-sea", "visible")
+        // .addIndicators({ name: "SKY_NAV" })
+        .addTo(controller_EARTH)
+        .triggerHook(0.5);
+    // ------------------- EARTH NAV END ----------------------
     /////////////////////////////////////////////////// POPUP
     var $space_pop_up = $("#space_pop_up")
     var $space_btn = $("#space_btn")
@@ -581,6 +601,9 @@ function goToSpaceRightFun(){
       controller_ROCKET.scrollTo("#space_h");
 }
 
-function goToSkyFun(){
-      controller_ROCKET.scrollTo("#sky");
+function goToUnderwaterFun(){
+      controller_ROCKET.scrollTo("#underwater");
+}
+function goToEarthFun(){
+      controller_ROCKET.scrollTo("#earth");
 }
