@@ -458,12 +458,12 @@ $(function() {
         console.log("Scene  EARTH.");
         $('#rocket').removeClass("addSmoke");
         $('#rocket').addClass("submarine");
-        $('#rocket img').attr("src", '././assets/medow/submarine.svg');
+        $('#rocket img').attr("src", '../medow/submarine.svg');
     });
 
     scene_UNDERWATER.on("leave", function(event) {
         console.log("Scene LEAVE EARTH.");
-        $('#rocket img').attr("src", '././assets/medow/rocket_red.svg');
+        $('#rocket img').attr("src", '../medow/rocket_red.svg');
         $('#rocket').addClass("addSmoke");
         $('#rocket').removeClass("submarine");
     });
