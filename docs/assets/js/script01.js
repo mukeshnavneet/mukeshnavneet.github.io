@@ -194,7 +194,7 @@ $(function() {
             offset: WIH / 4
         })
         .setTween([tween_SPACE_btn, ])
-        .setClassToggle("body", "overflowY_hide")
+        // .setClassToggle("body", "overflowY_hide")
         // .addIndicators({ name: "SPACE_NAV" })
         .addTo(controller_SPACE)
         .triggerHook(0.5);

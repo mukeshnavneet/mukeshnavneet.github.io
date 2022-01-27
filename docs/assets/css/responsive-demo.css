@@ -5,31 +5,30 @@
          margin-left: -50px;
          margin-top: -80px;
      }
-
      .text_pop_up {
          width: 300px;
          margin-left: -150px;
      }
-     .text_pop_up h2{
-       font-size: 18px;
-       font-weight: bold;
+     .text_pop_up h2 {
+         font-size: 18px;
+         font-weight: bold;
      }
      .diractions button {
-       background: #ffc20000;
+         background: #ffc20000;
      }
      .diractions button.active {
-       background:#ffc20000;
-    }
-    .diractions button.active:after {
-      background:#ffc20000;
-    }
-    .arrow:before {
-      border-right: 4px #ffc200 solid;
-      border-bottom: 4px #ffc200 solid;
-    }
+         background: #ffc20000;
+     }
+     .diractions button.active:after {
+         background: #ffc20000;
+     }
+     .arrow:before {
+         border-right: 4px #ffc200 solid;
+         border-bottom: 4px #ffc200 solid;
+     }
  }
  /* SPACE  */
-
+ 
  @media only screen and (max-width: 480px) {
      .planet-left {
          width: 90px;
@@ -68,7 +67,7 @@
      }
  }
  /* SKY */
-
+ 
  @media only screen and (max-width: 480px) {
      .plane {
          width: 150px;
@@ -99,19 +98,30 @@
          align-items: center;
          text-align: center;
      }
+     .touch-me-not .cloud-text {
+         display: flex;
+         flex-direction: column;
+         align-content: center;
+         align-items: center;
+     }
+     .hide-btn {
+         background-color: #595959;
+         border-radius: 20px;
+         /* margin: 10px; */
+     }
  }
  /* LAND */
-
+ 
  @media only screen and (max-width: 480px) {
-   .logo {
-       position: absolute;
-       width: 220px;
-       margin-left: -110px;
-       left: 50%;
-       top: 0px;
-       left: 50%;
-       z-index: 400;
-   }
+     .logo {
+         position: absolute;
+         width: 220px;
+         margin-left: -110px;
+         left: 50%;
+         top: 0px;
+         left: 50%;
+         z-index: 400;
+     }
      .tree-big {
          width: 200px;
          left: -70px;
@@ -123,7 +133,7 @@
          background-size: auto 50%;
      }
  }
-
+ 
  @media only screen and (max-width: 480px) {
      .grass-bg {
          background-size: 180%;
@@ -158,7 +168,7 @@
          text-align: center;
      }
  }
-
+ 
  @media only screen and (max-width: 480px) {
      .fish-center-top {
          width: 80px;
