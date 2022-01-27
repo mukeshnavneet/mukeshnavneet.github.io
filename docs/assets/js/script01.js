@@ -19,7 +19,7 @@ $(function() {
         Rocket_Height = 369 / 2;
         Rocket_Width = 200 / 2;
         rocket_base_offset = 300
-          LOGO_RES_Y_OFFSET = 50;
+        LOGO_RES_Y_OFFSET = 50;
     }
 
     let STARS_COUNT = 100;
@@ -41,7 +41,7 @@ $(function() {
     for (var i = 0; i < STARS_COUNT; i++) {
         var randomStar = Math.floor(Math.random() * STARS_ARRAY.length);
         var randomStarSize = Math.floor(Math.random() * STARS_SIZE_ARRAY.length);
-        var star = '<div class="star ' + STARS_SIZE_ARRAY[randomStarSize] + '" style="z-index: 9;animation: twinkle ' + ((Math.random() * 5) + 5) + 's linear ' + ((Math.random() * 5) + 5) + 's infinite; top: ' + Math.random() * ($(window).height() + $(window).height() / 2) + 'px; left: ' + Math.random() * $(window).width() + 'px;"><img src="../assets/sky/' + STARS_ARRAY[randomStar] + '.svg"/></div>';
+        var star = '<div class="star ' + STARS_SIZE_ARRAY[randomStarSize] + '" style="z-index: 9;animation: twinkle ' + ((Math.random() * 5) + 5) + 's linear ' + ((Math.random() * 5) + 5) + 's infinite; top: ' + Math.random() * ($(window).height() + $(window).height() / 2) + 'px; left: ' + Math.random() * $(window).width() + 'px;"><img src="./assets/sky/' + STARS_ARRAY[randomStar] + '.svg"/></div>';
         $('#space').append(star);
     }
     ////////////////////////////////////////////////////// HORIZONTAL SCROll
@@ -50,12 +50,12 @@ $(function() {
     //     .to("#rocket", 0.5, {
     //         // rotation: 40,
     //      })
-		// // build scene
-		// var scene_h = new ScrollMagic.Scene({duration: "100%"})
-		// 				.setTween(tween_ROCKET_H)
-		// 				// .setPin("#rocket")
-		// 				.addIndicators({name: "rotate_h"}) // add indicators (requires plugin)
-		// 				.addTo(controller_h);
+    // // build scene
+    // var scene_h = new ScrollMagic.Scene({duration: "100%"})
+    // 				.setTween(tween_ROCKET_H)
+    // 				// .setPin("#rocket")
+    // 				.addIndicators({name: "rotate_h"}) // add indicators (requires plugin)
+    // 				.addTo(controller_h);
     ////////////////////////////////////////////////////// BUBBLES
 
     for (var b = 0; b < 50; b++) {
@@ -146,7 +146,7 @@ $(function() {
     });
 
     scene_ROCKET.on("progress", function(event) {
-         // console.log("Scene progress changed to " + event.progress);
+        // console.log("Scene progress changed to " + event.progress);
     });
     //  bind scroll to anchor links
 
@@ -198,77 +198,77 @@ $(function() {
         // .addIndicators({ name: "SPACE_NAV" })
         .addTo(controller_SPACE)
         .triggerHook(0.5);
-        // ------------------- SPACE NAV ----------------------
-        var scene_SPACE_NAV = new ScrollMagic.Scene({
-                triggerElement: "#space",
-                duration: "50%",
-                offset: WIH / 4
-            })
-             .setClassToggle(".in-space", "visible")
-            // .addIndicators({ name: "SPACE" })
-            .addTo(controller_SPACE)
-            .triggerHook(0.5);
-        // ------------------- SPACE NAV END ----------------------
+    // ------------------- SPACE NAV ----------------------
+    var scene_SPACE_NAV = new ScrollMagic.Scene({
+            triggerElement: "#space",
+            duration: "50%",
+            offset: WIH / 4
+        })
+        .setClassToggle(".in-space", "visible")
+        // .addIndicators({ name: "SPACE" })
+        .addTo(controller_SPACE)
+        .triggerHook(0.5);
+    // ------------------- SPACE NAV END ----------------------
 
-        // ------------------- SPACE ----------------------
-        var tween_SPACE_btn = new TimelineMax()
-            .to("#space_btn", 0.5, {
-                x: 0,
-            })
-            .to("#space_btn", 0.5, {
-                x: 120,
-            });
-            var scene_SKY = new ScrollMagic.Scene({
-                triggerElement: "#space",
-                // duration: 500,
-                duration: "25%",
-                offset: WIH / 4
-            })
-            // .setTween([tween_LAND_btn])
-            .setClassToggle("#space_pop_up", "visible")
-            // .addIndicators({ name: "SPACE_TEXT" })
-            .addTo(controller_SPACE)
-            .triggerHook(0.25);
-        // ------------------- SKY ----------------------
-        var tween_SKY_btn = new TimelineMax()
-            .to("#sky_btn", 0.5, {
-                x: 0,
-            })
-            .to("#sky_btn", 0.5, {
-                x: 120,
-            });
-            var scene_SKY = new ScrollMagic.Scene({
-                triggerElement: "#sky",
-                // duration: 500,
-                duration: "25%",
-                offset: WIH / 4
-            })
-            // .setTween([tween_LAND_btn])
-            .setClassToggle("#sky_pop_up", "visible")
-            // .addIndicators({ name: "SKY_TEXT" })
-            .addTo(controller_SKY)
-            .triggerHook(0.25);
-            // ------------------- SKY NAV ----------------------
-            var scene_SKY_NAV = new ScrollMagic.Scene({
-                    triggerElement: "#sky",
-                    duration: "50%",
-                    offset: WIH / 4
-                })
-                 .setClassToggle(".in-sky", "visible")
-                // .addIndicators({ name: "SKY_NAV" })
-                .addTo(controller_SKY)
-                .triggerHook(0.5);
-            // ------------------- SKY NAV END ----------------------
+    // ------------------- SPACE ----------------------
+    var tween_SPACE_btn = new TimelineMax()
+        .to("#space_btn", 0.5, {
+            x: 0,
+        })
+        .to("#space_btn", 0.5, {
+            x: 120,
+        });
+    var scene_SKY = new ScrollMagic.Scene({
+            triggerElement: "#space",
+            // duration: 500,
+            duration: "25%",
+            offset: WIH / 4
+        })
+        // .setTween([tween_LAND_btn])
+        .setClassToggle("#space_pop_up", "visible")
+        // .addIndicators({ name: "SPACE_TEXT" })
+        .addTo(controller_SPACE)
+        .triggerHook(0.25);
+    // ------------------- SKY ----------------------
+    var tween_SKY_btn = new TimelineMax()
+        .to("#sky_btn", 0.5, {
+            x: 0,
+        })
+        .to("#sky_btn", 0.5, {
+            x: 120,
+        });
+    var scene_SKY = new ScrollMagic.Scene({
+            triggerElement: "#sky",
+            // duration: 500,
+            duration: "25%",
+            offset: WIH / 4
+        })
+        // .setTween([tween_LAND_btn])
+        .setClassToggle("#sky_pop_up", "visible")
+        // .addIndicators({ name: "SKY_TEXT" })
+        .addTo(controller_SKY)
+        .triggerHook(0.25);
+    // ------------------- SKY NAV ----------------------
+    var scene_SKY_NAV = new ScrollMagic.Scene({
+            triggerElement: "#sky",
+            duration: "50%",
+            offset: WIH / 4
+        })
+        .setClassToggle(".in-sky", "visible")
+        // .addIndicators({ name: "SKY_NAV" })
+        .addTo(controller_SKY)
+        .triggerHook(0.5);
+    // ------------------- SKY NAV END ----------------------
 
-        // ------------------- LAND ----------------------
-        var tween_LAND_btn = new TimelineMax()
-            .to("#land_btn", 0.5, {
-                x: 0,
-            })
-            .to("#land_btn", 0.5, {
-                x: 120,
-            });
-        var scene_LAND = new ScrollMagic.Scene({
+    // ------------------- LAND ----------------------
+    var tween_LAND_btn = new TimelineMax()
+        .to("#land_btn", 0.5, {
+            x: 0,
+        })
+        .to("#land_btn", 0.5, {
+            x: 120,
+        });
+    var scene_LAND = new ScrollMagic.Scene({
             triggerElement: "#land",
             // duration: 500,
             duration: "25%",
@@ -314,21 +314,21 @@ $(function() {
     //         x: 120,
     //     });
     var scene_LAND = new ScrollMagic.Scene({
-        triggerElement: "#earth",
-         duration: "50%",
-        offset: WIH /4
-    })
-     .setClassToggle("#earth_pop_up", "visible")
-    // .addIndicators({ name: "EARTH_TEXT" })
-    .addTo(controller_EARTH)
-    .triggerHook(0.25);
+            triggerElement: "#earth",
+            duration: "50%",
+            offset: WIH / 4
+        })
+        .setClassToggle("#earth_pop_up", "visible")
+        // .addIndicators({ name: "EARTH_TEXT" })
+        .addTo(controller_EARTH)
+        .triggerHook(0.25);
     // ------------------- LAND NAV ----------------------
     var scene_SKY_NAV = new ScrollMagic.Scene({
             triggerElement: "#land",
             duration: "50%",
             offset: WIH / 4
         })
-         .setClassToggle(".in-land", "visible")
+        .setClassToggle(".in-land", "visible")
         // .addIndicators({ name: "LAND_NAV" })
         .addTo(controller_LAND)
         .triggerHook(0.5);
@@ -399,7 +399,7 @@ $(function() {
             duration: "50%",
             offset: WIH / 4
         })
-         .setClassToggle(".in-earth", "visible")
+        .setClassToggle(".in-earth", "visible")
         // .addIndicators({ name: "SKY_NAV" })
         .addTo(controller_EARTH)
         .triggerHook(0.5);
@@ -435,17 +435,17 @@ $(function() {
         .addTo(controller_UNDERWATER)
         .triggerHook(0.5);
 
-        // ------------------- EARTH TEXT ----------------------
-        // var tween_LAND_btn = new TimelineMax()
-        //     .to("#earth_btn", 0.5, {
-        //         x: 0,
-        //     })
-        //     .to("#earth_btn", 0.5, {
-        //         x: 120,
-        //     });
-        var scene_UNDERWATER_TEXT = new ScrollMagic.Scene({
+    // ------------------- EARTH TEXT ----------------------
+    // var tween_LAND_btn = new TimelineMax()
+    //     .to("#earth_btn", 0.5, {
+    //         x: 0,
+    //     })
+    //     .to("#earth_btn", 0.5, {
+    //         x: 120,
+    //     });
+    var scene_UNDERWATER_TEXT = new ScrollMagic.Scene({
             triggerElement: "#underwater",
-             duration: "30%",
+            duration: "30%",
             offset: 10
         })
         .setClassToggle("#sea_pop_up", "visible")
@@ -453,16 +453,16 @@ $(function() {
         .addTo(controller_UNDERWATER)
         .triggerHook(0.25);
 
-        var tween_UNDERWATER_btn = new TimelineMax()
-            .to("#sea_btn", 1, {
-                x: 0,
-            })
-            .to("#sea_btn", 1, {
-                x: 120,
-            })
-            .to("#sea_btn", 1, {
-                x: 0,
-            });
+    var tween_UNDERWATER_btn = new TimelineMax()
+        .to("#sea_btn", 1, {
+            x: 0,
+        })
+        .to("#sea_btn", 1, {
+            x: 120,
+        })
+        .to("#sea_btn", 1, {
+            x: 0,
+        });
 
     scene_UNDERWATER.on("start", function(event) {
         console.log("Scene  EARTH.");
@@ -483,7 +483,7 @@ $(function() {
             duration: "50%",
             offset: WIH / 4
         })
-         .setClassToggle(".in-sea", "visible")
+        .setClassToggle(".in-sea", "visible")
         // .addIndicators({ name: "SKY_NAV" })
         .addTo(controller_EARTH)
         .triggerHook(0.5);
@@ -537,18 +537,18 @@ $(function() {
 
     $($touch_me_not_IMG).hover(over, null);
     $touch_me_not.hover(null, out);
-    TweenMax.to($touch_me_not_IMG, 0.5, { x:"0%", width: "200px", })
+    TweenMax.to($touch_me_not_IMG, 0.5, { x: "0%", width: "200px", })
     TweenMax.to($cloud_text, 0.5, { autoAlpha: 1, scale: 0 })
 
     function over() {
         $touch_me_not.addClass("hide-btn");
-        TweenMax.to($touch_me_not_IMG, 0.5, { x:"0",width: "100%" })
+        TweenMax.to($touch_me_not_IMG, 0.5, { x: "0", width: "100%" })
         TweenMax.to($cloud_text, 0.5, { autoAlpha: 1, scale: 1, })
     }
 
     function out() {
         $touch_me_not.removeClass("hide-btn");
-        TweenMax.to($touch_me_not_IMG, 0.5, { x:"0", width: "200px" })
+        TweenMax.to($touch_me_not_IMG, 0.5, { x: "0", width: "200px" })
         TweenMax.to($cloud_text, 0.5, { autoAlpha: 0, scale: 0, })
     }
 
@@ -590,20 +590,23 @@ $(function() {
         }
     );
 });
-function goToSkyFun(){
-      controller_ROCKET.scrollTo("#sky");
-}
-function goToSpaceFun(){
-      controller_ROCKET.scrollTo("#space");
+
+function goToSkyFun() {
+    controller_ROCKET.scrollTo("#sky");
 }
 
-function goToSpaceRightFun(){
-      controller_ROCKET.scrollTo("#space_h");
+function goToSpaceFun() {
+    controller_ROCKET.scrollTo("#space");
 }
 
-function goToUnderwaterFun(){
-      controller_ROCKET.scrollTo("#underwater");
+function goToSpaceRightFun() {
+    controller_ROCKET.scrollTo("#space_h");
 }
-function goToEarthFun(){
-      controller_ROCKET.scrollTo("#earth");
+
+function goToUnderwaterFun() {
+    controller_ROCKET.scrollTo("#underwater");
+}
+
+function goToEarthFun() {
+    controller_ROCKET.scrollTo("#earth");
 }
