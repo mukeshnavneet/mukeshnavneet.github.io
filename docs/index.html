@@ -22,23 +22,23 @@
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="./assets/js/lib/jquery.min.js"></script>
     <style media="screen">
-    .pageloader {
-      position: fixed;
-      left: 0px;
-      top: 0px;
-      width: 100%;
-      height: 100%;
-      z-index: 9999;
-      background: url('images/yourLoaderImage.gif') 50% 50% no-repeat rgb(249, 249, 249);
-      opacity: .8;
-    }
+        .pageloader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('images/yourLoaderImage.gif') 50% 50% no-repeat rgb(249, 249, 249);
+            opacity: .8;
+        }
     </style>
     <script type="text/javascript">
-    jQuery("body").prepend('<div id="preloader" class="pageloader">Loading...</div>');
-    jQuery(document).ready(function() {
-        jQuery("#preloader").remove();
-    });
-</script>
+        jQuery("body").prepend('<div id="preloader" class="pageloader">Loading...</div>');
+        jQuery(document).ready(function() {
+            jQuery("#preloader").remove();
+        });
+    </script>
     <script type="text/javascript" src="./assets/js/lib/highlight.pack.js"></script>
     <script type="text/javascript" src="./assets/js/lib/modernizr.custom.min.js"></script>
     <script type="text/javascript" src="./scrollmagic/uncompressed/ScrollMagic.js"></script>
@@ -67,7 +67,7 @@
     </div>
     <!-- -->
     <div class="skip-btn">
-      Skip
+        Skip
     </div>
     <main id="container-scroll">
         <div id="rocket-container">
@@ -82,8 +82,10 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <img src="./assets/medow/rocket_red.svg" />
+                <img src="./assets/medow/rocket-2.svg" />
                 <div class="smoke">
+                    <!-- <div class="smoke-l"></div>
+                    <div class="smoke-r"></div> -->
                     <!-- <img class="eye-animation" src="./assets/medow/flame-1.svg" alt="blinking eye animation" /> -->
                     <!-- <img src="./assets/Space/smoke 1.svg" /> -->
                 </div>
@@ -147,10 +149,10 @@
                 <div class="planet-left"><img src="./assets/Space/planet-left.svg" /></div>
             </div>
             <div class="diractions in-space">
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button"  class="active" onclick="goToSpaceRightFun()"><div class="arrow animat-arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button"><div class="arrow "></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button" class="active" onclick="goToSpaceRightFun()"><div class="arrow animat-arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow "></div></button>
             </div>
         </section>
         <section id="sky">
@@ -188,15 +190,15 @@
                 </div>
             </div>
             <div class="diractions in-sky">
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button" class="active" onclick="goToSpaceFun()"><div class="arrow animat-arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button" class="active" onclick="goToSpaceFun()"><div class="arrow animat-arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
             </div>
-         </section>
+        </section>
         <section id="land">
             <div class="launcher-base">
-                <div class="smoke-to-left">
+                <!-- <div class="smoke-to-left">
                     <span><img src="./assets/medow/1.svg" /></span>
                     <span><img src="./assets/medow/2.svg" /></span>
                     <span><img src="./assets/medow/3.svg" /></span>
@@ -219,7 +221,7 @@
                     <span><img src="./assets/medow/8.svg" /></span>
                     <span><img src="./assets/medow/9.svg" /></span>
                     <span><img src="./assets/medow/10.svg" /></span>
-                </div>
+                </div> -->
             </div>
             <div class="butterflys">
             </div>
@@ -246,10 +248,10 @@
                 <div class="tree-big"><img src="./assets/medow/tree.svg" /></div>
             </div>
             <div class="diractions in-land">
-              <button type="button" name="button" class="active" onclick="goToSkyFun()"><div class="arrow animat-arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button" class="active" onclick="goToSkyFun()"><div class="arrow animat-arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
             </div>
         </section>
         <section id="earth">
@@ -270,7 +272,7 @@
                     <!--<img src="./assets/earth/pipe-top.svg" alt="">-->
                 </div>
                 <div class="pipe">
-                    <!-- <img src="./assets/earth/pipe-bot.svg" alt=""> -->
+                    <img id="pipe-sequence" src="./assets/earth/pipe-bot.svg" alt="">
                     <div id="pipe-end"></div>
                 </div>
                 <div class="earth-layer">
@@ -278,10 +280,10 @@
                 </div>
             </div>
             <div class="diractions in-earth">
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button" class="active" onclick="goToUnderwaterFun()"><div class="arrow animat-arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button" class="active" onclick="goToUnderwaterFun()"><div class="arrow animat-arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
             </div>
         </section>
         <section id="underwater">
@@ -345,10 +347,10 @@
                 </div>
             </div>
             <div class="diractions in-sea">
-              <button type="button" name="button" class="active" onclick="goToEarthFun()"><div class="arrow animat-arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
-              <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button" class="active" onclick="goToEarthFun()"><div class="arrow animat-arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
+                <button type="button" name="button"><div class="arrow"></div></button>
             </div>
         </section>
     </main>

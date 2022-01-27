@@ -5,9 +5,9 @@ $(function() {
     let WIW = window.innerWidth;
     let WIH = window.innerHeight;
     let Rocket_Width = 200;
-    let Rocket_Height = 369;
+    let Rocket_Height = 208;
     let launchpad_Height = 30;
-    let rocket_base_offset = 200;
+    let rocket_base_offset = 100;
 
     var SECTION = $("section")
     var ELM = $(".elm")
@@ -16,9 +16,9 @@ $(function() {
     var LOGO_RES_Y_OFFSET = 100;
 
     if (WIW < 480) {
-        Rocket_Height = 369 / 2;
+        Rocket_Height = 208 / 2;
         Rocket_Width = 200 / 2;
-        rocket_base_offset = 300
+        rocket_base_offset = 0
         LOGO_RES_Y_OFFSET = 50;
     }
 
@@ -118,7 +118,7 @@ $(function() {
             y: 200
         })
         .to("#rocket", 0.5, {
-            x: 0,
+            x: -(WIW / 2) + Rocket_Width,
             scale: 1,
             y: 100
         })
@@ -333,6 +333,30 @@ $(function() {
         .addTo(controller_LAND)
         .triggerHook(0.5);
     // ------------------- SKY NAV END ----------------------
+
+    var images = [
+        "./assets/earth/example_imagesequence_01.png",
+        "./assets/earth/example_imagesequence_02.png",
+        "./assets/earth/example_imagesequence_03.png",
+        "./assets/earth/example_imagesequence_04.png",
+        "./assets/earth/example_imagesequence_05.png",
+        "./assets/earth/example_imagesequence_05.png",
+        "./assets/earth/example_imagesequence_05.png",
+        "./assets/earth/example_imagesequence_05.png",
+        "./assets/earth/example_imagesequence_05.png",
+    ];
+    var obj = { curImg: 0 };
+    // create tween
+    // var tween_pipe_sequence = TweenMax.to(obj, 0.5, {
+    //     curImg: images.length - 1, // animate propery curImg to number of images
+    //     roundProps: "curImg", // only integers so it can be used as an array index
+    //     repeat: 3, // repeat 3 times
+    //     immediateRender: true, // load first image automatically
+    //     ease: Linear.easeNone, // show every image the same ammount of time
+    //     onUpdate: function() {
+    //         $("#pipe-sequence").attr("src", images[obj.curImg]); // set the image source
+    //     }
+    // });
     var tween_EARTH_btn = new TimelineMax()
         .to("#earth_btn", 1, {
             x: 0,
@@ -343,6 +367,16 @@ $(function() {
         .to("#earth_btn", 1, {
             x: 0,
         });
+    // var scene_tween_pipe_sequence = new ScrollMagic.Scene({
+    //         triggerElement: "#earth",
+    //         // duration: 500,
+    //         duration: "100%",
+    //         offset: "0px"
+    //     })
+    //     .setTween([tween_pipe_sequence])
+    //     .addIndicators({ name: "EARTH" })
+    //     .addTo(controller_EARTH)
+    //     .triggerHook(1);
 
     var scene_EARTH = new ScrollMagic.Scene({
             triggerElement: "#earth",
@@ -350,7 +384,7 @@ $(function() {
             duration: "20%",
             offset: "0px"
         })
-        .setTween([tween_EARTH_btn, ])
+        .setTween([tween_EARTH_btn])
         // .addIndicators({ name: "EARTH" })
         .addTo(controller_EARTH)
         .triggerHook(1);
@@ -358,8 +392,8 @@ $(function() {
     scene_EARTH.on("start", function(event) {
         console.log("Scene  EARTH.");
         $('#rocket').removeClass("addSmoke");
-        $('.smoke-to-left').hide();
-        $('.smoke-to-right').hide();
+        // $('.smoke-to-left').hide();
+        // $('.smoke-to-right').hide();
     });
 
     scene_EARTH.on("leave", function(event) {
@@ -436,6 +470,7 @@ $(function() {
         .triggerHook(0.5);
 
     // ------------------- EARTH TEXT ----------------------
+
     // var tween_LAND_btn = new TimelineMax()
     //     .to("#earth_btn", 0.5, {
     //         x: 0,
@@ -443,6 +478,7 @@ $(function() {
     //     .to("#earth_btn", 0.5, {
     //         x: 120,
     //     });
+
     var scene_UNDERWATER_TEXT = new ScrollMagic.Scene({
             triggerElement: "#underwater",
             duration: "30%",
@@ -473,7 +509,7 @@ $(function() {
 
     scene_UNDERWATER.on("leave", function(event) {
         console.log("Scene LEAVE EARTH.");
-        $('#rocket img').attr("src", './assets/medow/rocket_red.svg');
+        $('#rocket img').attr("src", './assets/medow/rocket-2.svg');
         $('#rocket').addClass("addSmoke");
         $('#rocket').removeClass("submarine");
     });
