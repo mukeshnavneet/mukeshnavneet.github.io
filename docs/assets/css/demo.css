@@ -1,3 +1,8 @@
+html {
+    background: #000000;
+    overflow-x: hidden;
+}
+
 body {
     position: relative;
     /* overflow: hidden; */
@@ -113,6 +118,7 @@ body {
     background: -webkit-linear-gradient(0deg, rgb(3 16 54) 0%, rgba(0, 0, 22, 1) 100%);
     background: linear-gradient(0deg, rgb(3 16 54) 0%, rgba(0, 0, 22, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#001544", endColorstr="#000016", GradientType=1);
+    overflow-x: hidden;
 }
 
 #space .elm {
@@ -161,6 +167,10 @@ body {
     /* background: -moz-linear-gradient(180deg, #9AC97F 0%, #0083CD 70%, rgb(255, 255, 255) 100%);
     background: -webkit-linear-gradient(180deg, #9AC97F 0%, #0083CD 70%, rgb(255, 255, 255) 100%);
     background: linear-gradient(180deg, #9AC97F 0%, #0083CD 70%, rgb(255, 255, 255) 100%); */
+}
+
+#earth .elm {
+    overflow-x: hidden;
 }
 
 #underwater {
@@ -225,10 +235,10 @@ section {
 
 #rocket {
     position: relative;
+    /*width: 200px;
+    height: 208px;*/
     width: 200px;
-    height: 208px;
-    /* width: 200px;
-    height: 320px; */
+    height: 369px;
     /* background-color: yellow; */
     /* background: yellow; */
     /* border: 1px solid red; */
@@ -237,7 +247,7 @@ section {
     left: 50%;
     top: 50%;
     margin-left: -100px;
-    margin-top: -104px;
+    margin-top: -160px;
     z-index: 500;
 }
 
@@ -1333,10 +1343,10 @@ section {
     position: absolute;
     z-index: 1;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 20px 11px rgba(255, 255, 255, 0.5);
-    width: 400px;
-    /* height: 400px; */
-    left: 50%;
+    box-shadow: 0 0 20px 11px rgb(255 255 255 / 50%);
+    width: 300px;
+    height: 300px;
+    right: 100px;
     top: 50%;
     margin-left: -200px;
     /* margin-top: -200px; */
@@ -1348,7 +1358,7 @@ section {
     align-content: center;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 150px;
     box-sizing: border-box;
     text-align: center;
 }
@@ -1620,7 +1630,7 @@ section {
     z-index: 0;
     top: 0;
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 50vh;
     background-image: url("../../assets/earth/earth_grass.svg");
     background-size: contain;
