@@ -1,6 +1,12 @@
 var controller_ROCKET = new ScrollMagic.Controller();
 
 $(function() {
+    // init scrollbar
+    // var Scrollbar = window.Scrollbar;
+    // var elem = document.querySelector("#container-scroll");
+    // var scrollbar = Scrollbar.init(elem);
+    // init scrollbar
+
     // VARS
     let WIW = window.innerWidth;
     let WIH = window.innerHeight;
@@ -21,18 +27,18 @@ $(function() {
         rocket_base_offset = 0
         LOGO_RES_Y_OFFSET = 50;
     }
-
     let STARS_COUNT = 100;
-    if (WIW < 480) {
-        STARS_COUNT = 25;
-    }
-
     // Set Section Height
     SECTION.css('height', WIH + "px");
     ELM.css('height', WIH + "px");
     EARTH_LAYER.css('height', (WIH / 2) + "px")
     PIPE.css('height', (WIH / 1.5) + "px")
     PIPE.css('margin-top', -(WIH / 1.5) / 2 + "px")
+
+    if (WIW < 480) {
+        STARS_COUNT = 25;
+        PIPE.css('height', (WIH / 1.5) + "px")
+    }
 
     var STARS_ARRAY = ["star-yellow", "star-grey", "star-whitet"];
 
@@ -74,53 +80,71 @@ $(function() {
     window.addEventListener('scroll', (e) => {
         newValue = window.pageYOffset;
         if (oldValue < newValue) {
-            console.log("Up");
+            // console.log("Up");
         } else if (oldValue > newValue) {
-            console.log("Down");
+            // console.log("Down");
         }
         oldValue = newValue;
     });
 
     // ROCKET
     var tween_ROCKET = new TimelineMax()
-        .to("#rocket", 0.5, {
-            x: 100,
-            y: (WIH / 2) - (Rocket_Height),
-        })
-        .to("#rocket", 0.5, {
+        .to("#rocket", 1, {
             x: 0,
+            y: (WIH / 2) - (Rocket_Height),
+            onComplete: () => { console.log("STEP - 1") },
+            ease: 'Power4.out'
         })
+        // .to("#rocket", 0.5, {
+        //     x: 0,
+        //     onComplete: () => { console.log("STEP - 2") },
+        //     ease: 'Power4.out'
+        // })
         .to("#rocket", 0.5, {
             x: -100,
+            onComplete: () => { console.log("STEP - 3") },
+            ease: 'Power4.out'
         })
         .to("#rocket", 0.5, {
             x: 0,
             // y: (WIH / 2 - Rocket_Height),
+            onComplete: () => { console.log("STEP - 4") },
+            ease: 'Power4.out'
         })
         .to("#rocket", 1, {
             x: 0,
-            y: (WIH / 2) - (Rocket_Height / 2)
+            y: (WIH / 2) - (Rocket_Height / 2),
+            onComplete: () => { console.log("STEP - 5") },
+            ease: 'Power4.out'
         })
         .to("#rocket", 1, {
             x: 0,
             y: (WIH / 2) - (Rocket_Height / 2) - rocket_base_offset,
             scale: 0.5,
+            onComplete: () => { console.log("STEP - 6") },
+            ease: 'Power4.out'
         })
         .to("#rocket", 0.5, {
             x: 0,
             scale: 0.1,
-            y: 0
+            y: 0,
+            onComplete: () => { console.log("STEP - 7") },
+            ease: 'Power4.out'
         })
         .to("#rocket", 0.5, {
             x: 0,
             scale: 0.25,
             rotation: 270,
-            y: 200
+            y: 200,
+            onComplete: () => { console.log("STEP - 8") },
+            ease: 'Power4.out'
         })
         .to("#rocket", 0.5, {
-            x: -(WIW / 2) + Rocket_Width,
+            // x: -(WIW / 2) + Rocket_Width,
+            x: 0,
             scale: 1,
-            y: 100
+            y: 100,
+            ease: 'Power4.out'
         })
 
     // tween_ROCKET.call(function() {
@@ -180,6 +204,7 @@ $(function() {
     var controller_LAND = new ScrollMagic.Controller();
     var controller_EARTH = new ScrollMagic.Controller();
     var controller_UNDERWATER = new ScrollMagic.Controller();
+    var controller_SUB_2 = new ScrollMagic.Controller();
     // ------------------- SPACE ----------------------
     var tween_SPACE_btn = new TimelineMax()
         .to("#space_btn", 0.5, {
@@ -335,28 +360,27 @@ $(function() {
     // ------------------- SKY NAV END ----------------------
 
     var images = [
-        "./assets/earth/example_imagesequence_01.png",
-        "./assets/earth/example_imagesequence_02.png",
-        "./assets/earth/example_imagesequence_03.png",
-        "./assets/earth/example_imagesequence_04.png",
-        "./assets/earth/example_imagesequence_05.png",
-        "./assets/earth/example_imagesequence_05.png",
-        "./assets/earth/example_imagesequence_05.png",
-        "./assets/earth/example_imagesequence_05.png",
-        "./assets/earth/example_imagesequence_05.png",
+        "./assets/earth/pipe-1.SVG",
+        "./assets/earth/pipe-2.SVG",
+        "./assets/earth/pipe-3.SVG",
+        "./assets/earth/pipe-4.SVG",
+        "./assets/earth/pipe-5.SVG",
+        "./assets/earth/pipe-1.SVG",
+        "./assets/earth/pipe-1.SVG",
+        "./assets/earth/pipe-bot.SVG",
     ];
     var obj = { curImg: 0 };
     // create tween
-    // var tween_pipe_sequence = TweenMax.to(obj, 0.5, {
-    //     curImg: images.length - 1, // animate propery curImg to number of images
-    //     roundProps: "curImg", // only integers so it can be used as an array index
-    //     repeat: 3, // repeat 3 times
-    //     immediateRender: true, // load first image automatically
-    //     ease: Linear.easeNone, // show every image the same ammount of time
-    //     onUpdate: function() {
-    //         $("#pipe-sequence").attr("src", images[obj.curImg]); // set the image source
-    //     }
-    // });
+    var tween_pipe_sequence = TweenMax.to(obj, 0.5, {
+        curImg: images.length - 1, // animate propery curImg to number of images
+        roundProps: "curImg", // only integers so it can be used as an array index
+        repeat: 3, // repeat 3 times
+        immediateRender: true, // load first image automatically
+        ease: Linear.easeNone, // show every image the same ammount of time
+        onUpdate: function() {
+            $("#pipe-sequence").attr("src", images[obj.curImg]); // set the image source
+        }
+    });
     var tween_EARTH_btn = new TimelineMax()
         .to("#earth_btn", 1, {
             x: 0,
@@ -367,16 +391,16 @@ $(function() {
         .to("#earth_btn", 1, {
             x: 0,
         });
-    // var scene_tween_pipe_sequence = new ScrollMagic.Scene({
-    //         triggerElement: "#earth",
-    //         // duration: 500,
-    //         duration: "100%",
-    //         offset: "0px"
-    //     })
-    //     .setTween([tween_pipe_sequence])
-    //     .addIndicators({ name: "EARTH" })
-    //     .addTo(controller_EARTH)
-    //     .triggerHook(1);
+    var scene_tween_pipe_sequence = new ScrollMagic.Scene({
+            triggerElement: "#earth",
+            // duration: 500,
+            duration: "100%",
+            offset: "0px"
+        })
+        .setTween([tween_pipe_sequence])
+        // .addIndicators({ name: "EARTH" })
+        .addTo(controller_EARTH)
+        .triggerHook(1);
 
     var scene_EARTH = new ScrollMagic.Scene({
             triggerElement: "#earth",
@@ -390,14 +414,12 @@ $(function() {
         .triggerHook(1);
 
     scene_EARTH.on("start", function(event) {
-        console.log("Scene  EARTH.");
         $('#rocket').removeClass("addSmoke");
         // $('.smoke-to-left').hide();
         // $('.smoke-to-right').hide();
     });
 
     scene_EARTH.on("leave", function(event) {
-        console.log("Scene LEAVE EARTH.");
         $('#rocket').addClass("addSmoke");
         $('.smoke-to-left').show();
         $('.smoke-to-right').show();
@@ -449,7 +471,6 @@ $(function() {
         .addTo(controller_ROCKET)
         .triggerHook(0.5);
     scene_PIPE.on("start", function(event) {
-        console.log("Scene  PIPE.");
         // $('#rocket').hide();
     });
     scene_PIPE.on("leave", function(event) {
@@ -501,18 +522,17 @@ $(function() {
         });
 
     scene_UNDERWATER.on("start", function(event) {
-        console.log("Scene  EARTH.");
         $('#rocket').removeClass("addSmoke");
         $('#rocket').addClass("submarine");
         $('#rocket img').attr("src", './assets/medow/submarine.svg');
     });
 
     scene_UNDERWATER.on("leave", function(event) {
-        console.log("Scene LEAVE EARTH.");
         $('#rocket img').attr("src", './assets/medow/rocket-2.svg');
         $('#rocket').addClass("addSmoke");
         $('#rocket').removeClass("submarine");
     });
+
     // ------------------- EARTH NAV ----------------------
     var scene_SEA_NAV = new ScrollMagic.Scene({
             triggerElement: "#underwater",
@@ -524,6 +544,34 @@ $(function() {
         .addTo(controller_EARTH)
         .triggerHook(0.5);
     // ------------------- EARTH NAV END ----------------------
+    var tween_SUB_2 = new TimelineMax()
+        .to("#sea_btn", 1, {
+            x: 0,
+        })
+        .to("#sea_btn", 1, {
+            x: 120,
+        })
+        .to("#sea_btn", 1, {
+            x: 0,
+        });
+    var scene_SUB2 = new ScrollMagic.Scene({
+            triggerElement: "#underwater",
+            duration: "80%",
+            offset: 0
+        })
+        .setTween([tween_SUB_2])
+        // .addIndicators({ name: "SEA_SUB2" })
+        .addTo(controller_SUB_2)
+        .triggerHook(1);
+
+
+
+    // var cloudTl = new TimelineMax({ repeat: -1, force3D: true });
+    // cloudTl.to(".fish-center-top", 10, { x: WIW + 100, ease: Linear.easeInOut }, 1)
+    // .to("#cloud02", 5, { x: WIW, ease: Linear.easeNone }, 0.9)
+    // .to("#cloud03", 9, { x: WIW, ease: Linear.easeNone }, 1)
+    // .to("#cloud04", 4, { x: WIW, ease: Linear.easeNone }, 1.5);
+
     /////////////////////////////////////////////////// POPUP
     var $space_pop_up = $("#space_pop_up")
     var $space_btn = $("#space_btn")
@@ -625,6 +673,7 @@ $(function() {
             $(this).removeClass('animate__wobble');
         }
     );
+    // scrollbar.addListener(() => { scene_ROCKET.refresh() })
 });
 
 function goToSkyFun() {

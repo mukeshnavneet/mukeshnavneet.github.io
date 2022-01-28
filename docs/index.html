@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./assets/css/responsive-demo.css" type="text/css">
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="./assets/js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
     <style media="screen">
         .pageloader {
             position: fixed;
@@ -29,14 +30,145 @@
             width: 100%;
             height: 100%;
             z-index: 9999;
-            background: url('images/yourLoaderImage.gif') 50% 50% no-repeat rgb(249, 249, 249);
-            opacity: .8;
+            background: url(images/yourLoaderImage.gif) 50% 50% no-repeat rgb(0, 0, 0);
+            background: rgb(0, 0, 0);
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #preloader .txt-perc {
+            font-size: 35px;
+            color: aliceblue;
+            opacity: 1;
+            margin: 0 0 6px 0;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        #preloader .progress {
+            width: 100px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 15px auto;
+        }
+        
+        .is-loading {
+            overflow: hidden;
+        }
+        
+        .bcg {
+            transition: transform 4s ease-out;
+            transform: scale(1.05);
+            transform-origin: top center;
+        }
+        
+        .is-loaded.bcg {
+            transform: scale(1);
+        }
+        
+        #preloader.is-hidden {
+            visibility: hidden;
+            opacity: 0;
         }
     </style>
     <script type="text/javascript">
-        jQuery("body").prepend('<div id="preloader" class="pageloader">Loading...</div>');
+        // jQuery("body").prepend('<div id="preloader" class="pageloader">Loading...</div>');
         jQuery(document).ready(function() {
-            jQuery("#preloader").remove();
+
+            // number of loaded images for preloader progress
+            var loadedCount = 0; //current number of images loaded
+            var imagesToLoad = $('img').length; //number of slides with .bcg container
+            var loadingProgress = 0; //timeline progress - starts at 0
+
+            $('img').imagesLoaded({
+                background: true
+            }).progress(function(instance, image) {
+                loadProgress();
+            });
+
+            function loadProgress(imgLoad, image) {
+                //one more image has been loaded
+                loadedCount++;
+                loadingProgress = (loadedCount / imagesToLoad);
+                //console.log(loadingProgress);
+                // GSAP timeline for our progress bar
+                TweenLite.to(progressTl, 0.7, {
+                    progress: loadingProgress,
+                    ease: Linear.easeNone
+                });
+            }
+
+            //progress animation instance. the instance's time is irrelevant, can be anything but 0 to void  immediate render
+            var progressTl = new TimelineMax({
+                paused: true,
+                onUpdate: progressUpdate,
+                onComplete: loadComplete
+            });
+
+            progressTl
+            //tween the progress bar width
+                .to($('.progress span'), 1, {
+                width: 100,
+                ease: Linear.easeNone
+            });
+
+            function progressUpdate() {
+                //the percentage loaded based on the tween's progress
+                loadingProgress = Math.round(progressTl.progress() * 100);
+                //we put the percentage in the screen
+                $(".txt-perc").text(loadingProgress + '%');
+
+            }
+
+            function loadComplete() {
+                console.log("DDDDDDDDDDDDDDDDD");
+                // preloader out
+                var preloaderOutTl = new TimelineMax();
+                preloaderOutTl
+                    .to($('.progress'), 0.3, {
+                        y: 100,
+                        autoAlpha: 0,
+                        ease: Back.easeIn
+                    })
+                    .to($('.txt-perc'), 0.3, {
+                        y: 100,
+                        autoAlpha: 0,
+                        ease: Back.easeIn
+                    }, 0.1)
+                    .set($('body'), {
+                        className: '-=is-loading'
+                    })
+                    .set($('#intro'), {
+                        className: '+=is-loaded'
+                    })
+                    .to($('#preloader'), 0.7, {
+                        yPercent: 100,
+                        ease: Power4.easeInOut
+                    })
+                    .set($('#preloader'), {
+                        className: '+=is-hidden'
+                    })
+                    .from($('#intro .title'), 1, {
+                        autoAlpha: 0,
+                        ease: Power1.easeOut
+                    }, '-=0.2')
+                    .from($('#intro p'), 0.7, {
+                        autoAlpha: 0,
+                        ease: Power1.easeOut
+                    }, '+=0.2')
+                    .from($('.scroll-hint'), 0.3, {
+                        y: -20,
+                        autoAlpha: 0,
+                        ease: Power1.easeOut
+                    }, '+=0.1');
+
+                return preloaderOutTl;
+            }
         });
     </script>
     <script type="text/javascript" src="./assets/js/lib/highlight.pack.js"></script>
@@ -49,10 +181,23 @@
     <script type="text/javascript" src="./scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
     <script type="text/javascript" src="./assets/js/lib/greensock/plugins/ScrollToPlugin.min.js"></script>
     <script type="text/javascript" src="./assets/js/lib/gsap3/MotionPathPlugin.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/smooth-scrollbar@8.7.4/dist/smooth-scrollbar.js"></script>
     <script type="text/javascript" src="./assets/js/script01.js"></script>
+    <style>
+        .is-loading {
+            overflow: hidden;
+        }
+    </style>
 </head>
 
-<body>
+<body class="is-loading">
+    <div id="preloader" class="pageloader">
+        <div class="txt">
+            <p class="txt-perc">0%</p>
+            <div class="progress"><span></span></div>
+        </div>
+    </div>
+    <!-- <div id="preloader" class="pageloader">Loading...</div> -->
     <div class="navs">
         <form class="move">
             <fieldset>
@@ -105,9 +250,9 @@
                     </h2>
                 </div>
                 <div id="comets">
-                    <i><img src="./assets/Space/comet-2.svg" /></i>
-                    <i><img src="./assets/Space/comet-1.svg" /></i>
-                    <i><img src="./assets/Space/comet-3.svg" /></i>
+                    <i><img class="bcg" src="./assets/Space/comet-2.svg" /></i>
+                    <i><img class="bcg" src="./assets/Space/comet-1.svg" /></i>
+                    <i><img class="bcg" src="./assets/Space/comet-3.svg" /></i>
                 </div>
                 <div class="const swril_1">
                     <img src="./assets/Space/swril_1.svg" />
@@ -272,7 +417,7 @@
                     <!--<img src="./assets/earth/pipe-top.svg" alt="">-->
                 </div>
                 <div class="pipe">
-                    <img id="pipe-sequence" src="./assets/earth/pipe-bot.svg" alt="">
+                    <img id="pipe-sequence" src="./assets/earth/pipe-1.svg" alt="">
                     <div id="pipe-end"></div>
                 </div>
                 <div class="earth-layer">
@@ -292,6 +437,9 @@
                 <h2>We've much to offer the early-learner, Don't miss out, just register.
                 </h2>
             </div>
+            <!-- <div class="submarine-two">
+                <img src="./assets/medow/submarine.svg" alt="">
+            </div> -->
             <div class="elm">
                 <div class="stons"></div>
                 <div class="bubbles"></div>

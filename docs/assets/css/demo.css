@@ -2684,3 +2684,13 @@ button {
         transform: translateZ(0px) rotateY(-50deg)
     }
 }
+
+.submarine-two {
+    width: 200px;
+    transform: rotate(-90deg);
+    position: relative;
+    top: 50%;
+    margin-top: -150px;
+    left: 50%;
+    margin-left: -100px;
+}
