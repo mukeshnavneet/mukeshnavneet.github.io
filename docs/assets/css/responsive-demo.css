@@ -182,7 +182,7 @@
          display: none;
      }
      .pipe {
-         border: 1px solid #ffc200;
+         /* border: 1px solid #ffc200; */
      }
      .pipe img {
          width: 100%;
