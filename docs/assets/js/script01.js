@@ -354,14 +354,14 @@ $(function() {
     // ------------------- SKY NAV END ----------------------
 
     var images = [
-        "./assets/earth/pipe-1.SVG",
-        "./assets/earth/pipe-2.SVG",
-        "./assets/earth/pipe-2.SVG",
-        "./assets/earth/pipe-3.SVG",
-        "./assets/earth/pipe-4.SVG",
-        "./assets/earth/pipe-5.SVG",
-        "./assets/earth/pipe-6.SVG",
-        "./assets/earth/pipe-bot.SVG",
+        "../assets/earth/pipe-1.SVG",
+        "../assets/earth/pipe-2.SVG",
+        "../assets/earth/pipe-2.SVG",
+        "../assets/earth/pipe-3.SVG",
+        "../assets/earth/pipe-4.SVG",
+        "../assets/earth/pipe-5.SVG",
+        "../assets/earth/pipe-6.SVG",
+        "../assets/earth/pipe-bot.SVG",
     ];
     var obj = { curImg: 0 };
     // create tween
