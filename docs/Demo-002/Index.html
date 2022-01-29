@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+  <meta name="keywords" content="ScrollMagic, example, scrolling, attaching, scrollbar, tween, tweenmax">
+  <meta name="author" content="Jan Paepke (www.janpaepke.de)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+    <title>Demo 002</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sky.css">
+    <link rel="stylesheet" href="/css/space.css">
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/lib/highlight.pack.js"></script>
+    <script type="text/javascript" src="./js/lib/modernizr.custom.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script type="text/javascript" src="./js/script01.js"></script>
+</head>
+<body>
+   <main>
+    <section class="intro"></section>
+    <section class="sky-overlay0"></section>
+    <section class="sky-overlay1"></section>
+    <section class="sky-overlay"></section>
+    <section class="space-overlay"></section>
+      <div class="bg-palceholder">
+      <div class="container">
+        <section data-color="red" class="panel p1">
+                <div class="elm">
+                    <div id="sky_pop_up" class="text_pop_up visible">
+                        <h2>We teach children to wonder why, The rocket can fly.
+                        </h2>
+                    </div>
+                    <div id="sputnik" class="sputnik sputnik01">
+                        <img src="./svg/sky/sputnik.svg" />
+                    </div>
+                    <div id="clouds">
+                        <div class="cloud x1"><img src="./svg/sky/cloud-left-1.svg" /></div>
+                        <div class="cloud x2"><img src="./svg/sky/cloud-left-2.svg" /></div>
+                        <div class="cloud x3"><img src="./svg/sky/cloud-left-3.svg" /></div>
+                        <div class="cloud x4"><img src="./svg/sky/cloud-left-4.svg" /></div>
+                    </div>
+                    <div id="plane" class="plane plane01">
+                        <img src="./svg/sky/aeroplane.svg" />
+                    </div>
+                    <div id="plane" class="plane plane02">
+                        <img src="./svg/sky/aeroplane2.svg" />
+                    </div>
+                </div>
+                <div class="diractions in-sky">
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                    <button type="button" name="button" class="active" onclick="goToSpaceFun()"><div class="arrow animat-arrow"></div></button>
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                </div>
+        </section>
+        <section id="sky"  data-color="orange" class="panel p2">
+              <div class="sky-img"></div>
+             <div id="touch-me-not" class="touch-me-not">
+                   <div class="cloud-text">
+                      <div>
+                          <h2> Oh no! You've caused pollution!</h2>
+                          <h2>But do not worry, We'll clear the confusion If you say you're sorry.</h2>
+                      </div>
+                      <div class="back-btn">I'm sorry!</div>
+                  </div>
+                  <img src="./svg/sky/black-cloude.svg" alt="">
+              </div>
+              <div class="elm">
+                  <div id="sky_pop_up" class="text_pop_up visible">
+                      <h2>We teach children to wonder why, The rocket can fly.
+                      </h2>
+                  </div>
+                  <div id="sputnik" class="sputnik sputnik01">
+                      <img src="./svg/sky/sputnik.svg" />
+                  </div>
+                  <div id="clouds">
+                      <div class="cloud x1"><img src="./svg/sky/cloud-left-1.svg" /></div>
+                      <div class="cloud x2"><img src="./svg/sky/cloud-left-2.svg" /></div>
+                      <div class="cloud x3"><img src="./svg/sky/cloud-left-3.svg" /></div>
+                      <div class="cloud x4"><img src="./svg/sky/cloud-left-4.svg" /></div>
+                  </div>
+                  <div id="plane" class="plane plane01">
+                      <img src="./svg/sky/aeroplane.svg" />
+                  </div>
+                  <div id="plane" class="plane plane02">
+                      <img src="./svg/sky/aeroplane2.svg" />
+                  </div>
+              </div>
+              <div class="diractions in-sky">
+                  <button type="button" name="button"><div class="arrow"></div></button>
+                  <button type="button" name="button" class="active" onclick="goToSpaceFun()"><div class="arrow animat-arrow"></div></button>
+                  <button type="button" name="button"><div class="arrow"></div></button>
+                  <button type="button" name="button"><div class="arrow"></div></button>
+              </div>
+        </section>
+        <section id="space" data-color="green" class="panel p4">
+          <div class="space-bg-img bcg "></div>
+          <div class="stars">
+            <div class="star s1"></div>
+            <div class="star s2"></div>
+            <div class="star s3"></div>
+            <div class="star s4"></div>
+            <div class="star s5"></div>
+          </div>
+        </section>
+        <section id="space2"  data-color="purple" class="panel p3">
+          <div class="elm">
+              <div id="space_pop_up" class="text_pop_up visible">
+                  <h2>In this safe space, Children learn at their own pace.
+                  </h2>
+              </div>
+              <div id="comets">
+                  <i><img class="bcg" src="./svg/Space/comet-2.svg" /></i>
+                  <i><img class="bcg" src="./svg/Space/comet-1.svg" /></i>
+                  <i><img class="bcg" src="./svg/Space/comet-3.svg" /></i>
+              </div>
+              <div class="const swril_1">
+                  <img class="bcg" src="./svg/Space/swril_1.svg" />
+              </div>
+              <div class="const swril_2">
+                  <img class="bcg" src="./svg/Space/swirl_2.svg" />
+              </div>
+              <div class="const const1">
+                  <img class="bcg" src="./svg/Space/constelation_1.svg" />
+              </div>
+              <div class="const const2">
+                  <img class="bcg" src="./svg/Space/constelation_2.svg" />
+              </div>
+              <div class="const const3">
+                  <img class="bcg" src="./svg/Space/constelation_3.svg" />
+              </div>
+              <div class="const const4">
+                  <img class="bcg" src="./svg/Space/constelation_4.svg" />
+              </div>
+              <div class="const const5">
+                  <img class="bcg" src="./svg/Space/constelation_5.svg" />
+              </div>
+              <div class="const const6">
+                  <img class="bcg" src="./svg/Space/constelation_6.svg" />
+              </div>
+              <div class="meteors meteor1">
+                  <img class="bcg" src="./svg/Space/asteroids_bot.svg" />
+              </div>
+              <div class="meteors meteor2">
+                  <img class="bcg" src="./svg/Space/asteroids_left.svg" />
+              </div>
+              <div class="planet-top-right"><img class="bcg" src="./svg/Space/plante-top-right.svg" /></div>
+              <div class="planet-bot"><img class="bcg" src="./svg/Space/planet-bot.svg" /></div>
+              <div class="planet-left"><img class="bcg" src="./svg/Space/planet-left.svg" /></div>
+          </div>
+          <div class="stars">
+            <div class="star s1"></div>
+            <div class="star s2"></div>
+            <div class="star s3"></div>
+            <div class="star s4"></div>
+            <div class="star s5"></div>
+          </div>
+         </section>
+
+        <section  id="sea"  data-color="gray" class="panel p5">
+
+        </section>
+      </div>
+    </div>
+    <div id="rocket" class="rocket">
+      <img src="./svg/rocket_red.svg" alt="">
+    </div>
+    <div id="earth" class="earth">
+      <div id="earth-pin">
+        <img class="earth-img"src="./svg/earth.svg" alt="">
+      </div>
+    </div>
+    <div class="backgrounds">
+      <section id="step1">STEP-1</section>
+      <section id="step2">STEP-2</section>
+      <section id="step3">STEP-3</section>
+      <section id="step4">STEP-4</section>
+      <section id="step5">STEP-5</section>
+    </div>
+</main>
+</body>
+</html>
