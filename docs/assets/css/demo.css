@@ -2615,6 +2615,10 @@ button {
     background-position: center;
 }
 
+.pipe img {
+    height: inherit;
+}
+
 .logo {
     position: absolute;
     width: 300px;

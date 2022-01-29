@@ -1,4 +1,17 @@
  @media only screen and (max-width: 480px) {
+     html {
+         overflow: hidden;
+         width: 100%;
+     }
+     body {
+         height: 100%;
+         position: fixed;
+         overflow-y: scroll;
+         -webkit-overflow-scrolling: touch;
+     }
+ }
+ 
+ @media only screen and (max-width: 480px) {
      #rocket {
          width: 100px;
          height: 164px;

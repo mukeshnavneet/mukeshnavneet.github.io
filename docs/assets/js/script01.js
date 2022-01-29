@@ -353,28 +353,28 @@ $(function() {
         .triggerHook(0.5);
     // ------------------- SKY NAV END ----------------------
 
-    // var images = [
-    //     "./assets/earth/pipe-1.SVG",
-    //     "./assets/earth/pipe-2.SVG",
-    //     "./assets/earth/pipe-3.SVG",
-    //     "./assets/earth/pipe-4.SVG",
-    //     "./assets/earth/pipe-5.SVG",
-    //     "./assets/earth/pipe-1.SVG",
-    //     "./assets/earth/pipe-1.SVG",
-    //     "./assets/earth/pipe-bot.SVG",
-    // ];
-    // var obj = { curImg: 0 };
-    // // create tween
-    // var tween_pipe_sequence = TweenMax.to(obj, 0.5, {
-    //     curImg: images.length - 1, // animate propery curImg to number of images
-    //     roundProps: "curImg", // only integers so it can be used as an array index
-    //     repeat: 3, // repeat 3 times
-    //     immediateRender: true, // load first image automatically
-    //     ease: Linear.easeNone, // show every image the same ammount of time
-    //     onUpdate: function() {
-    //         $("#pipe-sequence").attr("src", images[obj.curImg]); // set the image source
-    //     }
-    // });
+    var images = [
+        "./assets/earth/pipe-1.SVG",
+        "./assets/earth/pipe-2.SVG",
+        "./assets/earth/pipe-2.SVG",
+        "./assets/earth/pipe-3.SVG",
+        "./assets/earth/pipe-4.SVG",
+        "./assets/earth/pipe-5.SVG",
+        "./assets/earth/pipe-6.SVG",
+        "./assets/earth/pipe-bot.SVG",
+    ];
+    var obj = { curImg: 0 };
+    // create tween
+    var tween_pipe_sequence = TweenMax.to(obj, 0.5, {
+        curImg: images.length - 1, // animate propery curImg to number of images
+        roundProps: "curImg", // only integers so it can be used as an array index
+        repeat: 0, // repeat 3 times
+        immediateRender: true, // load first image automatically
+        ease: Linear.easeNone, // show every image the same ammount of time
+        onUpdate: function() {
+            $("#pipe-sequence").attr("src", images[obj.curImg]); // set the image source
+        }
+    });
 
     var tween_EARTH_btn = new TimelineMax()
         .to("#earth_btn", 1, {
@@ -387,16 +387,16 @@ $(function() {
             x: 0,
         });
 
-    // var scene_tween_pipe_sequence = new ScrollMagic.Scene({
-    //         triggerElement: "#earth",
-    //         // duration: 500,
-    //         duration: "100%",
-    //         offset: "0px"
-    //     })
-    //     .setTween([tween_pipe_sequence])
-    //     // .addIndicators({ name: "EARTH" })
-    //     .addTo(controller_EARTH)
-    //     .triggerHook(1);
+    var scene_tween_pipe_sequence = new ScrollMagic.Scene({
+            triggerElement: "#earth",
+            // duration: 500,
+            duration: "110%",
+            offset: "10%"
+        })
+        .setTween([tween_pipe_sequence])
+        .addIndicators({ name: "scene_tween_pipe_sequence" })
+        .addTo(controller_EARTH)
+        .triggerHook(1);
 
     var scene_EARTH = new ScrollMagic.Scene({
             triggerElement: "#earth",

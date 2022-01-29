@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <meta name="keywords" content="ScrollMagic, example, scrolling, attaching, scrollbar, tween, tweenmax">
     <meta name="author" content="Jan Paepke (www.janpaepke.de)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,7 +81,6 @@
     <script type="text/javascript">
         // jQuery("body").prepend('<div id="preloader" class="pageloader">Loading...</div>');
         jQuery(document).ready(function() {
-
             // number of loaded images for preloader progress
             var loadedCount = 0; //current number of images loaded
             var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
