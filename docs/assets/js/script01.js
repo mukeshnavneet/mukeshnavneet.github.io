@@ -359,16 +359,16 @@ $(function() {
         .addTo(controller_LAND)
         .triggerHook(0.5);
     // ------------------- SKY NAV END ----------------------
-
+    // https://mukeshnavneet.github.io/docs/assets/earth/pipe-5.svg
     var images = [
-        "../earth/pipe-1.SVG",
-        "../earth/pipe-2.SVG",
-        "../earth/pipe-2.SVG",
-        "../earth/pipe-3.SVG",
-        "../earth/pipe-4.SVG",
-        "../earth/pipe-5.SVG",
-        "../earth/pipe-6.SVG",
-        "../earth/pipe-bot.SVG",
+        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-1.svg",
+        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-2.svg",
+        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-2.svg",
+        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-3.svg",
+        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-4.svg",
+        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-5.svg",
+        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-6.svg",
+        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-bot.svg",
     ];
     var obj = { curImg: 0 };
     // create tween
