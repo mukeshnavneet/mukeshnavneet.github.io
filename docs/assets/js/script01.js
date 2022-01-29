@@ -1,10 +1,13 @@
 $(function() {
     // VARS
-    // let WIW = window.innerWidth;
-    // let WIH = window.innerHeight;
-
-    let WIW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-    let WIH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+    let WIW = window.innerWidth;
+    let WIH = window.innerHeight;
+    console.log("WW", WIW);
+    console.log("WH", WIH);
+    console.log("VW", verge.viewportW());
+    console.log("VH", verge.viewportH());
+    // let WIW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    // let WIH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
     let Rocket_Width = 200;
     let Rocket_Height = 369;
@@ -162,8 +165,8 @@ $(function() {
         .triggerHook(1);
     scene_ROCKET.on("start", function(event) {
         $('#rocket').addClass("addSmoke");
-        // $('.launcher-base').show();
-        // $('.launcher-base').show();
+        $('.launcher-base').show();
+        $('.launcher-base').show();
         // console.log("STARTED....");
     });
 
@@ -358,14 +361,14 @@ $(function() {
     // ------------------- SKY NAV END ----------------------
 
     var images = [
-        "../assets/earth/pipe-1.SVG",
-        "../assets/earth/pipe-2.SVG",
-        "../assets/earth/pipe-2.SVG",
-        "../assets/earth/pipe-3.SVG",
-        "../assets/earth/pipe-4.SVG",
-        "../assets/earth/pipe-5.SVG",
-        "../assets/earth/pipe-6.SVG",
-        "../assets/earth/pipe-bot.SVG",
+        "../earth/pipe-1.SVG",
+        "../earth/pipe-2.SVG",
+        "../earth/pipe-2.SVG",
+        "../earth/pipe-3.SVG",
+        "../earth/pipe-4.SVG",
+        "../earth/pipe-5.SVG",
+        "../earth/pipe-6.SVG",
+        "../earth/pipe-bot.SVG",
     ];
     var obj = { curImg: 0 };
     // create tween
@@ -413,6 +416,13 @@ $(function() {
         .addTo(controller_EARTH)
         .triggerHook(1);
 
+    scene_EARTH.on("start", function(event) {
+        $('#rocket').removeClass("addSmoke");
+    });
+
+    scene_EARTH.on("leave", function(event) {
+        $('#rocket').addClass("addSmoke");
+    });
 
     var tween_EARTH_rocket = new TimelineMax()
         .to("#rocket", 1, {
@@ -424,30 +434,27 @@ $(function() {
         .to("#rocket", 1, {
             scale: 0.1,
         });
+
     var scene_EARTH_ROCKET = new ScrollMagic.Scene({
             triggerElement: "#earth",
             // duration: 500,
             duration: "50%",
             offset: "0px"
-        })
-        .setTween([tween_EARTH_rocket])
+        }).setTween([tween_EARTH_rocket])
         // .addIndicators({ name: "scene_EARTH_ROCKET" })
         .addTo(controller_EARTH)
         .triggerHook(1);
 
-
-
-    scene_EARTH.on("start", function(event) {
-        $('#rocket').removeClass("addSmoke");
-        // $('.smoke-to-left').hide();
-        // $('.smoke-to-right').hide();
+    scene_EARTH_ROCKET.on("start", function(event) {
+        $('.smoke-to-left').hide();
+        $('.smoke-to-right').hide();
     });
-
-    scene_EARTH.on("leave", function(event) {
-        $('#rocket').addClass("addSmoke");
+    scene_EARTH_ROCKET.on("leave", function(event) {
         $('.smoke-to-left').show();
         $('.smoke-to-right').show();
     });
+
+
     // ------------------- PIPE MOVEMENT ----------------------
     // TweenMax.set(".pipe-start", { x: 100 });
     // var tween_PIPE_MOVE = new TimelineMax()

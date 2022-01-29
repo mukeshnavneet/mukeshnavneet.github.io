@@ -256,7 +256,7 @@ section {
     /* border: 1px solid red; */
     width: 50px;
     height: 100px;
-    top: calc(100% - 25px);
+    /* top: calc(100% - 25px); */
     left: 50%;
     z-index: -1;
     margin-left: -30px;
@@ -1343,6 +1343,7 @@ section {
     position: absolute;
     z-index: 1;
     background-color: rgb(255, 255, 255);
+    background-color: rgb(249 144 246);
     box-shadow: 0 0 20px 11px rgb(255 255 255 / 50%);
     width: 300px;
     height: 300px;
@@ -1361,6 +1362,7 @@ section {
     border-radius: 150px;
     box-sizing: border-box;
     text-align: center;
+    border: 10px solid #fff;
 }
 
 .text_pop_up h2 {
@@ -1461,7 +1463,7 @@ section {
     width: 10px;
     height: 10px;
     right: 50%;
-    top: -20px;
+    top: 0px;
 }
 
 .launcher-base .smoke-to-left span {
@@ -1471,87 +1473,7 @@ section {
     width: 10px;
     height: 10px;
     opacity: 0.5;
-    top: -20px;
-}
-
-.launcher-base .smoke-to-left span:nth-child(1) {
-    animation: smoke-left 2s infinite;
-}
-
-.launcher-base .smoke-to-left span:nth-child(2) {
-    animation: smoke-left 5s infinite;
-}
-
-.launcher-base .smoke-to-leftspan:nth-child(3) {
-    animation: smoke-left 1s infinite;
-}
-
-.launcher-base .smoke-to-left span:nth-child(4) {
-    animation: smoke-left 1.5s infinite;
-}
-
-.launcher-base .smoke-to-left span:nth-child(5) {
-    animation: smoke-left 2.6s infinite;
-}
-
-.launcher-base .smoke-to-left span:nth-child(6) {
-    animation: smoke-left 1.2s infinite;
-}
-
-.launcher-base .smoke-to-left span:nth-child(7) {
-    animation: smoke-left 3s infinite;
-}
-
-.launcher-base .smoke-to-left span:nth-child(8) {
-    animation: smoke-left 2s infinite;
-}
-
-.launcher-base .smoke-to-left span:nth-child(9) {
-    animation: smoke-left 1.5s infinite;
-}
-
-.launcher-base .smoke-to-left span:nth-child(10) {
-    animation: smoke-left 1.7s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(1) {
-    animation: smoke-right 2s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(2) {
-    animation: smoke-right 5s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(3) {
-    animation: smoke-right 1s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(4) {
-    animation: smoke-right 1.5s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(5) {
-    animation: smoke-right 2.6s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(6) {
-    animation: smoke-right 2.4s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(7) {
-    animation: smoke-right 3.5s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(8) {
-    animation: smoke-right 1.5s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(9) {
-    animation: smoke-right 3s infinite;
-}
-
-.launcher-base .smoke-to-right span:nth-child(10) {
-    animation: smoke-right 2s infinite;
+    top: 0px;
 }
 
 @-webkit-keyframes smoke-left {
@@ -1569,6 +1491,8 @@ section {
         height: 100px;
         transform: rotate(180deg);
         opacity: 0;
+        top: -100px;
+        transform: rotate(90deg);
     }
 }
 
@@ -1582,12 +1506,94 @@ section {
     100% {
         right: 150%;
         transform: scale(2);
-        transform: translateY(500px);
+        transform: translateY(100px);
         width: 100px;
         height: 100px;
         transform: rotate(-180deg);
         opacity: 0;
+        top: -100px;
+        transform: rotate(90deg);
     }
+}
+
+.launcher-base .smoke-to-left span:nth-child(1) {
+    animation: smoke-left 1s infinite;
+}
+
+.launcher-base .smoke-to-left span:nth-child(2) {
+    animation: smoke-left 1.5s infinite;
+}
+
+.launcher-base .smoke-to-leftspan:nth-child(3) {
+    animation: smoke-left 2s infinite;
+}
+
+.launcher-base .smoke-to-left span:nth-child(4) {
+    animation: smoke-left 2.5s infinite;
+}
+
+.launcher-base .smoke-to-left span:nth-child(5) {
+    animation: smoke-left 3s infinite;
+}
+
+.launcher-base .smoke-to-left span:nth-child(6) {
+    animation: smoke-left 3.5s infinite;
+}
+
+.launcher-base .smoke-to-left span:nth-child(7) {
+    animation: smoke-left 4s infinite;
+}
+
+.launcher-base .smoke-to-left span:nth-child(8) {
+    animation: smoke-left 4.5s infinite;
+}
+
+.launcher-base .smoke-to-left span:nth-child(9) {
+    animation: smoke-left 5s infinite;
+}
+
+.launcher-base .smoke-to-left span:nth-child(10) {
+    animation: smoke-left 5.5s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(1) {
+    animation: smoke-right 1s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(2) {
+    animation: smoke-right 1.5s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(3) {
+    animation: smoke-right 2s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(4) {
+    animation: smoke-right 2.5s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(5) {
+    animation: smoke-right 3s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(6) {
+    animation: smoke-right 3.5s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(7) {
+    animation: smoke-right 4s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(8) {
+    animation: smoke-right 4.5s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(9) {
+    animation: smoke-right 5s infinite;
+}
+
+.launcher-base .smoke-to-right span:nth-child(10) {
+    animation: smoke-right 5.5s infinite;
 }
 
 .mountains-bg {
@@ -1695,7 +1701,7 @@ section {
 }
 
 .butterfly1 {
-    z-index: 600;
+    z-index: 400;
     width: 50px;
     offset-path: path('M1194.43,458.19c14.62,14.63,57.89,10.53,74.87-1.29s29.94-29,48-39.19c21.9-12.37,50.21-12.51,72.21-.34a75.37,75.37,0,0,1,38.11,61.33c1.46,31.79-17.79,61.31-41.76,82.25a190.17,190.17,0,0,1-102.56,45.4c-48.4,5.59-96.69-7.6-144.46-17.14s-99.14-15.15-143.74,4.45c-60.19,26.43-94.58,100.8-75.74,163.78');
     animation: followPath 12s infinite;
@@ -1703,7 +1709,7 @@ section {
 }
 
 .butterfly2 {
-    z-index: 600;
+    z-index: 400;
     width: 50px;
     offset-path: path("M485.77,484.58c-12.21,1.45-26.67-4.74-36.13-13.75-14.12-13.44-24.07-31.95-41.47-40.75-19.89-10.05-46.75-3.07-59.23,15.4-14.76,21.84-8,52.74,8.42,73.39s40.31,33.6,63.14,46.77c32.29,18.64,64,39,90.45,65.24s47.71,58.84,55.47,95.3c10.17,47.82-4.94,100.52-39.69,134.9S438.46,910,391.38,896.8C376,892.51,361,885.06,350.09,873.68");
     animation: followPath 12s infinite;
@@ -1713,7 +1719,7 @@ section {
 }
 
 .butterfly3 {
-    z-index: 600;
+    z-index: 400;
     width: 50px;
     offset-path: path("M1380.72,1059.79c-12.59-6.33-24.67-14.35-33.31-25.5s-13.49-25.81-10.56-39.61c3.59-16.88,17.84-29.49,32.94-37.84a132.92,132.92,0,0,1,52.29-16c25.21-2.27,50.5,2.71,75.81,2.63,19.65-.07,40.88-4,54.22-18.44,12.54-13.56,15.38-33.93,11.83-52s-12.63-34.62-21.59-50.77");
     animation: followPath 12s infinite;

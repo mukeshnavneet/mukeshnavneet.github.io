@@ -22,8 +22,9 @@
     <link rel="stylesheet" href="./assets/css/demo.css" type="text/css">
     <link rel="stylesheet" href="./assets/css/responsive-demo.css" type="text/css">
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
-    <script type="text/javascript" src="./assets/js/lib/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="./assets/js/lib/jquery.min.js"></script> -->
     <script type="text/javascript" src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+
     <style media="screen">
         .pageloader {
             position: fixed;
@@ -127,7 +128,6 @@
             }
 
             function loadComplete() {
-                console.log("DDDDDDDDDDDDDDDDD");
                 // preloader out
                 var preloaderOutTl = new TimelineMax();
                 preloaderOutTl
@@ -146,7 +146,7 @@
                         onComplete: () => {
                             console.log("ROCKET SET TO DEFAULT");
                             $('html, body').animate({
-                                scrollTop: $("#earth").offset().top
+                                scrollTop: $("#land").offset().top
                             }, 2000);
                         },
                     })
@@ -164,6 +164,7 @@
             }
         });
     </script>
+
     <script type="text/javascript" src="./assets/js/lib/highlight.pack.js"></script>
     <script type="text/javascript" src="./assets/js/lib/modernizr.custom.min.js"></script>
     <script type="text/javascript" src="./scrollmagic/uncompressed/ScrollMagic.js"></script>
@@ -175,6 +176,7 @@
     <script type="text/javascript" src="./assets/js/lib/greensock/plugins/ScrollToPlugin.min.js"></script>
     <script type="text/javascript" src="./assets/js/lib/gsap3/MotionPathPlugin.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/smooth-scrollbar@8.7.4/dist/smooth-scrollbar.js"></script>
+    <script type="text/javascript" src="./assets/js/verge.js"></script>
     <script type="text/javascript" src="./assets/js/script01.js"></script>
     <style>
         .is-loading {
@@ -336,7 +338,7 @@
         </section>
         <section id="land">
             <div class="launcher-base">
-                <!-- <div class="smoke-to-left">
+                <div class="smoke-to-left">
                     <span><img src="./assets/medow/1.svg" /></span>
                     <span><img src="./assets/medow/2.svg" /></span>
                     <span><img src="./assets/medow/3.svg" /></span>
@@ -359,7 +361,7 @@
                     <span><img src="./assets/medow/8.svg" /></span>
                     <span><img src="./assets/medow/9.svg" /></span>
                     <span><img src="./assets/medow/10.svg" /></span>
-                </div> -->
+                </div>
             </div>
             <div class="butterflys">
             </div>
