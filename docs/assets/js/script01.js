@@ -1,7 +1,11 @@
 $(function() {
     // VARS
-    let WIW = window.innerWidth;
-    let WIH = window.innerHeight;
+    // let WIW = window.innerWidth;
+    // let WIH = window.innerHeight;
+
+    let WIW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    let WIH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+
     let Rocket_Width = 200;
     let Rocket_Height = 369;
     let launchpad_Height = 30;
