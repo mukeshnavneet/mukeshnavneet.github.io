@@ -1,0 +1,347 @@
+.sea-overlay {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 90;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  border: 2px solid pink;
+}
+
+.sea-bg-img {
+  background-image: url("../../svg/underwater/bgimage.svg");
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  position: absolute;
+}
+
+#sea {
+  background: blue;
+  position: relative;
+  border: 2px solid pink;
+}
+
+.bubble {
+  min-width: 20px;
+  min-height: 20px;
+  position: relative;
+  background-color: rgb(255 255 255 / 20%);
+  border-radius: 25px;
+  position: absolute;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid rgb(255 255 255 / 40%);
+  /* -webkit-animation: moveBubbles 2s linear infinite;
+    -moz-animation: moveBubbles 2s linear infinite;
+    -o-animation: moveBubbles 2s linear infinite; */
+}
+
+@-webkit-keyframes moveBubbles {
+  0% {
+    top: 90%;
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+@-moz-keyframes moveBubbles {
+  0% {
+    margin-top: 1000px;
+  }
+
+  100% {
+    margin-top: -1000px;
+  }
+}
+
+@-o-keyframes moveBubbles {
+  0% {
+    margin-top: 1000px;
+  }
+
+  100% {
+    margin-top: -1000px;
+  }
+}
+
+.stons {
+  /* background-image: url("../../svg/underwater/bot-stones.svg"); */
+  background-image: url("../../svg/underwater/bottom-stones.svg");
+  background-size: 100%;
+  width: 100vw;
+  height: 100px;
+  z-index: 1;
+  bottom: 0;
+  position: absolute;
+}
+
+.plant-left {
+  background-image: url("../../svg/underwater/plant-left.svg");
+  width: 250px;
+  position: absolute;
+  bottom: 10px;
+  transform: rotate(25deg);
+  z-index: 1;
+  transform-origin: bottom center;
+  animation: plant 4s infinite;
+}
+
+.plant-right {
+  background-image: url("../../svg/underwater/plant-right.svg");
+  width: 250px;
+  position: absolute;
+  bottom: 3%;
+  right: 0px;
+  z-index: 1;
+  transform-origin: bottom center;
+  animation: plant 6s infinite;
+}
+
+@keyframes plant {
+  0% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0px, 0px, 0px) rotate(5deg);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+}
+
+@keyframes plant2 {
+  0% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0px, 0px, 0px) rotate(6deg);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+}
+
+.plant-mid-bot-1 {
+  background-image: url("../../svg/underwater/plant-mid-bot-1.svg");
+  width: 150px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  z-index: 1;
+  transform-origin: bottom center;
+  animation: plant2 6s infinite;
+}
+
+.plant-mid-bot-2 {
+  background-image: url("../../svg/underwater/plant-mid-bot-2.svg");
+  width: 120px;
+  position: absolute;
+  bottom: -10px;
+  left: 40%;
+  z-index: 0;
+  transform-origin: bottom center;
+  animation: plant2 6s infinite;
+}
+
+.fish {
+  /* border: 1px solid rgb(0, 255, 242);   */
+}
+
+.crab-left {
+  width: 100px;
+  z-index: 1;
+  left: 15%;
+  bottom: 10%;
+  position: absolute;
+  transform: rotate(20deg);
+  transform: scale(0.8);
+}
+
+.crab-right {
+  width: 100px;
+  z-index: 1;
+  right: 15%;
+  bottom: 5%;
+  position: absolute;
+  transform: rotate(-20deg);
+}
+
+.fish-center-top {
+  width: 100px;
+  z-index: 1;
+  left: 50%;
+  top: 15%;
+  position: absolute;
+  transform: rotate(-20deg);
+  animation: diagonal-lb-rt 4s infinite;
+}
+
+.fish-left-bot {
+  width: 100px;
+  z-index: 1;
+  bottom: 0;
+  left: 30%;
+  bottom: 15%;
+  position: absolute;
+  animation: diagonal-lt-rb 6s infinite;
+}
+
+.shell {
+  width: 50px;
+  z-index: 1;
+  bottom: 0;
+  left: 35%;
+  bottom: 5px;
+  position: absolute;
+  /* animation: diagonal-lt-rb 6s infinite; */
+}
+
+.puff-fish-top-left {
+  width: 100px;
+  z-index: 1;
+  bottom: 0;
+  left: 10%;
+  top: 10%;
+  position: absolute;
+  animation: diagonal-lb-rt 6s infinite;
+}
+
+@keyframes jellyfish {
+  0% {
+    transform: translate3d(0px, 0px, 0) scaleY(1);
+  }
+
+  50% {
+    transform: translate3d(10px, -10px, 0px)scaleY(0.6);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0)scaleY(1);
+  }
+}
+
+@keyframes jellyfish-full {
+  0% {
+    transform: translate3d(0px, 0px, 0) scaleX(1);
+  }
+
+  50% {
+    transform: translate3d(0px, 0px, 0px)scaleX(0.8);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0)scaleX(1);
+  }
+}
+
+@keyframes jellyfish-tail {
+  0% {
+    transform: translate3d(0px, 0px, 0) scaleY(1);
+  }
+
+  50% {
+    transform: translate3d(0px, 0px, 0px)scaleY(0.5);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0)scaleY(1);
+  }
+}
+
+.jellyfish-left1 {
+  width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: rotate(25deg);
+}
+
+.jellyfish-left1 .head {
+  position: relative;
+  z-index: 1;
+  animation: jellyfish-full 4s infinite;
+}
+
+.jellyfish-left1 .tail {
+  position: relative;
+  top: -30px;
+  width: 60px;
+  z-index: 0;
+  transform-origin: top center;
+  animation: jellyfish-tail 4s infinite;
+}
+
+.jellyfish-right2 {
+  width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  transform: rotate(-25deg);
+}
+
+.jellyfish-right2 .head {
+  position: relative;
+  z-index: 1;
+  animation: jellyfish-full 4s infinite;
+}
+
+.jellyfish-right2 .tail {
+  position: relative;
+  top: -30px;
+  width: 60px;
+  z-index: 0;
+  transform-origin: top center;
+  animation: jellyfish-tail 4s infinite;
+}
+
+.jellyfish-left {
+  width: 100px;
+  z-index: 1;
+  bottom: 0;
+  left: 25%;
+  bottom: 20%;
+  position: absolute;
+  animation: jellyfish 6s infinite;
+}
+
+.jellyfish-right {
+  width: 100px;
+  z-index: 1;
+  right: 25%;
+  top: 20%;
+  position: absolute;
+  animation: jellyfish 6s infinite;
+}
+
+.pink-fish-bot {
+  width: 100px;
+  z-index: 1;
+  right: 25%;
+  bottom: 20%;
+  position: absolute;
+  animation: diagonal-lt-rb 6s infinite;
+}
+
+.turtle {
+  width: 150px;
+  z-index: 1;
+  right: 10%;
+  top: 10%;
+  position: absolute;
+  animation: diagonal-lt-rb 6s infinite;
+}
