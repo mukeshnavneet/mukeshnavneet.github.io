@@ -1,0 +1,313 @@
+ @media only screen and (max-width: 480px) {
+     html {
+         overflow: hidden;
+         width: 100%;
+     }
+     body {
+         height: 100%;
+         position: fixed;
+         overflow-y: scroll;
+         -webkit-overflow-scrolling: touch;
+     }
+ }
+ 
+ @media only screen and (max-width: 480px) {
+     #rocket {
+         width: 100px;
+         height: 164px;
+         margin-left: -50px;
+         margin-top: -80px;
+         bottom: 0px;
+     }
+     .text_pop_up {
+         width: 300px;
+         margin-left: -150px;
+     }
+     .text_pop_up h2 {
+         font-size: 18px;
+         font-weight: bold;
+     }
+     .diractions button {
+         background: #ffc20000;
+     }
+     .diractions button.active {
+         background: #ffc20000;
+     }
+     .diractions button.active:after {
+         background: #ffc20000;
+     }
+     .arrow:before {
+         border-right: 4px #ffc200 solid;
+         border-bottom: 4px #ffc200 solid;
+     }
+     .text_pop_up {
+         position: absolute;
+         z-index: 1;
+         background-color: rgb(255, 255, 255);
+         box-shadow: 0 0 20px 11px rgba(255, 255, 255, 0.5);
+         width: 400px;
+         left: 50%;
+         top: 50%;
+         margin-left: -200px;
+         padding: 10px 20px;
+         z-index: 900;
+         display: flex;
+         flex-direction: row;
+         flex-wrap: nowrap;
+         align-content: center;
+         justify-content: center;
+         align-items: center;
+         border-radius: 50px;
+         box-sizing: border-box;
+         text-align: center;
+         width: 300px;
+         margin-left: -150px;
+         height: auto;
+     }
+ }
+ /* SPACE  */
+ 
+ @media only screen and (max-width: 480px) {
+     .planet-left {
+         width: 90px;
+     }
+     .planet-bot {
+         width: 45px;
+     }
+     .meteor1 {
+         top: calc(100% - 100px);
+         left: 65%;
+         margin-left: -100px;
+         width: 60px;
+         height: 250px;
+         animation: up-down 6s infinite;
+     }
+     .meteor2 {
+         top: 50%;
+         left: 5%;
+         width: 100px;
+         animation: left-right 3s infinite;
+     }
+     .const1 {
+         top: 10%;
+         left: 5%;
+         width: 150px;
+     }
+     .const3 {
+         top: 43%;
+         left: 5%;
+         width: 200px;
+     }
+     .const6 {
+         top: 20%;
+         left: 40%;
+         width: 249px;
+     }
+ }
+ /* SKY */
+ 
+ @media only screen and (max-width: 480px) {
+     .plane {
+         width: 150px;
+     }
+     .plane02 {
+         width: 60px;
+     }
+     .touch-me-not {
+         left: 50%;
+         margin-left: -50%;
+     }
+     .touch-me-not-popup {}
+     .touch-me-not-popup>div {
+         position: relative;
+         width: 300px;
+         padding: 20px;
+         border-radius: 20px;
+         box-shadow: 0 0 20px 11px #0000004b;
+         margin-left: -150px;
+         top: 10%;
+         left: 50%;
+         background-color: rgb(65, 65, 65);
+         display: flex;
+         flex-direction: column;
+         flex-wrap: nowrap;
+         align-content: center;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
+     }
+     .touch-me-not .cloud-text {
+         display: flex;
+         flex-direction: column;
+         align-content: center;
+         align-items: center;
+     }
+     .hide-btn {
+         background-color: #595959;
+         border-radius: 20px;
+         /* margin: 10px; */
+     }
+ }
+ /* LAND */
+ 
+ @media only screen and (max-width: 480px) {
+     .logo {
+         position: absolute;
+         width: 220px;
+         margin-left: -110px;
+         left: 50%;
+         top: 0px;
+         left: 50%;
+         z-index: 400;
+     }
+     .tree-big {
+         width: 200px;
+         left: -70px;
+     }
+     .laun-bg {
+         background-size: 200vw;
+     }
+     .mountains-bg {
+         background-size: auto 50%;
+     }
+ }
+ 
+ @media only screen and (max-width: 480px) {
+     .grass-bg {
+         background-size: 180%;
+     }
+     .earth-layer {
+         height: 400px;
+         position: absolute;
+         margin-top: -200px;
+         top: 50%;
+         width: 100vw;
+         z-index: 99;
+         background-image: url(../earth/earth-layer.png);
+         background-size: auto 100%;
+         background-repeat: no-repeat;
+         background-position: center;
+         z-index: 609;
+     }
+     .earthworm {
+         display: none;
+     }
+     .earthworm2 {
+         display: none;
+     }
+     .pipe {
+         /* border: 1px solid #ffc200; */
+     }
+     .pipe img {
+         width: 100%;
+         height: inherit;
+     }
+     .pipe-start {
+         width: 150px;
+         height: 300px;
+         position: absolute;
+         z-index: 608;
+         margin-left: -75px;
+         left: 50%;
+         top: 100px;
+         text-align: center;
+     }
+ }
+ 
+ @media only screen and (max-width: 480px) {
+     .fish-center-top {
+         width: 80px;
+         left: 40%;
+         top: 20%;
+     }
+     .puff-fish-top-left {
+         width: 50px;
+     }
+     .turtle {
+         width: 90px;
+         right: 5%;
+         top: 3%;
+     }
+     .fish-left-bot {
+         width: 50px;
+     }
+     .plant-right {
+         width: 100px;
+     }
+     .plant-left {
+         width: 100px;
+     }
+     .plant-mid-bot-1 {
+         width: 65px;
+         bottom: -10px;
+     }
+     .plant-mid-bot-2 {
+         bottom: -5px;
+         width: 45px;
+     }
+     .jellyfish-right2 {
+         width: 50px;
+         top: 25%;
+         right: 5%;
+     }
+     .jellyfish-right2 .tail {
+         top: -15px;
+         width: 30px;
+         z-index: 0;
+     }
+     .jellyfish-left1 {
+         width: 50px;
+         left: 10%;
+     }
+     .jellyfish-left1 .tail {
+         position: relative;
+         top: -15px;
+         width: 30px;
+     }
+     .stons {
+         background-repeat: no-repeat;
+         background-position: bottom;
+         position: absolute;
+     }
+     .shell {
+         width: 20px;
+         left: 15%;
+     }
+     .crab-left {
+         width: 75px;
+         bottom: 5%;
+     }
+     .crab-right {
+         width: 90px;
+         z-index: 1;
+         right: 15%;
+         bottom: 2%;
+     }
+     /* ///////////////////////////////////////////////////// LAND */
+     .text_btn_container {
+         height: 50px;
+         width: 50px;
+         margin-top: -25px;
+         margin-left: -25px;
+     }
+     .text_btn {
+         height: 50px;
+         width: 50px;
+         margin-top: -25px;
+         margin-left: -25px;
+         left: 50%;
+         top: 50%;
+     }
+     .text_btn::after {
+         content: '';
+         height: 50px;
+         width: 50px;
+         opacity: 0.5;
+         border-radius: 50px;
+         margin-top: -25px;
+         margin-left: -25px;
+         left: 50%;
+         top: 50%;
+     }
+     .text_btn::before {}
+ }
