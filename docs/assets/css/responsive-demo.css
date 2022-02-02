@@ -18,6 +18,15 @@
          margin-left: -50px;
          margin-top: -80px;
      }
+     #rocket.addSmoke .smoke {
+         width: 30px;
+         height: 100px;
+         left: 50%;
+         z-index: -1;
+         margin-left: -15px;
+         position: absolute;
+         z-index: -1;
+     }
      .text_pop_up {
          width: 300px;
          margin-left: -150px;

@@ -43,7 +43,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         #preloader .txt-perc {
             font-size: 35px;
             color: aliceblue;
@@ -52,28 +52,28 @@
             max-width: 400px;
             text-align: center;
         }
-        
+
         #preloader .progress {
             width: 100px;
             height: 3px;
             background-color: rgba(255, 255, 255, 0.2);
             margin: 0 auto 15px auto;
         }
-        
+
         .is-loading {
             overflow: hidden;
         }
-        
+
         .bcg {
             transition: transform 4s ease-out;
             transform: scale(1.05);
             transform-origin: top center;
         }
-        
+
         .is-loaded.bcg {
             transform: scale(1);
         }
-        
+
         #preloader.is-hidden {
             visibility: hidden;
             opacity: 0;
@@ -241,8 +241,7 @@
             <div class="space-bg-img bcg "></div>
             <div class="elm">
                 <div id="space_pop_up" class="text_pop_up">
-                    <h2>In this safe space, Children learn at their own pace.
-                    </h2>
+                    <h2>In this safe space,<br/> Children learn at their own pace.</h2>
                 </div>
                 <div id="comets">
                     <i><img class="bcg" src="./assets/Space/comet-2.svg" /></i>
@@ -301,8 +300,8 @@
                 <!-- <div class="text">Touch me not!</div> -->
                 <div class="cloud-text">
                     <div>
-                        <h2> Oh no! You've caused pollution!</h2>
-                        <h2>But do not worry, We'll clear the confusion If you say you're sorry.</h2>
+                      <h1>You've caused pollution!</h1>
+                        <h2>But we'll clear the confusion, Do not worry,Say you're sorry.</h2>
                     </div>
                     <div class="back-btn">I'm sorry!</div>
                 </div>
@@ -337,6 +336,7 @@
             </div>
         </section>
         <section id="land">
+          <div class="launcher-base2"></div>
             <div class="launcher-base">
                 <div class="smoke-to-left">
                     <span><img src="./assets/medow/1.svg" /></span>
@@ -368,16 +368,20 @@
             <div class="elm">
                 <div id="trigger_LOGO"></div>
                 <div id="logo" class="logo"><img src="./assets/medow/logo.svg" /></div>
+
                 <div id="land_pop_up" class="text_pop_up">
-                    <h2>All the best for your mission Drag the rocket in the correct direction
-                    </h2>
+                    <h2>Scroll to discover,</h2>
+                    <h2>What awaits our early-learners.</h2>
                 </div>
+
                 <div class="butterfly butterfly2">
                     <div class="boxi b2"></div>
                 </div>
+
                 <div class="butterfly butterfly3">
                     <div class="boxi b3"></div>
                 </div>
+
                 <div class="mountains-bg bcg"></div>
                 <div class="laun-bg bcg"></div>
                 <div class="land-clouds">
@@ -397,8 +401,9 @@
         <section id="earth">
             <div id="earth_btn" class="text_btn">!</div>
             <div id="earth_pop_up" class="text_pop_up">
-                <h2>We care about the quality, So we made the lessons multisensory
-                </h2>
+                <h2>We care about the quality,<br/>
+So we made the lessons multisensory.
+</h2>
             </div>
             <div class="elm">
                 <div class="grass-bg bcg"></div>
@@ -429,8 +434,8 @@
         <section id="underwater">
             <div class="sea-bg-img bcg"></div>
             <div id="sea_pop_up" class="text_pop_up">
-                <h2>We've much to offer the early-learner, Don't miss out, just register.
-                </h2>
+                <h2>Immersive lessons are what we offer,<br/>
+Don't miss out, just register.</h2>
             </div>
             <!-- <div class="submarine-two">
                 <img class="bcg" src="./assets/medow/submarine.svg" alt="">
@@ -489,13 +494,45 @@
                     <img class="bcg" src="./assets/underwater//plant-mid-bot-2.svg" alt="">
                 </div>
             </div>
-            <div class="diractions in-sea">
-                <button type="button" name="button" class="active" onclick="goToEarthFun()"><div class="arrow animat-arrow"></div></button>
-                <button type="button" name="button"><div class="arrow"></div></button>
-                <button type="button" name="button"><div class="arrow"></div></button>
-                <button type="button" name="button"><div class="arrow"></div></button>
-            </div>
+            <nav class="cta">
+                <button class="register-btn"> Register now! </button>
+                <a href="#land" class="replay-btn"> Replay </a>
+            </nav>
         </section>
+        <div>
+    <span class="test"></span>
+    <!-------------------------------------------------------------->
+    <!------------------------ MODAL & POP UP ---------------------->
+    <!-------------------------------------------------------------->
+    <div class="modal">
+        <div class="message-container">
+            <div class="actual-message">
+                <div class="modal-logo">
+                    <img src="./assets/medow/logo.svg" />
+                </div>
+                <div class="modal-text">
+                    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                    <p>Amet, praesentium sed. Iure modi illum ducimus facere, laboriosam nostrum magni ad molestias saepe voluptate, ipsam velit laborum error, perspiciatis earum unde.</p>
+                </div>
+                <form action="">
+                    <div class="input-holder">
+                        <input type="text" required placeholder="Full Name" />
+                    </div>
+                    <div class="input-holder">
+                        <input type="email" required placeholder="Email" />
+                    </div>
+                    <div class="input-holder">
+                        <input type="phone" required placeholder="Contact No." />
+                    </div>
+                    <div class="btn-holder">
+                        <button>Submit</button>
+                    </div>
+                </form>
+                <div class="close-button">X</div>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
     <!-- ///////////////////// END SEA SEC -->
 
