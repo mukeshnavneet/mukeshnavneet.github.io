@@ -611,7 +611,7 @@ $(function() {
   var tween_UNDERWATER_rocket = new TimelineMax()
     .to("#rocket", 1, {
       scale: 0.2,
-      y: 200
+      y: 100
     })
     .to("#rocket", 1, {
       scale: 1,
@@ -641,7 +641,59 @@ $(function() {
     $('#rocket').addClass("addSmoke");
     $('#rocket').removeClass("submarine");
   });
+/////;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/////////////
+  var controller_UNDERWATER2 = new ScrollMagic.Controller();
 
+  var tween_UNDERWATER_rocket2 = new TimelineMax()
+    .fromTo("#rocket2",0.2, {
+      scale: 1,
+      y:0,
+      x:25
+      // rotation:-180
+    },{
+      scale: 1,
+      y:  0,
+      x:25
+      // rotation:-180
+    })
+  var scene_UNDERWATER_ROCKET2 = new ScrollMagic.Scene({
+      triggerElement: "#underwater",
+      // duration: 500,
+      duration: "100%",
+      offset: "0px"
+    })
+    .setPin("#rocket2")
+    .setTween([tween_UNDERWATER_rocket2])
+    // .addIndicators({ name: "scene_UNDERWATER_ROCKET2" })
+    .addTo(controller_UNDERWATER2)
+    .triggerHook(1);
+    /////;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/////////////
+    /////;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/////////////
+      var controller_UNDERWATER3 = new ScrollMagic.Controller();
+
+      var tween_UNDERWATER_rocket3 = new TimelineMax()
+        .to("#rocket2",0.2, {
+          scale:1,
+          rotation:-90,
+          y: 0
+        } )
+        .to("#rocket2",0.2, {
+          scale:1.75,
+          y: 100,
+          x:-50,
+          rotation:-90
+        } )
+      var scene_UNDERWATER_ROCKET3 = new ScrollMagic.Scene({
+          triggerElement: "#underwater",
+          // duration: 500,
+          duration: "50%",
+          offset: 0
+        })
+        .setTween([tween_UNDERWATER_rocket3])
+        .addIndicators({ name: "scene_UNDERWATER_ROCKET22" })
+        .addTo(controller_UNDERWATER3)
+        .triggerHook(0.5);
+        /////;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/////////////
   // ------------------- EARTH NAV ----------------------
   var scene_SEA_NAV = new ScrollMagic.Scene({
       triggerElement: "#underwater",
