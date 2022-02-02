@@ -11,8 +11,8 @@ $(function() {
   // let WIW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
   // let WIH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
-  let Rocket_Width = 200;
-  let Rocket_Height = 369;
+  let Rocket_Width = 150;
+  let Rocket_Height = 290;
   let launchpad_Height = 30;
   let rocket_base_offset = 60;
 
@@ -29,12 +29,7 @@ $(function() {
     LOGO_RES_Y_OFFSET = 50;
   }
 
-  var isMob = false;
-  if (WIW < 480) {
-    STARS_COUNT = 25;
-    PIPE.css('height', (WIH / 1.5) + "px")
-    isMob = true;
-  }
+
 
   let STARS_COUNT = 100;
   // Set Section Height
@@ -48,6 +43,13 @@ $(function() {
   if (WIW < 480) {
     STARS_COUNT = 25;
     PIPE.css('height', (WIH / 1.5) + "px")
+  }
+
+  var isMob = false;
+  if (WIW < 480) {
+    STARS_COUNT = 25;
+    PIPE.css('height', (WIH / 1.5) + "px")
+    isMob = true;
   }
 
   var STARS_ARRAY = ["star-yellow", "star-grey", "star-whitet"];
@@ -138,7 +140,7 @@ $(function() {
     })
     .to("#rocket", 1, {
       x: 0,
-      y: (WIH / 2) - (Rocket_Height / 2) - rocket_base_offset,
+      y: (WIH / 2) - (Rocket_Height / 2),
       onComplete: () => {
         console.log("STEP - 5")
       },
@@ -432,9 +434,7 @@ $(function() {
       offset: "10%"
     })
     .setTween([tween_pipe_sequence])
-    .addIndicators({
-      name: "scene_tween_pipe_sequence"
-    })
+    // .addIndicators({   name: "scene_tween_pipe_sequence" })
     .addTo(controller_EARTH)
     .triggerHook(1);
 
@@ -465,7 +465,8 @@ $(function() {
       scale: 0.5,
     })
     .to("#rocket", 1, {
-      scale: 0.1,
+      scale: 0.5,
+      // rotation:-135
     });
 
   var scene_EARTH_ROCKET = new ScrollMagic.Scene({
@@ -485,8 +486,31 @@ $(function() {
   scene_EARTH_ROCKET.on("leave", function(event) {
     $('.smoke-to-left').show();
     $('.smoke-to-right').show();
+    setTimeout(function(){
+      $('.smoke-to-left').hide();
+      $('.smoke-to-right').hide();
+    }, 2000)
   });
 
+  //////////////////////////SMOKEEEEEEEEEEEEEEEEE/////////
+  var tween_SMOKE_ROCKET = new TimelineMax()
+    .to('.smoke-to-left', 1, {
+      scale: 0.5,
+      y:10,
+    })
+     .to('.smoke-to-left', 1, {
+      scale: 0,
+      y:0
+    });
+  var scene_SMOKE_ROCKET = new ScrollMagic.Scene({
+      triggerElement: "#earth",
+      // duration: 500,
+      duration: "50%",
+      offset: "0px"
+    }).setTween([tween_EARTH_rocket])
+    // .addIndicators({ name: "scene_EARTH_ROCKET" })
+    .addTo(controller_EARTH)
+    .triggerHook(1);
 
   // ------------------- PIPE MOVEMENT ----------------------
   // TweenMax.set(".pipe-start", { x: 100 });
@@ -588,13 +612,13 @@ $(function() {
   var tween_UNDERWATER_rocket = new TimelineMax()
     .to("#rocket", 1, {
       scale: 0.2,
-      y: 100
+      y: 200
     })
     .to("#rocket", 1, {
       scale: 1,
       rotation: -90,
-      x: -100,
-      y: 0
+      x: 0,
+      y: 100
     })
   var scene_UNDERWATER_ROCKET = new ScrollMagic.Scene({
       triggerElement: "#underwater",

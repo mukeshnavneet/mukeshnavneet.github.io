@@ -10,7 +10,7 @@
          -webkit-overflow-scrolling: touch;
      }
  }
- 
+
  @media only screen and (max-width: 480px) {
      #rocket {
          width: 100px;
@@ -27,12 +27,9 @@
          position: absolute;
          z-index: -1;
      }
-     .text_pop_up {
-         width: 300px;
-         margin-left: -150px;
-     }
+
      .text_pop_up h2 {
-         font-size: 18px;
+         font-size: 12px;
          font-weight: bold;
      }
      .diractions button {
@@ -51,13 +48,9 @@
      .text_pop_up {
          position: absolute;
          z-index: 1;
-         background-color: rgb(255, 255, 255);
-         box-shadow: 0 0 20px 11px rgba(255, 255, 255, 0.5);
-         width: 400px;
-         left: 50%;
+           left: 50%;
          top: 50%;
-         margin-left: -200px;
-         padding: 10px 20px;
+          padding: 0px  0px;
          z-index: 900;
          display: flex;
          flex-direction: row;
@@ -65,16 +58,19 @@
          align-content: center;
          justify-content: center;
          align-items: center;
-         border-radius: 50px;
+         border-radius: 00px;
          box-sizing: border-box;
          text-align: center;
-         width: 300px;
-         margin-left: -150px;
-         height: auto;
+          height: auto;
+         width: 200px !important;
+         height: 200px !important;
+         margin-left: -100px;
      }
  }
  /* SPACE  */
- 
+#land_pop_up{
+  top: 175px;
+}
  @media only screen and (max-width: 480px) {
      .planet-left {
          width: 90px;
@@ -113,7 +109,7 @@
      }
  }
  /* SKY */
- 
+
  @media only screen and (max-width: 480px) {
      .plane {
          width: 150px;
@@ -157,7 +153,7 @@
      }
  }
  /* LAND */
- 
+
  @media only screen and (max-width: 480px) {
      .logo {
          position: absolute;
@@ -179,7 +175,7 @@
          background-size: auto 50%;
      }
  }
- 
+
  @media only screen and (max-width: 480px) {
      .grass-bg {
          background-size: 180%;
@@ -221,7 +217,7 @@
          text-align: center;
      }
  }
- 
+
  @media only screen and (max-width: 480px) {
      .fish-center-top {
          width: 80px;

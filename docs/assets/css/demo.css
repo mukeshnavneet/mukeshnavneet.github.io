@@ -185,6 +185,7 @@ section {
     padding: 0;
     margin: 0;
     width: 100vw;
+    min-height: 100vh;
     /* overflow: hidden; */
 }
 
@@ -237,8 +238,10 @@ section {
     position: relative;
     /*width: 200px;
     height: 208px;*/
-    width: 200px;
-    height: 369px;
+    /* width: 200px; */
+    /* height: 369px;     */
+    width: 150px;
+    height: 290px;
     /* background-color: yellow; */
     /* background: yellow; */
     /* border: 1px solid red; */
@@ -1112,7 +1115,10 @@ section {
     font-weight: bold;
     bottom: 25px;
 }
-
+.touch-me-not h1, .touch-me-not h2 {
+    color: #ffffff;
+    margin: 0px
+}
 .touch-me-not img {
     width: 100%;
     position: absolute;
@@ -1356,7 +1362,6 @@ section {
     height: 100px;
     background: #8AE4EF;
 }
-
 .text_pop_up {
     position: absolute;
     z-index: 1;
@@ -1364,7 +1369,7 @@ section {
     background-color: rgb(249 144 246);
     box-shadow: 0 0 20px 11px rgb(255 255 255 / 50%); */
     width: 300px;
-    height: 300px;
+    height: 300px!important;
     right: 100px;
     top: 50%;
     margin-left: -200px;
@@ -2462,7 +2467,9 @@ button {
 
 
 /* /////////////////////////////////////////////////////////////////////////////////////// */
-
+#rocket.submarine img {
+    animation: up-down 6s infinite;
+}
 #rocket.submarine span {
     width: 10px;
     height: 10px;
