@@ -314,4 +314,9 @@
          top: 50%;
      }
      .text_btn::before {}
+       .actual-message {
+    width: auto !important;
+    margin: 20px;
+    padding: 20px;
+}
  }

@@ -213,7 +213,6 @@ $(function() {
       });
       // trigger scroll
       controller_ROCKET.scrollTo(id);
-
       // if supported by the browser we can even update the URL.
       if (window.history && window.history.pushState) {
         history.pushState("", document.title, id);
