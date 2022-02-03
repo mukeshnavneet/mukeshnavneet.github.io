@@ -1,3 +1,7 @@
+:root {
+    --viewport-height: 100%;
+}
+
 html {
     background: #000000;
     overflow-x: hidden;
@@ -259,7 +263,7 @@ section {
     /* border: 1px solid red; */
     width: 50px;
     height: 100px;
-    /* top: calc(100% - 25px); */
+    top: calc(100% - 25px);
     left: 50%;
     z-index: -1;
     margin-left: -30px;
@@ -505,6 +509,22 @@ section {
         /* transform: translate3d(0px, 0px, 0) scaleY(); */
         background-repeat: no-repeat;
     }
+}
+
+@keyframes rocketleft-right {
+    0% {
+        transform: translate3d(0px, 0px, 0);
+    }
+    50% {
+        transform: translate3d(0px, 15px, 0px);
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0);
+    }
+}
+
+#rocket.addSmoke img {
+    /* animation: rocketleft-right 5s infinite; */
 }
 
 #rocket.addSmoke .smoke {
@@ -2358,8 +2378,8 @@ button {
 
 .elm {
     position: relative;
-    height: 100%;
-    height: 800px;
+    height: 100vh;
+    /* height: 800px; */
     /* background: #ff00e040; */
 }
 

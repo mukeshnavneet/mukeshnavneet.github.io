@@ -14,7 +14,7 @@ $(function() {
     let Rocket_Width = 150;
     let Rocket_Height = 290;
     let launchpad_Height = 30;
-    let rocket_base_offset = 60;
+    let rocket_base_offset = 0;
 
     var SECTION = $("section")
     var ELM = $(".elm")
@@ -25,18 +25,17 @@ $(function() {
     if (WIW < 530) {
         Rocket_Height = 369 / 2;
         Rocket_Width = 200 / 2;
-        rocket_base_offset = 30
-        LOGO_RES_Y_OFFSET = 50;
+        rocket_base_offset = 50
+        LOGO_RES_Y_OFFSET = 100;
     }
-
-
 
     let STARS_COUNT = 100;
     // Set Section Height
-    SECTION.css('height', WIH + "px");
     if (WIW > 480) {
+        SECTION.css('height', WIH + "px");
         ELM.css('height', WIH + "px");
     }
+
     EARTH_LAYER.css('height', (WIH / 2) + "px")
     EARTH_LAYER.css('margin-top', -(WIH / 4) + "px")
     PIPE.css('height', (WIH / 1.5) + "px")
@@ -115,10 +114,7 @@ $(function() {
         .to("#rocket", 1, {
             x: 0,
             y: (WIH / 2) - (Rocket_Height),
-            onComplete: () => {
-                // console.log("STEP - 1")
-            },
-            ease: 'Power4.out'
+            ease: 'EaseIn'
         })
         .to("#rocket", 0.5, {
             x: 0,
@@ -144,7 +140,7 @@ $(function() {
         })
         .to("#rocket", 1, {
             x: 0,
-            y: (WIH / 2) - (Rocket_Height / 2),
+            y: (WIH / 2) - (Rocket_Height / 2) - rocket_base_offset,
             onComplete: () => {
                 // console.log("STEP - 5")
             },
@@ -168,8 +164,8 @@ $(function() {
         .triggerHook(1);
     scene_ROCKET.on("start", function(event) {
         $('#rocket').addClass("addSmoke");
-        $('.launcher-base').show();
-        $('.launcher-base').show();
+        // $('.launcher-base').show();
+        // $('.launcher-base').show();
         // console.log("STARTED....");
     });
 
@@ -438,38 +434,39 @@ $(function() {
         .addTo(controller_EARTH)
         .triggerHook(1);
 
-    scene_EARTH_ROCKET.on("start", function(event) {
+
+
+    //////////////////////////SMOKEEEEEEEEEEEEEEEEE/////////
+    var controller_SMOKE = new ScrollMagic.Controller();
+    // var tween_SMOKE = new TimelineMax()
+    //     .to('.smoke-to-left', 1, {
+    //         scale: 0.5,
+    //         y: 10,
+    //     })
+    //     .to('.smoke-to-left', 1, {
+    //         scale: 0,
+    //         y: 0
+    //     });
+    var scene_SMOKE = new ScrollMagic.Scene({
+            triggerElement: "#earth",
+            // duration: 500,
+            duration: WIH * 2 + 50,
+            offset: "-100px"
+        })
+        // .setTween([tween_SMOKE])
+        // .addIndicators({ name: "scene_SMOKE" })
+        .addTo(controller_SMOKE)
+        .triggerHook(0.9);
+
+    scene_SMOKE.on("start", function(event) {
         $('.smoke-to-left').hide();
         $('.smoke-to-right').hide();
     });
-    scene_EARTH_ROCKET.on("leave", function(event) {
+    scene_SMOKE.on("leave", function(event) {
         $('.smoke-to-left').show();
         $('.smoke-to-right').show();
-        setTimeout(function() {
-            $('.smoke-to-left').hide();
-            $('.smoke-to-right').hide();
-        }, 2000)
     });
-
     //////////////////////////SMOKEEEEEEEEEEEEEEEEE/////////
-    var tween_SMOKE_ROCKET = new TimelineMax()
-        .to('.smoke-to-left', 1, {
-            scale: 0.5,
-            y: 10,
-        })
-        .to('.smoke-to-left', 1, {
-            scale: 0,
-            y: 0
-        });
-    var scene_SMOKE_ROCKET = new ScrollMagic.Scene({
-            triggerElement: "#earth",
-            // duration: 500,
-            duration: "50%",
-            offset: "0px"
-        }).setTween([tween_EARTH_rocket])
-        // .addIndicators({ name: "scene_EARTH_ROCKET" })
-        .addTo(controller_EARTH)
-        .triggerHook(1);
 
     // ------------------- PIPE MOVEMENT ----------------------
     // TweenMax.set(".pipe-start", { x: 100 });
@@ -598,7 +595,7 @@ $(function() {
 
     scene_UNDERWATER.on("leave", function(event) {
         $('#rocket img').attr("src", './assets/medow/rocket_red.svg');
-        $('#rocket').addClass("addSmoke");
+        $('#rocket').removeClass("addSmoke");
         $('#rocket').removeClass("submarine");
     });
     /////;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/////////////
@@ -897,10 +894,7 @@ $(function() {
             }
         }
     });
-    window.scrollTo(0, 1);
 
-
-    window.scrollTo(0, 1);
 });
 
 // function goToSkyFun() {

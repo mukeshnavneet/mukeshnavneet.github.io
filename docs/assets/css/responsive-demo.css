@@ -10,7 +10,7 @@
          -webkit-overflow-scrolling: touch;
      }
  }
-
+ 
  @media only screen and (max-width: 480px) {
      #rocket {
          width: 100px;
@@ -27,7 +27,9 @@
          position: absolute;
          z-index: -1;
      }
-
+     #rocket .smoke {
+         top: calc(100% - 0px);
+     }
      .text_pop_up h2 {
          font-size: 12px;
          font-weight: bold;
@@ -48,9 +50,9 @@
      .text_pop_up {
          position: absolute;
          z-index: 1;
-           left: 50%;
+         left: 50%;
          top: 50%;
-          padding: 0px  0px;
+         padding: 0px 0px;
          z-index: 900;
          display: flex;
          flex-direction: row;
@@ -61,19 +63,29 @@
          border-radius: 00px;
          box-sizing: border-box;
          text-align: center;
-          height: auto;
+         height: auto;
          width: 200px !important;
          height: 200px !important;
          margin-left: -100px;
      }
  }
  /* SPACE  */
-#land_pop_up{
-  top: 175px;
-}
+ 
  @media only screen and (max-width: 480px) {
+     #space_pop_up {
+         top: 50px;
+     }
+     #land_pop_up {
+         top: 225px;
+     }
+     .planet-top-right {
+         top: 100px;
+         right: 50px;
+     }
      .planet-left {
          width: 90px;
+         top: 10px;
+         left: 10px;
      }
      .planet-bot {
          width: 45px;
@@ -109,7 +121,7 @@
      }
  }
  /* SKY */
-
+ 
  @media only screen and (max-width: 480px) {
      .plane {
          width: 150px;
@@ -153,7 +165,7 @@
      }
  }
  /* LAND */
-
+ 
  @media only screen and (max-width: 480px) {
      .logo {
          position: absolute;
@@ -175,7 +187,7 @@
          background-size: auto 50%;
      }
  }
-
+ 
  @media only screen and (max-width: 480px) {
      .grass-bg {
          background-size: 180%;
@@ -217,7 +229,7 @@
          text-align: center;
      }
  }
-
+ 
  @media only screen and (max-width: 480px) {
      .fish-center-top {
          width: 80px;
@@ -314,9 +326,9 @@
          top: 50%;
      }
      .text_btn::before {}
-       .actual-message {
-    width: auto !important;
-    margin: 20px;
-    padding: 20px;
-}
+     .actual-message {
+         width: auto !important;
+         margin: 20px;
+         padding: 20px;
+     }
  }

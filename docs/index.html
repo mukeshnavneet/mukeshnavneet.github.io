@@ -36,21 +36,21 @@
 
     <!-- FACEBOOK -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://mukeshthankar.com/index.html">
-    <meta property="og:title" content="Mukesh Thankar | portfoli">
-    <meta property="og:image" content="http://mukeshthankar.com/img/image.jpg">
-    <meta property="og:description" content="A Designer/Developer by profession an artist by passion">
-    <meta property="og:site_name" content="Mukesh Thankar | portfolio">
+    <meta property="og:url" content="http://Leapbridge.com/index.html">
+    <meta property="og:title" content="Leapbridge by Navneet">
+    <meta property="og:image" content="http://Leapbridge.com/img/image.jpg">
+    <meta property="og:description" content="Leapbridge by Navneet">
+    <meta property="og:site_name" content="Leapbridge by Navneeto">
     <meta property="og:locale" content="en_US">
 
     <!-- TWITTER -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@site_account">
     <meta name="twitter:creator" content="@individual_account">
-    <meta name="twitter:url" content="http://mukeshthankar.com/index.html">
+    <meta name="twitter:url" content="http://Leapbridge.com/index.html">
     <meta name="twitter:title" content="Mukesh Thankar-portfoli">
-    <meta name="twitter:description" content="A Designer/Developer by profession an artist by passion">
-    <meta name="twitter:image" content="http://mukeshthankar.com/image.jpg">
+    <meta name="twitter:description" content="Leapbridge by Navneet">
+    <meta name="twitter:image" content="http://Leapbridge.com/image.jpg">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#ff660" />
@@ -127,10 +127,18 @@
     <script type="text/javascript">
         // jQuery("body").prepend('<div id="preloader" class="pageloader">Loading...</div>');
         jQuery(document).ready(function() {
+            let WIW = verge.viewportW();
+            let WIH = verge.viewportH();
+
             // number of loaded images for preloader progress
             var loadedCount = 0; //current number of images loaded
             var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
             var loadingProgress = 0; //timeline progress - starts at 0
+            var LAUNCHER_OFFSET = 0;
+
+            if (WIW < 530) {
+                LAUNCHER_OFFSET = 55;
+            }
 
             $('.bcg').imagesLoaded({
                 background: true
@@ -190,7 +198,7 @@
                         className: '-=is-loading',
                         onComplete: () => {
                             $('html, body').animate({
-                                scrollTop: $("#land").offset().top
+                                scrollTop: ($("#land").offset().top) + LAUNCHER_OFFSET
                             }, 2000);
                         },
                     })
