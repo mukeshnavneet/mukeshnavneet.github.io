@@ -38,10 +38,17 @@
          background: #ffc20000;
      }
      .diractions button.active {
-         background: #ffc20000;
+         background: rgba(255, 194, 0, 0);
      }
      .diractions button.active:after {
          background: #ffc20000;
+     }
+     .diractions.top-bottom {
+         display: block !important;
+         opacity: 1;
+     }
+     .diractions.top-bottom button:nth-child(even) {
+         display: none;
      }
      .arrow:before {
          border-right: 4px #ffc200 solid;

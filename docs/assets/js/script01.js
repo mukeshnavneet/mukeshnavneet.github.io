@@ -101,9 +101,24 @@ $(function() {
     window.addEventListener('scroll', (e) => {
         newValue = window.pageYOffset;
         if (oldValue < newValue) {
-            // console.log("scrolling page Up", newValue, WIH * 4);
+            //console.log("scrolling page Up", newValue, WIH * 4);
+            if (newValue >= (WIH * 4 - 100)) {
+                $('.diractions button:nth-child(3)').hide();
+            }
+            if (newValue >= 100) {
+                $('.diractions button:nth-child(1)').show();
+            }
+
         } else if (oldValue > newValue) {
-            // console.log("scrolling page Down", newValue);
+            //console.log("scrolling page Down", newValue);
+            if (newValue <= 100) {
+                $('.diractions button:nth-child(1)').hide();
+            }
+
+            if (newValue <= (WIH * 4 - 100)) {
+                $('.diractions button:nth-child(3)').show();
+
+            }
         }
         oldValue = newValue;
     });
