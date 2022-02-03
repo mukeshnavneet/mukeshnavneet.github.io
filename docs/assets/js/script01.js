@@ -47,6 +47,7 @@ $(function() {
     }
 
     var isMob = false;
+
     if (WIW < 480) {
         STARS_COUNT = 25;
         PIPE.css('height', (WIH / 1.5) + "px")
@@ -99,9 +100,9 @@ $(function() {
     window.addEventListener('scroll', (e) => {
         newValue = window.pageYOffset;
         if (oldValue < newValue) {
-            console.log("Up");
+            console.log("scrolling page Up", newValue, WIH * 4);
         } else if (oldValue > newValue) {
-            console.log("Down");
+            console.log("scrolling page Down", newValue);
         }
         oldValue = newValue;
     });
@@ -147,35 +148,6 @@ $(function() {
             },
             ease: 'Power4.out'
         })
-        // .to("#rocket", 1, {
-        //     x: 0,
-        //     y: (WIH / 2) - (Rocket_Height / 2) - rocket_base_offset,
-        //     scale: 0.5,
-        //     onComplete: () => { console.log("STEP - 6") },
-        //     ease: 'Power4.out'
-        // })
-        // .to("#rocket", 0.5, {
-        //     x: 0,
-        //     scale: 0.1,
-        //     y: 0,
-        //     onComplete: () => { console.log("STEP - 7") },
-        //     ease: 'Power4.out'
-        // })
-        // .to("#rocket", 0.5, {
-        //     x: 0,
-        //     scale: 0.25,
-        //     rotation: 270,
-        //     y: 200,
-        //     onComplete: () => { console.log("STEP - 8") },
-        //     ease: 'Power4.out'
-        // })
-        // .to("#rocket", 0.5, {
-        //     // x: -(WIW / 2) + Rocket_Width,
-        //     x: 0,
-        //     scale: 1,
-        //     y: 100,
-        //     ease: 'Power4.out'
-        // })
 
     // tween_ROCKET.call(function() {
     //     $('#rocket').toggleClass("addSmoke");
@@ -908,20 +880,22 @@ $(function() {
             //     scrollTo: e.target.getAttribute("href")
             // });
 
-            // $('body').scrollTo(e.target.getAttribute("href"));
+            let element = $(e.target.getAttribute("href"))
+            $(window).scrollTo(element, 2000);
 
-            $('html, body').animate({
-                scrollTop: $(e.target.getAttribute("href")).offset().top
-            }, 3000);
+            // $('html, body').animate({
+            //     scrollTop: $(e.target.getAttribute("href")).offset().top
+            // }, 2000);
 
             // trigger scroll
-            controller_ROCKET.scrollTo(id);
+            // controller_ROCKET.scrollTo(id);
             // if supported by the browser we can even update the URL.
             if (window.history && window.history.pushState) {
                 history.pushState("", document.title, id);
             }
         }
     });
+    window.scrollTo(0, 1);
 
 });
 
