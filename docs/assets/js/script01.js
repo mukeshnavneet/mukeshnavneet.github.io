@@ -3,11 +3,11 @@ $(function() {
     let WIW = verge.viewportW();
     let WIH = verge.viewportH();
 
-    console.log("WW", WIW);
-    console.log("WH", WIH);
+    // console.log("WW", WIW);
+    // console.log("WH", WIH);
 
-    console.log("VW", verge.viewportW());
-    console.log("VH", verge.viewportH());
+    // console.log("VW", verge.viewportW());
+    // console.log("VH", verge.viewportH());
     // let WIW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
     // let WIH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
@@ -34,7 +34,9 @@ $(function() {
     let STARS_COUNT = 100;
     // Set Section Height
     SECTION.css('height', WIH + "px");
-    ELM.css('height', WIH + "px");
+    if (WIW > 480) {
+        ELM.css('height', WIH + "px");
+    }
     EARTH_LAYER.css('height', (WIH / 2) + "px")
     EARTH_LAYER.css('margin-top', -(WIH / 4) + "px")
     PIPE.css('height', (WIH / 1.5) + "px")
@@ -100,9 +102,9 @@ $(function() {
     window.addEventListener('scroll', (e) => {
         newValue = window.pageYOffset;
         if (oldValue < newValue) {
-            console.log("scrolling page Up", newValue, WIH * 4);
+            // console.log("scrolling page Up", newValue, WIH * 4);
         } else if (oldValue > newValue) {
-            console.log("scrolling page Down", newValue);
+            // console.log("scrolling page Down", newValue);
         }
         oldValue = newValue;
     });
@@ -114,21 +116,21 @@ $(function() {
             x: 0,
             y: (WIH / 2) - (Rocket_Height),
             onComplete: () => {
-                console.log("STEP - 1")
+                // console.log("STEP - 1")
             },
             ease: 'Power4.out'
         })
         .to("#rocket", 0.5, {
             x: 0,
             onComplete: () => {
-                console.log("STEP - 2")
+                // console.log("STEP - 2")
             },
             ease: 'Power4.out'
         })
         .to("#rocket", 0.5, {
             x: -100,
             onComplete: () => {
-                console.log("STEP - 3")
+                // console.log("STEP - 3")
             },
             ease: 'Power4.out'
         })
@@ -136,7 +138,7 @@ $(function() {
             x: 0,
             y: (WIH / 2 - Rocket_Height),
             onComplete: () => {
-                console.log("STEP - 4")
+                // console.log("STEP - 4")
             },
             ease: 'Power4.out'
         })
@@ -144,7 +146,7 @@ $(function() {
             x: 0,
             y: (WIH / 2) - (Rocket_Height / 2),
             onComplete: () => {
-                console.log("STEP - 5")
+                // console.log("STEP - 5")
             },
             ease: 'Power4.out'
         })
@@ -847,7 +849,7 @@ $(function() {
     });
 
     $(".register-btn").click(function() {
-        console.log("REG");
+        // console.log("REG");
         TweenMax.fromTo(".actual-message", 0.5, {
             marginTop: "10%",
             opacity: 0,
@@ -872,7 +874,7 @@ $(function() {
         var id = $(this).attr("href");
         if ($(id).length > 0) {
 
-            console.log(e.target.getAttribute("href"));
+            // console.log(e.target.getAttribute("href"));
 
             e.preventDefault();
             // TweenMax.to(window, {
@@ -897,6 +899,8 @@ $(function() {
     });
     window.scrollTo(0, 1);
 
+
+    window.scrollTo(0, 1);
 });
 
 // function goToSkyFun() {
