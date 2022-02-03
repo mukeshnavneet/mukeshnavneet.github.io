@@ -118,7 +118,7 @@ body {
     background: -webkit-linear-gradient(0deg, rgb(3 16 54) 0%, rgba(0, 0, 22, 1) 100%);
     background: linear-gradient(0deg, rgb(3 16 54) 0%, rgba(0, 0, 22, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#001544", endColorstr="#000016", GradientType=1);
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 #space .elm {
@@ -540,6 +540,7 @@ section {
     z-index: 0;
     position: absolute;
     opacity: 0.5;
+    overflow: hidden;
 }
 
 
@@ -1115,10 +1116,13 @@ section {
     font-weight: bold;
     bottom: 25px;
 }
-.touch-me-not h1, .touch-me-not h2 {
+
+.touch-me-not h1,
+.touch-me-not h2 {
     color: #ffffff;
     margin: 0px
 }
+
 .touch-me-not img {
     width: 100%;
     position: absolute;
@@ -1189,7 +1193,6 @@ section {
 .back-btn:hover {
     background-color: rgb(174, 0, 255);
 }
-
 
 .sputnik {
     position: relative;
@@ -1362,6 +1365,7 @@ section {
     height: 100px;
     background: #8AE4EF;
 }
+
 .text_pop_up {
     position: absolute;
     z-index: 1;
@@ -1394,7 +1398,7 @@ section {
     font-family: 'Quicksand', sans-serif;
     font-size: 22px;
     font-weight: bold;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 #space_pop_up {
@@ -1425,6 +1429,7 @@ section {
     background-image: url('../shape-01.svg');
     top: 100px
 }
+
 #land_pop_up,
 #sky_pop_up,
 #space_pop_up,
@@ -2467,9 +2472,11 @@ button {
 
 
 /* /////////////////////////////////////////////////////////////////////////////////////// */
+
 #rocket.submarine img {
     animation: up-down 6s infinite;
 }
+
 #rocket.submarine span {
     width: 10px;
     height: 10px;
@@ -2972,18 +2979,19 @@ input:focus {
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-.subm{
-  display: none;
-  position: relative;
-   width: 90px;
-  height: 125px;
-  background-color: yellow;
-   left: 50%;
-  top: 50%;
-  margin-left: -75px;
-  margin-top: -145px;
-  z-index: 500;
-  top:50%;
-  position: absolute;
-  z-index: 9999999;
+
+.subm {
+    display: none;
+    position: relative;
+    width: 90px;
+    height: 125px;
+    background-color: yellow;
+    left: 50%;
+    top: 50%;
+    margin-left: -75px;
+    margin-top: -145px;
+    z-index: 500;
+    top: 50%;
+    position: absolute;
+    z-index: 9999999;
 }
