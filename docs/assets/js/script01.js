@@ -99,9 +99,9 @@ $(function() {
     window.addEventListener('scroll', (e) => {
         newValue = window.pageYOffset;
         if (oldValue < newValue) {
-            // console.log("Up");
+            console.log("Up");
         } else if (oldValue > newValue) {
-            // console.log("Down");
+            console.log("Down");
         }
         oldValue = newValue;
     });
@@ -204,22 +204,7 @@ $(function() {
     });
     //  bind scroll to anchor links
 
-    $(document).on("click", "a[href^='#']", function(e) {
-        var id = $(this).attr("href");
-        if ($(id).length > 0) {
-            e.preventDefault();
-            TweenMax.to(window, {
-                duration: 1,
-                scrollTo: e.target.getAttribute("href")
-            });
-            // trigger scroll
-            controller_ROCKET.scrollTo(id);
-            // if supported by the browser we can even update the URL.
-            if (window.history && window.history.pushState) {
-                history.pushState("", document.title, id);
-            }
-        }
-    });
+
 
 
     // change behaviour of controller to animate scroll instead of jump
@@ -691,7 +676,7 @@ $(function() {
             offset: 0
         })
         .setTween([tween_UNDERWATER_rocket3])
-        .addIndicators({ name: "scene_UNDERWATER_ROCKET22" })
+        // .addIndicators({ name: "scene_UNDERWATER_ROCKET22" })
         .addTo(controller_UNDERWATER3)
         .triggerHook(0.5);
     /////;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/////////////
@@ -911,6 +896,32 @@ $(function() {
         });
     });
 
+    $(document).on("click", "a[href^='#']", function(e) {
+        var id = $(this).attr("href");
+        if ($(id).length > 0) {
+
+            console.log(e.target.getAttribute("href"));
+
+            e.preventDefault();
+            // TweenMax.to(window, {
+            //     duration: 1,
+            //     scrollTo: e.target.getAttribute("href")
+            // });
+
+            // $('body').scrollTo(e.target.getAttribute("href"));
+
+            $('html, body').animate({
+                scrollTop: $(e.target.getAttribute("href")).offset().top
+            }, 3000);
+
+            // trigger scroll
+            controller_ROCKET.scrollTo(id);
+            // if supported by the browser we can even update the URL.
+            if (window.history && window.history.pushState) {
+                history.pushState("", document.title, id);
+            }
+        }
+    });
 
 });
 
