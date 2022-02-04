@@ -110,9 +110,9 @@
         }
         
         .bcg {
-            transition: transform 4s ease-out;
-            transform: scale(1.05);
-            transform-origin: top center;
+            /* transition: transform 4s ease-out; */
+            /* transform: scale(1.05); */
+            /* transform-origin: top center; */
         }
         
         .is-loaded.bcg {
@@ -134,7 +134,7 @@
             var loadedCount = 0; //current number of images loaded
             var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
             var loadingProgress = 0; //timeline progress - starts at 0
-            var LAUNCHER_OFFSET = 0;
+            var LAUNCHER_OFFSET = 20;
 
             if (WIW < 530) {
                 LAUNCHER_OFFSET = 55;
@@ -348,16 +348,18 @@
                     <!-- <div class="text">Touch me not!</div> -->
                     <div class="cloud-text">
                         <div>
-                            <h1>You've caused pollution!</h1>
-                            <h2>But we'll clear the confusion, Do not worry,Say you're sorry.</h2>
+                            <h2>What's all this confusion?</h2>
+                            <h2>Just one wrong click caused all this pollution!</h2>
+                            <h2> But don't worry,</h2>
+                            <h2> We'll clean it up, if you say you're sorry.</h2>
                         </div>
-                        <div class="back-btn">I'm sorry!</div>
+                        <button class="back-btn">I'm sorry!</button>
                     </div>
                     <img src="./assets/sky/black-cloude.svg" alt="">
                 </div>
                 <div class="elm">
                     <div id="sky_pop_up" class="text_pop_up">
-                        <h2>We teach children to wonder why, The rocket can fly.
+                        <h2>We teach children, <br/> To wonder why, <br/>The rocket can fly.
                         </h2>
                     </div>
                     <div id="sputnik" class="sputnik sputnik01">
@@ -375,6 +377,9 @@
                     <div id="plane" class="plane plane02">
                         <img src="./assets/sky/aeroplane2.svg" />
                     </div>
+                    <div id="plane" class="plane plane03">
+                        <img src="./assets/sky/cloud-left-new.svg" />
+                    </div>
                 </div>
                 <div class="diractions in-sky">
                     <button type="button" name="button"><div class="arrow"></div></button>
@@ -384,6 +389,14 @@
                 </div>
             </section>
             <section id="land">
+                <div class="butterfly butterfly2">
+                    <div class="boxi b2"></div>
+                </div>
+
+                <div class="butterfly butterfly3">
+                    <div class="boxi b3"></div>
+                </div>
+
                 <div class="launcher-base2"></div>
                 <div class="launcher-base">
                     <div class="smoke-to-left">
@@ -411,8 +424,6 @@
                         <span><img src="./assets/medow/10.svg" /></span>
                     </div>
                 </div>
-                <div class="butterflys">
-                </div>
                 <div class="elm">
                     <div id="trigger_LOGO"></div>
                     <div id="logo" class="logo"><img src="./assets/medow/logo.svg" /></div>
@@ -421,13 +432,7 @@
                         <h2>Scroll to discover, <br/>What awaits your early-learners.</h2>
                     </div>
 
-                    <div class="butterfly butterfly2">
-                        <div class="boxi b2"></div>
-                    </div>
 
-                    <div class="butterfly butterfly3">
-                        <div class="boxi b3"></div>
-                    </div>
 
                     <div class="mountains-bg bcg"></div>
                     <div class="laun-bg bcg"></div>
@@ -469,6 +474,7 @@
                     <div class="earth-layer">
                         <!-- <img class="bcg" src="./assets/earth/earth-layer-no-tunnel.svg" alt=""> -->
                     </div>
+                    <div class="rays-top"></div>
                 </div>
                 <div class="diractions in-earth">
                     <button type="button" name="button"><div class="arrow"></div></button>
@@ -478,71 +484,75 @@
                 </div>
             </section>
             <section id="underwater">
-                <div class="sea-bg-img bcg"></div>
-                <div id="sea_pop_up" class="text_pop_up">
-                    <h2>Immersive lessons are what we offer,<br/> Don't miss out, just register.</h2>
+                <div class="rays">
                 </div>
-                <!-- <div class="submarine-two">
+                <div class="overflow-hidden">
+                    <div class="sea-bg-img bcg"></div>
+                    <div id="sea_pop_up" class="text_pop_up">
+                        <h2>Immersive lessons are<br/> What we offer,<br/> Don't miss out, just register.</h2>
+                    </div>
+                    <!-- <div class="submarine-two">
                 <img class="bcg" src="./assets/medow/submarine.svg" alt="">
             </div> -->
-                <div class="elm">
-                    <div class="stons"></div>
-                    <div class="bubbles"></div>
-                    <div class="fish crab-left">
-                        <img class="bcg" src="./assets/underwater/crab-left.svg" alt="">
-                    </div>
-                    <div class="fish crab-right">
-                        <img class="bcg" src="./assets/underwater/crab-left.svg" alt="">
-                    </div>
-                    <div class="puff-fish-top-left">
-                        <img class="bcg" src="./assets/underwater/puff-fish-top-left.svg" alt="">
-                    </div>
-                    <div class="fish fish-left-bot">
-                        <img class="bcg" src="./assets/underwater/fish-left-bot.svg" alt="">
-                    </div>
-                    <div class="fish shell">
-                        <img class="bcg" src="./assets/underwater/shell.svg" alt="">
-                    </div>
-                    <div class="fish fish-center-top">
-                        <img class="bcg" src="./assets/underwater/fish-left-bot.svg" alt="">
-                    </div>
-                    <div class="fish jellyfish-left1">
-                        <img class="bcg head" src="./assets/underwater/01jellyfish-head.svg" alt="">
-                        <img class="bcg tail" src="./assets/underwater/01jellyfish-tail.svg" alt="">
-                    </div>
-                    <div class="fish jellyfish-right2">
-                        <img class="bcg head" src="./assets/underwater/02jellyfish-head.svg" alt="">
-                        <img class="bcg tail" src="./assets/underwater/02jellyfish-tail.svg" alt="">
-                    </div>
-                    <!-- <div class="fish jellyfish-left">
+                    <div class="elm">
+                        <div class="stons"></div>
+                        <div class="bubbles"></div>
+                        <div class="fish crab-left">
+                            <img class="bcg" src="./assets/underwater/crab-left.svg" alt="">
+                        </div>
+                        <div class="fish crab-right">
+                            <img class="bcg" src="./assets/underwater/crab-left.svg" alt="">
+                        </div>
+                        <div class="puff-fish-top-left">
+                            <img class="bcg" src="./assets/underwater/puff-fish-top-left.svg" alt="">
+                        </div>
+                        <div class="fish fish-left-bot">
+                            <img class="bcg" src="./assets/underwater/fish-left-bot.svg" alt="">
+                        </div>
+                        <div class="fish shell">
+                            <img class="bcg" src="./assets/underwater/shell.svg" alt="">
+                        </div>
+                        <div class="fish fish-center-top">
+                            <img class="bcg" src="./assets/underwater/fish-left-bot.svg" alt="">
+                        </div>
+                        <div class="fish jellyfish-left1">
+                            <img class="bcg head" src="./assets/underwater/01jellyfish-head.svg" alt="">
+                            <img class="bcg tail" src="./assets/underwater/01jellyfish-tail.svg" alt="">
+                        </div>
+                        <div class="fish jellyfish-right2">
+                            <img class="bcg head" src="./assets/underwater/02jellyfish-head.svg" alt="">
+                            <img class="bcg tail" src="./assets/underwater/02jellyfish-tail.svg" alt="">
+                        </div>
+                        <!-- <div class="fish jellyfish-left">
                     <img src="./assets/underwater/jellyfish-left.svg" alt="">
                 </div>
                 <div class="fish jellyfish-right">
                     <img src="./assets/underwater/jellyfish-right.svg" alt="">
                 </div>-->
-                    <div class="fish pink-fish-bot">
-                        <img class="bcg" src="./assets/underwater/pink-fish-bot.svg" alt="">
+                        <div class="fish pink-fish-bot">
+                            <img class="bcg" src="./assets/underwater/pink-fish-bot.svg" alt="">
+                        </div>
+                        <div class="fish turtle">
+                            <img class="bcg" src="./assets/underwater/turtle.svg" alt="">
+                        </div>
+                        <div class="plant-left">
+                            <img class="bcg" src="./assets/underwater/plant-left.svg" alt="">
+                        </div>
+                        <div class="plant-right">
+                            <img class="bcg" src="./assets/underwater/plant-right.svg" alt="">
+                        </div>
+                        <div class="plant-mid-bot-1">
+                            <img class="bcg" src="./assets/underwater/plant-mid-bot-1.svg" alt="">
+                        </div>
+                        <div class="plant-mid-bot-2">
+                            <img class="bcg" src="./assets/underwater//plant-mid-bot-2.svg" alt="">
+                        </div>
                     </div>
-                    <div class="fish turtle">
-                        <img class="bcg" src="./assets/underwater/turtle.svg" alt="">
-                    </div>
-                    <div class="plant-left">
-                        <img class="bcg" src="./assets/underwater/plant-left.svg" alt="">
-                    </div>
-                    <div class="plant-right">
-                        <img class="bcg" src="./assets/underwater/plant-right.svg" alt="">
-                    </div>
-                    <div class="plant-mid-bot-1">
-                        <img class="bcg" src="./assets/underwater/plant-mid-bot-1.svg" alt="">
-                    </div>
-                    <div class="plant-mid-bot-2">
-                        <img class="bcg" src="./assets/underwater//plant-mid-bot-2.svg" alt="">
-                    </div>
+                    <nav class="cta">
+                        <button class="register-btn"> Register now! </button>
+                        <a href="#land" class="replay-btn"> Replay </a>
+                    </nav>
                 </div>
-                <nav class="cta">
-                    <button class="register-btn"> Register now! </button>
-                    <a href="#land" class="replay-btn"> Replay </a>
-                </nav>
             </section>
             <div>
                 <span class="test"></span>
@@ -556,8 +566,8 @@
                                 <img src="./assets/medow/logo.svg" />
                             </div>
                             <div class="modal-text">
-                                <h3>Thank you for considering Leapbridge.</h3>
-                                <p>A good education, Is a brilliant decision. Fill in the form below To receive updates and more.</p>
+                                <h3>Thank you for considering Leapbridge</h3>
+                                <p>A good education, <br/>Is a brilliant decision.<br/> Fill in the form below<br/> To receive updates and more.</p>
                             </div>
                             <form action="">
                                 <div class="input-holder">
@@ -581,6 +591,7 @@
                     </div>
                 </div>
             </div>
+            <div class="guideline"></div>
         </main>
     </div>
     <!-- ///////////////////// END SEA SEC -->
