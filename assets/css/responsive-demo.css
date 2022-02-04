@@ -158,14 +158,14 @@
      }
      .touch-me-not {
          left: 50%;
-         margin-left: -100px;
+         /* margin-left: -100px; */
          height: auto;
      }
      .touch-me-not-popup {}
      .touch-me-not-popup>div {}
      .touch-me-not .cloud-text .back-btn {
-         width: 70px;
-         height: 70px;
+         /* width: 70px;
+         height: 70px; */
          color: #FFF;
          font-size: 12px;
          text-align: center;
@@ -183,9 +183,9 @@
          align-items: center;
      }
      .touch-me-not:hover img {
-         width: 150%;
+         width: 100%;
          height: auto;
-         margin-left: -75%;
+         margin-left: -50%;
          left: 50%;
      }
      .touch-me-not:hover .cloud-text h1 {
@@ -198,6 +198,16 @@
          background-color: #595959;
          border-radius: 20px;
          /* margin: 10px; */
+     }
+     .plane03 {
+         top: 400px;
+         z-index: 0;
+         /* animation: drift 6s linear infinite; */
+         width: 300px;
+         position: absolute;
+         top: 65%;
+         left: 50%;
+         margin-left: -200px;
      }
  }
  /* LAND */

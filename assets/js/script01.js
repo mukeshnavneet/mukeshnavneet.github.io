@@ -200,7 +200,7 @@ $(function() {
             }
         });
     });
-    // ROCKET END
+    // ROCKET END controller_ROCKET
     var controller_SPACE = new ScrollMagic.Controller();
     var controller_SKY = new ScrollMagic.Controller();
     var controller_LAND = new ScrollMagic.Controller();
@@ -748,10 +748,10 @@ $(function() {
         }, 4000);
     })
 
-    // $touch_me_not.on("click", function name(params) {
-    //     $touch_me_not_popup.find("div").addClass("animate__bounceIn");
-    //     $touch_me_not_popup.show();
-    // })
+    $touch_me_not.on("click", function name(params) {
+        // alert();
+        $touch_me_not.toggleClass("zoom");
+    })
 
     $touch_me_not_IMG = $("#touch-me-not img")
 
@@ -772,37 +772,37 @@ $(function() {
 
     let res_SIZE = (isMob == true) ? WIW * 2 : "200px";
 
-    function over() {
-        $touch_me_not.addClass("hide-btn");
-        TweenMax.to($touch_me_not, 0.5, {
-            x: "-50%",
-            width: WIW,
-        })
-        TweenMax.to($touch_me_not_IMG, 0.5, {
-            x: "0%",
-            width: WIW,
-        })
-        TweenMax.to($cloud_text, 0.5, {
-            autoAlpha: 1,
-            scale: 1,
-        })
-    }
+    // function over() {
+    //     $touch_me_not.addClass("hide-btn");
+    //     TweenMax.to($touch_me_not, 0.5, {
+    //         x: "-50%",
+    //         width: WIW,
+    //     })
+    //     TweenMax.to($touch_me_not_IMG, 0.5, {
+    //         x: "0%",
+    //         width: WIW,
+    //     })
+    //     TweenMax.to($cloud_text, 0.5, {
+    //         autoAlpha: 1,
+    //         scale: 1,
+    //     })
+    // }
 
-    function out() {
-        $touch_me_not.removeClass("hide-btn");
-        TweenMax.to($touch_me_not, 0.5, {
-            x: "-50%",
-            width: "200px",
-        })
-        TweenMax.to($touch_me_not_IMG, 0.5, {
-            x: "0%",
-            width: "200px",
-        })
-        TweenMax.to($cloud_text, 0.5, {
-            autoAlpha: 1,
-            scale: 0
-        })
-    }
+    // function out() {
+    //     $touch_me_not.removeClass("hide-btn");
+    //     TweenMax.to($touch_me_not, 0.5, {
+    //         x: "-50%",
+    //         width: "200px",
+    //     })
+    //     TweenMax.to($touch_me_not_IMG, 0.5, {
+    //         x: "0%",
+    //         width: "200px",
+    //     })
+    //     TweenMax.to($cloud_text, 0.5, {
+    //         autoAlpha: 1,
+    //         scale: 0
+    //     })
+    // }
 
     $back_btn.on("click", function name(params) {
         $touch_me_not_popup.addClass("animate__bounceIn");
@@ -909,25 +909,4 @@ $(function() {
             }
         }
     });
-
 });
-
-// function goToSkyFun() {
-//     controller_ROCKET.scrollTo("#sky");
-// }
-
-// function goToSpaceFun() {
-//     controller_ROCKET.scrollTo("#space");
-// }
-
-// function goToSpaceRightFun() {
-//     controller_ROCKET.scrollTo("#space_h");
-// }
-
-// function goToUnderwaterFun() {
-//     controller_ROCKET.scrollTo("#underwater");
-// }
-
-// function goToEarthFun() {
-//     controller_ROCKET.scrollTo("#earth");
-// }
