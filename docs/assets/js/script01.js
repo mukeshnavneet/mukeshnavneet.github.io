@@ -1,4 +1,5 @@
 $(function() {
+
     // VARS
     let WIW = verge.viewportW();
     let WIH = verge.viewportH();
@@ -14,7 +15,7 @@ $(function() {
     let Rocket_Width = 150;
     let Rocket_Height = 290;
     let launchpad_Height = 30;
-    let rocket_base_offset = 0;
+    let rocket_base_offset = 10;
 
     var SECTION = $("section")
     var ELM = $(".elm")
@@ -25,7 +26,7 @@ $(function() {
     if (WIW < 530) {
         Rocket_Height = 369 / 2;
         Rocket_Width = 200 / 2;
-        rocket_base_offset = 50
+        rocket_base_offset = 55
         LOGO_RES_Y_OFFSET = 100;
     }
 
@@ -117,7 +118,6 @@ $(function() {
 
             if (newValue <= (WIH * 4 - 100)) {
                 $('.diractions button:nth-child(3)').show();
-
             }
         }
         oldValue = newValue;
@@ -200,7 +200,7 @@ $(function() {
             }
         });
     });
-    // ROCKET END
+    // ROCKET END controller_ROCKET
     var controller_SPACE = new ScrollMagic.Controller();
     var controller_SKY = new ScrollMagic.Controller();
     var controller_LAND = new ScrollMagic.Controller();
@@ -758,17 +758,17 @@ $(function() {
     $cloud_text = $(".cloud-text")
 
 
-    $touch_me_not_IMG.hover(over, null);
-    $touch_me_not.hover(null, out);
+    // $touch_me_not_IMG.hover(over, null);
+    // $touch_me_not.hover(null, out);
 
-    TweenMax.to($touch_me_not_IMG, 0.5, {
-        x: "0%",
-        width: "200px",
-    })
-    TweenMax.to($cloud_text, 0.5, {
-        autoAlpha: 1,
-        scale: 0
-    })
+    // TweenMax.to($touch_me_not_IMG, 0.5, {
+    //     x: "0%",
+    //     width: "200px",
+    // })
+    // TweenMax.to($cloud_text, 0.5, {
+    //     autoAlpha: 1,
+    //     scale: 0
+    // })
 
     let res_SIZE = (isMob == true) ? WIW * 2 : "200px";
 
@@ -895,7 +895,7 @@ $(function() {
             // });
 
             let element = $(e.target.getAttribute("href"))
-            $(window).scrollTo(element, 2000);
+            $(window).scrollTo(element, 1000);
 
             // $('html, body').animate({
             //     scrollTop: $(e.target.getAttribute("href")).offset().top
@@ -909,25 +909,4 @@ $(function() {
             }
         }
     });
-
 });
-
-// function goToSkyFun() {
-//     controller_ROCKET.scrollTo("#sky");
-// }
-
-// function goToSpaceFun() {
-//     controller_ROCKET.scrollTo("#space");
-// }
-
-// function goToSpaceRightFun() {
-//     controller_ROCKET.scrollTo("#space_h");
-// }
-
-// function goToUnderwaterFun() {
-//     controller_ROCKET.scrollTo("#underwater");
-// }
-
-// function goToEarthFun() {
-//     controller_ROCKET.scrollTo("#earth");
-// }

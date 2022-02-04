@@ -80,6 +80,26 @@
  
  @media only screen and (max-width: 480px) {
      #space_pop_up {
+         top: 100px;
+         background-image: url('../shape-01.svg');
+     }
+     #sky_pop_up {
+         background-image: url('../mob-shape-02.svg');
+         top: 100px
+     }
+     #land_pop_up {
+         background-image: url('../mob-shape-01.svg');
+         top: 300px
+     }
+     #earth_pop_up {
+         background-image: url('../shape-04.svg');
+         top: 100px
+     }
+     #sea_pop_up {
+         background-image: url('../shape-01.svg');
+         top: 100px
+     }
+     #space_pop_up {
          top: 50px;
      }
      #land_pop_up {
@@ -138,32 +158,41 @@
      }
      .touch-me-not {
          left: 50%;
-         margin-left: -50%;
+         margin-left: -100px;
+         height: auto;
      }
      .touch-me-not-popup {}
-     .touch-me-not-popup>div {
-         position: relative;
-         width: 300px;
-         padding: 20px;
-         border-radius: 20px;
-         box-shadow: 0 0 20px 11px #0000004b;
-         margin-left: -150px;
-         top: 10%;
-         left: 50%;
-         background-color: rgb(65, 65, 65);
-         display: flex;
-         flex-direction: column;
-         flex-wrap: nowrap;
-         align-content: center;
-         justify-content: center;
-         align-items: center;
+     .touch-me-not-popup>div {}
+     .touch-me-not .cloud-text .back-btn {
+         width: 70px;
+         height: 70px;
+         color: #FFF;
+         font-size: 12px;
          text-align: center;
+     }
+     .touch-me-not:hover {
+         left: 50%;
+         margin-left: -50%;
+         height: auto;
      }
      .touch-me-not .cloud-text {
          display: flex;
          flex-direction: column;
          align-content: center;
+         /* padding: 24PX 30PX; */
          align-items: center;
+     }
+     .touch-me-not:hover img {
+         width: 150%;
+         height: auto;
+         margin-left: -75%;
+         left: 50%;
+     }
+     .touch-me-not:hover .cloud-text h1 {
+         font-size: 24px;
+     }
+     .touch-me-not:hover .cloud-text h2 {
+         font-size: 16px;
      }
      .hide-btn {
          background-color: #595959;
