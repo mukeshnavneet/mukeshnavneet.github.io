@@ -1,0 +1,370 @@
+ @media only screen and (max-width: 480px) {
+     html {
+         overflow: hidden;
+         width: 100%;
+     }
+     body {
+         height: 100%;
+         position: fixed;
+         overflow-y: scroll;
+         -webkit-overflow-scrolling: touch;
+     }
+ }
+ 
+ @media only screen and (max-width: 480px) {
+     #rocket {
+         width: 100px;
+         height: 164px;
+         margin-left: -50px;
+         margin-top: -80px;
+     }
+     #rocket.addSmoke .smoke {
+         width: 30px;
+         height: 100px;
+         left: 50%;
+         z-index: -1;
+         margin-left: -15px;
+         position: absolute;
+         z-index: -1;
+     }
+     #rocket .smoke {
+         top: calc(100% - 0px);
+     }
+     .text_pop_up h2 {
+         font-size: 12px;
+         font-weight: bold;
+     }
+     .diractions button {
+         background: #ffc20000;
+     }
+     .diractions button.active {
+         background: rgba(255, 194, 0, 0);
+     }
+     .diractions button.active:after {
+         background: #ffc20000;
+     }
+     .diractions.top-bottom {
+         display: block !important;
+         opacity: 1;
+     }
+     .diractions.top-bottom button:nth-child(even) {
+         display: none;
+     }
+     .arrow:before {
+         border-right: 4px #ffc200 solid;
+         border-bottom: 4px #ffc200 solid;
+     }
+     .text_pop_up {
+         position: absolute;
+         z-index: 1;
+         left: 50%;
+         top: 50%;
+         padding: 0px 0px;
+         z-index: 900;
+         display: flex;
+         flex-direction: row;
+         flex-wrap: nowrap;
+         align-content: center;
+         justify-content: center;
+         align-items: center;
+         border-radius: 00px;
+         box-sizing: border-box;
+         text-align: center;
+         height: auto;
+         width: 200px !important;
+         height: 200px !important;
+         margin-left: -100px;
+     }
+ }
+ /* SPACE  */
+ 
+ @media only screen and (max-width: 480px) {
+     #space_pop_up {
+         top: 100px;
+         background-image: url('../shape-01.svg');
+     }
+     #sky_pop_up {
+         background-image: url('../mob-shape-02.svg');
+         top: 100px
+     }
+     #land_pop_up {
+         background-image: url('../mob-shape-01.svg');
+         top: 300px
+     }
+     #earth_pop_up {
+         background-image: url('../shape-04.svg');
+         top: 100px
+     }
+     #sea_pop_up {
+         background-image: url('../shape-01.svg');
+         top: 100px
+     }
+     #space_pop_up {
+         top: 50px;
+     }
+     #land_pop_up {
+         top: 225px;
+     }
+     .planet-top-right {
+         top: 100px;
+         right: 50px;
+     }
+     .planet-left {
+         width: 90px;
+         top: 10px;
+         left: 10px;
+     }
+     .planet-bot {
+         width: 45px;
+     }
+     .meteor1 {
+         top: calc(100% - 100px);
+         left: 65%;
+         margin-left: -100px;
+         width: 60px;
+         height: 250px;
+         animation: up-down 6s infinite;
+     }
+     .meteor2 {
+         top: 50%;
+         left: 5%;
+         width: 100px;
+         animation: left-right 3s infinite;
+     }
+     .const1 {
+         top: 10%;
+         left: 5%;
+         width: 150px;
+     }
+     .const3 {
+         top: 43%;
+         left: 5%;
+         width: 200px;
+     }
+     .const6 {
+         top: 20%;
+         left: 40%;
+         width: 249px;
+     }
+ }
+ /* SKY */
+ 
+ @media only screen and (max-width: 480px) {
+     .plane {
+         width: 150px;
+     }
+     .plane02 {
+         width: 60px;
+     }
+     .touch-me-not {
+         left: 50%;
+         margin-left: -100px;
+         height: auto;
+     }
+     .touch-me-not-popup {}
+     .touch-me-not-popup>div {}
+     .touch-me-not .cloud-text .back-btn {
+         width: 70px;
+         height: 70px;
+         color: #FFF;
+         font-size: 12px;
+         text-align: center;
+     }
+     .touch-me-not:hover {
+         left: 50%;
+         margin-left: -50%;
+         height: auto;
+     }
+     .touch-me-not .cloud-text {
+         display: flex;
+         flex-direction: column;
+         align-content: center;
+         /* padding: 24PX 30PX; */
+         align-items: center;
+     }
+     .touch-me-not:hover img {
+         width: 150%;
+         height: auto;
+         margin-left: -75%;
+         left: 50%;
+     }
+     .touch-me-not:hover .cloud-text h1 {
+         font-size: 24px;
+     }
+     .touch-me-not:hover .cloud-text h2 {
+         font-size: 16px;
+     }
+     .hide-btn {
+         background-color: #595959;
+         border-radius: 20px;
+         /* margin: 10px; */
+     }
+ }
+ /* LAND */
+ 
+ @media only screen and (max-width: 480px) {
+     .logo {
+         position: absolute;
+         width: 220px;
+         margin-left: -110px;
+         left: 50%;
+         top: 0px;
+         left: 50%;
+         z-index: 400;
+     }
+     .tree-big {
+         width: 200px;
+         left: -70px;
+     }
+     .laun-bg {
+         background-size: 200vw;
+     }
+     .mountains-bg {
+         background-size: auto 50%;
+     }
+ }
+ 
+ @media only screen and (max-width: 480px) {
+     .grass-bg {
+         background-size: 180%;
+     }
+     .earth-layer {
+         height: 400px;
+         position: absolute;
+         margin-top: -200px;
+         top: 50%;
+         width: 100vw;
+         z-index: 99;
+         background-image: url(../earth/earth-layer.png);
+         background-size: auto 100%;
+         background-repeat: no-repeat;
+         background-position: center;
+         z-index: 609;
+     }
+     .earthworm {
+         display: none;
+     }
+     .earthworm2 {
+         display: none;
+     }
+     .pipe {
+         /* border: 1px solid #ffc200; */
+     }
+     .pipe img {
+         width: 100%;
+         height: inherit;
+     }
+     .pipe-start {
+         width: 150px;
+         height: 300px;
+         position: absolute;
+         z-index: 608;
+         margin-left: -75px;
+         left: 50%;
+         top: 100px;
+         text-align: center;
+     }
+ }
+ 
+ @media only screen and (max-width: 480px) {
+     .fish-center-top {
+         width: 80px;
+         left: 40%;
+         top: 20%;
+     }
+     .puff-fish-top-left {
+         width: 50px;
+     }
+     .turtle {
+         width: 90px;
+         right: 5%;
+         top: 3%;
+     }
+     .fish-left-bot {
+         width: 50px;
+     }
+     .plant-right {
+         width: 100px;
+     }
+     .plant-left {
+         width: 100px;
+     }
+     .plant-mid-bot-1 {
+         width: 65px;
+         bottom: -10px;
+     }
+     .plant-mid-bot-2 {
+         bottom: -5px;
+         width: 45px;
+     }
+     .jellyfish-right2 {
+         width: 50px;
+         top: 25%;
+         right: 5%;
+     }
+     .jellyfish-right2 .tail {
+         top: -15px;
+         width: 30px;
+         z-index: 0;
+     }
+     .jellyfish-left1 {
+         width: 50px;
+         left: 10%;
+     }
+     .jellyfish-left1 .tail {
+         position: relative;
+         top: -15px;
+         width: 30px;
+     }
+     .stons {
+         background-repeat: no-repeat;
+         background-position: bottom;
+         position: absolute;
+     }
+     .shell {
+         width: 20px;
+         left: 15%;
+     }
+     .crab-left {
+         width: 75px;
+         bottom: 5%;
+     }
+     .crab-right {
+         width: 90px;
+         z-index: 1;
+         right: 15%;
+         bottom: 2%;
+     }
+     /* ///////////////////////////////////////////////////// LAND */
+     .text_btn_container {
+         height: 50px;
+         width: 50px;
+         margin-top: -25px;
+         margin-left: -25px;
+     }
+     .text_btn {
+         height: 50px;
+         width: 50px;
+         margin-top: -25px;
+         margin-left: -25px;
+         left: 50%;
+         top: 50%;
+     }
+     .text_btn::after {
+         content: '';
+         height: 50px;
+         width: 50px;
+         opacity: 0.5;
+         border-radius: 50px;
+         margin-top: -25px;
+         margin-left: -25px;
+         left: 50%;
+         top: 50%;
+     }
+     .text_btn::before {}
+     .actual-message {
+         width: auto !important;
+         margin: 20px;
+         padding: 20px;
+     }
+ }
