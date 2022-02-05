@@ -33,6 +33,7 @@
      .text_pop_up h2 {
          font-size: 12px;
          font-weight: bold;
+         padding: 0px 10px;
      }
      .diractions button {
          background: #ffc20000;
@@ -158,19 +159,19 @@
      }
      .touch-me-not {
          left: 50%;
-         margin-left: -100px;
+         /* margin-left: -100px; */
          height: auto;
      }
      .touch-me-not-popup {}
      .touch-me-not-popup>div {}
      .touch-me-not .cloud-text .back-btn {
-         width: 70px;
-         height: 70px;
+         /* width: 70px;
+         height: 70px; */
          color: #FFF;
          font-size: 12px;
          text-align: center;
      }
-     .touch-me-not:hover {
+     .touch-me-not.zoom {
          left: 50%;
          margin-left: -50%;
          height: auto;
@@ -182,22 +183,32 @@
          /* padding: 24PX 30PX; */
          align-items: center;
      }
-     .touch-me-not:hover img {
-         width: 150%;
+     .touch-me-not.zoom img {
+         width: 200%;
          height: auto;
-         margin-left: -75%;
+         margin-left: -100%;
          left: 50%;
      }
-     .touch-me-not:hover .cloud-text h1 {
+     .touch-me-not.zoom .cloud-text h1 {
          font-size: 24px;
      }
-     .touch-me-not:hover .cloud-text h2 {
+     .touch-me-not.zoom .cloud-text h2 {
          font-size: 16px;
      }
      .hide-btn {
          background-color: #595959;
          border-radius: 20px;
          /* margin: 10px; */
+     }
+     .plane03 {
+         top: 400px;
+         z-index: 0;
+         /* animation: drift 6s linear infinite; */
+         width: 300px;
+         position: absolute;
+         top: 65%;
+         left: 0%;
+         margin-left: -200px;
      }
  }
  /* LAND */
@@ -213,8 +224,9 @@
          z-index: 400;
      }
      .tree-big {
-         width: 200px;
-         left: -70px;
+         width: 120px;
+         left: -50px;
+         bottom: 100px;
      }
      .laun-bg {
          background-size: 200vw;
@@ -225,6 +237,14 @@
  }
  
  @media only screen and (max-width: 480px) {
+     .cricket {
+         position: absolute;
+         z-index: 620;
+         width: 40px;
+         margin-left: 75px;
+         top: 15px;
+         right: 50px;
+     }
      .grass-bg {
          background-size: 180%;
      }

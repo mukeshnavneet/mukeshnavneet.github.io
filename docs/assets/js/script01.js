@@ -15,7 +15,7 @@ $(function() {
     let Rocket_Width = 150;
     let Rocket_Height = 290;
     let launchpad_Height = 30;
-    let rocket_base_offset = 10;
+    let rocket_base_offset = 0;
 
     var SECTION = $("section")
     var ELM = $(".elm")
@@ -43,6 +43,8 @@ $(function() {
     PIPE.css('margin-top', -(WIH / 1.5) / 2 + "px")
 
     $('.space-bg-img').css('height', WIH + "px")
+    $(".rays").css('height', WIH + "px")
+
     if (WIW < 480) {
         STARS_COUNT = 25;
         PIPE.css('height', (WIH / 1.5) + "px")
@@ -123,6 +125,7 @@ $(function() {
         oldValue = newValue;
     });
 
+
     // ROCKET
     var controller_ROCKET = new ScrollMagic.Controller();
     var tween_ROCKET = new TimelineMax()
@@ -149,7 +152,7 @@ $(function() {
             x: 0,
             y: (WIH / 2 - Rocket_Height),
             onComplete: () => {
-                // console.log("STEP - 4")
+                console.log("STEP - 4")
             },
             ease: 'Power4.out'
         })
@@ -157,7 +160,7 @@ $(function() {
             x: 0,
             y: (WIH / 2) - (Rocket_Height / 2) - rocket_base_offset,
             onComplete: () => {
-                // console.log("STEP - 5")
+                console.log("STEP - 5")
             },
             ease: 'Power4.out'
         })
@@ -171,12 +174,12 @@ $(function() {
             triggerElement: "#rocket_trigger",
             // duration: 3000,
             duration: "200%",
-            offset: WIH
+            offset: WIH - 5
         })
         .setTween(tween_ROCKET)
         // .addIndicators({ name: "ROCKET" })
         .addTo(controller_ROCKET)
-        .triggerHook(1);
+        .triggerHook("1");
     scene_ROCKET.on("start", function(event) {
         $('#rocket').addClass("addSmoke");
         // $('.launcher-base').show();
@@ -188,9 +191,6 @@ $(function() {
         // console.log("Scene progress changed to " + event.progress);
     });
     //  bind scroll to anchor links
-
-
-
 
     // change behaviour of controller to animate scroll instead of jump
     controller_ROCKET.scrollTo(function(newpos) {
@@ -369,7 +369,6 @@ $(function() {
         "https://mukeshnavneet.github.io/docs/assets/earth/pipe-4.svg",
         "https://mukeshnavneet.github.io/docs/assets/earth/pipe-5.svg",
         "https://mukeshnavneet.github.io/docs/assets/earth/pipe-6.svg",
-        "https://mukeshnavneet.github.io/docs/assets/earth/pipe-bot.svg",
     ];
     var obj = {
         curImg: 0
@@ -428,15 +427,17 @@ $(function() {
     });
 
     var tween_EARTH_rocket = new TimelineMax()
-        .to("#rocket", 1, {
+        .to("#rocket", 0.5, {
             scale: 0.5,
+            // y: (WIH / 2) - (Rocket_Height / 2)
         })
-        .to("#rocket", 1, {
+        .to("#rocket", 0.5, {
             scale: 0.5,
+            // y: (WIH / 2) - (Rocket_Height / 2)
         })
-        .to("#rocket", 1, {
-            scale: 0.5,
-            // rotation:-135
+        .to("#rocket", 0.5, {
+            scale: 0,
+            // y: (WIH / 2) - (Rocket_Height / 2)
         });
 
     var scene_EARTH_ROCKET = new ScrollMagic.Scene({
@@ -748,10 +749,10 @@ $(function() {
         }, 4000);
     })
 
-    // $touch_me_not.on("click", function name(params) {
-    //     $touch_me_not_popup.find("div").addClass("animate__bounceIn");
-    //     $touch_me_not_popup.show();
-    // })
+    $touch_me_not.on("click", function name(params) {
+        // alert();
+        $touch_me_not.toggleClass("zoom");
+    })
 
     $touch_me_not_IMG = $("#touch-me-not img")
 
@@ -772,45 +773,45 @@ $(function() {
 
     let res_SIZE = (isMob == true) ? WIW * 2 : "200px";
 
-    function over() {
-        $touch_me_not.addClass("hide-btn");
-        TweenMax.to($touch_me_not, 0.5, {
-            x: "-50%",
-            width: WIW,
-        })
-        TweenMax.to($touch_me_not_IMG, 0.5, {
-            x: "0%",
-            width: WIW,
-        })
-        TweenMax.to($cloud_text, 0.5, {
-            autoAlpha: 1,
-            scale: 1,
-        })
-    }
+    // function over() {
+    //     $touch_me_not.addClass("hide-btn");
+    //     TweenMax.to($touch_me_not, 0.5, {
+    //         x: "-50%",
+    //         width: WIW,
+    //     })
+    //     TweenMax.to($touch_me_not_IMG, 0.5, {
+    //         x: "0%",
+    //         width: WIW,
+    //     })
+    //     TweenMax.to($cloud_text, 0.5, {
+    //         autoAlpha: 1,
+    //         scale: 1,
+    //     })
+    // }
 
-    function out() {
-        $touch_me_not.removeClass("hide-btn");
-        TweenMax.to($touch_me_not, 0.5, {
-            x: "-50%",
-            width: "200px",
-        })
-        TweenMax.to($touch_me_not_IMG, 0.5, {
-            x: "0%",
-            width: "200px",
-        })
-        TweenMax.to($cloud_text, 0.5, {
-            autoAlpha: 1,
-            scale: 0
-        })
-    }
+    // function out() {
+    //     $touch_me_not.removeClass("hide-btn");
+    //     TweenMax.to($touch_me_not, 0.5, {
+    //         x: "-50%",
+    //         width: "200px",
+    //     })
+    //     TweenMax.to($touch_me_not_IMG, 0.5, {
+    //         x: "0%",
+    //         width: "200px",
+    //     })
+    //     TweenMax.to($cloud_text, 0.5, {
+    //         autoAlpha: 1,
+    //         scale: 0
+    //     })
+    // }
 
-    $back_btn.on("click", function name(params) {
-        $touch_me_not_popup.addClass("animate__bounceIn");
-        $touch_me_not_popup.hide();
-        $('html, body').animate({
-            scrollTop: $("#space").offset().top
-        }, 2000);
-    })
+    // $back_btn.on("click", function name(params) {
+    //     $touch_me_not_popup.addClass("animate__bounceIn");
+    //     $touch_me_not_popup.hide();
+    //     $('html, body').animate({
+    //         scrollTop: $("#space").offset().top
+    //     }, 2000);
+    // })
 
     $land_btn.on("click", function name(params) {
         $land_pop_up.addClass("animate__bounceIn");

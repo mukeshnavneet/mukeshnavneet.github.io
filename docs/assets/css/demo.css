@@ -149,12 +149,26 @@ body {
     bottom: 0;
 }
 
+.sky-img {
+    /* border: 1px solid #00eeff; */
+    z-index: 0;
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/sky/bg-wave.svg");
+    background-size: 100vw;
+    background-position: top;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+}
+
 #land {
     background: -moz-linear-gradient(180deg, #588DB4 0%, #8AE4EF 30%, rgb(255, 255, 255) 100%);
     background: -webkit-linear-gradient(180deg, #588DB4 0%, #8AE4EF 30%, rgb(255, 255, 255) 100%);
     background: linear-gradient(180deg, #588DB4 0%, #8AE4EF 30%, rgb(255, 255, 255) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#92d9ef", endColorstr="#c9e7f2", GradientType=1);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #land .elm {
@@ -179,11 +193,11 @@ body {
 }
 
 #underwater {
-    background: -moz-linear-gradient(0deg, #0A42A0 0%, #0085CE 100%);
-    background: -webkit-linear-gradient(0deg, #0A42A0 0%, #0085CE 100%);
-    background: linear-gradient(0deg, #0A42A0 0%, #0085CE 100%);
+    background: -moz-linear-gradient(0deg, #0A42A0 0%, #0183cc 100%);
+    background: -webkit-linear-gradient(0deg, #0A42A0 0%, #0183cc 100%);
+    background: linear-gradient(0deg, #0A42A0 0%, #0183cc 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#0085CE", endColorstr="#0A42A0", GradientType=1);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 section {
@@ -254,7 +268,7 @@ section {
     z-index: 1;
     left: 50%;
     top: 50%;
-    margin-left: -100px;
+    margin-left: -75px;
     margin-top: -160px;
     z-index: 500;
 }
@@ -571,14 +585,15 @@ section {
 
 .space-bg-img {
     background-image: url("../../assets/space/bg.svg");
-    background-size: cover;
-    background-position: center center;
+    background-size: 100% 100%;
+    background-position: center -42px;
     width: 100vw;
     height: 100vh;
     z-index: 0;
     position: absolute;
     opacity: 0.5;
     overflow: hidden;
+    background-repeat: no-repeat;
 }
 
 
@@ -608,6 +623,7 @@ section {
     top: 80%;
     left: 30%;
     width: 250px;
+    display: none;
 }
 
 .const3 {
@@ -625,7 +641,7 @@ section {
 .const5 {
     top: 57%;
     left: 65%;
-    width: 562px;
+    width: 262px;
 }
 
 .const6 {
@@ -642,7 +658,7 @@ section {
 }
 
 .swril_2 {
-    top: 20%;
+    top: 40%;
     left: 70%;
     width: 200px;
     opacity: 0.6;
@@ -923,16 +939,39 @@ section {
 }
 
 .plane01 {
+    width: 180px;
     top: 450px;
     z-index: 0;
     animation: drift 6s linear infinite;
 }
 
 .plane02 {
-    top: 20% !important;
+    top: 85% !important;
     width: 100px;
     z-index: 0;
     animation: drift2 9s linear infinite;
+}
+
+.plane03 {
+    top: 450px;
+    z-index: 0;
+    /* animation: drift 6s linear infinite; */
+    width: 400px;
+    position: absolute;
+    /* top: 46%; */
+    left: 50%;
+    margin-left: -200px;
+}
+
+.plane04 {
+    top: 300px;
+    z-index: 0;
+    /* animation: drift 6s linear infinite; */
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
 }
 
 @keyframes drift {
@@ -1050,7 +1089,7 @@ section {
 
 .x7 {
     left: 50vw;
-    top: 300px;
+    top: 250px;
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     transform: scale(0.8);
@@ -1094,7 +1133,7 @@ section {
     width: 200px;
     height: 100px;
     /* height: auto; */
-    margin-left: -100px;
+    /* margin-left: -100px; */
     margin-top: -100px;
     position: absolute;
     top: 50%;
@@ -1114,7 +1153,11 @@ section {
     transition: all 0.5s ease-in-out;
 }
 
-.touch-me-not:hover {
+.touch-me-not.zoom .back-btn {
+    display: block;
+}
+
+.touch-me-not.zoom {
     width: 100%;
     /* height: 400px; */
     height: auto;
@@ -1127,7 +1170,8 @@ section {
     transition: all 0.5s ease-in-out;
 }
 
-.touch-me-not:hover .cloud-text {
+.touch-me-not.zoom .cloud-text {
+    text-align: center;
     display: block;
     opacity: 1;
     -webkit-transition: all 2.5s ease-in-out;
@@ -1137,15 +1181,15 @@ section {
     transition: all 2.5s ease-in-out;
 }
 
-.touch-me-not:hover .cloud-text h1 {
-    font-size: 48px;
+.touch-me-not.zoom .cloud-text h1 {
+    /* font-size: 48px; */
 }
 
-.touch-me-not:hover .cloud-text h2 {
+.touch-me-not.zoom .cloud-text h2 {
     font-size: 20px;
 }
 
-.touch-me-not:hover img {
+.touch-me-not.zoom img {
     width: 100%;
     height: auto;
     margin-left: -50%;
@@ -1157,7 +1201,7 @@ section {
     transition: all 0.5s ease-in-out;
 }
 
-.touch-me-not:hover::after {
+.touch-me-not.zoom::after {
     display: none;
 }
 
@@ -1174,6 +1218,7 @@ section {
 }
 
 .touch-me-not .cloud-text {
+    cursor: pointer;
     position: relative;
     z-index: 999;
     display: flex;
@@ -1292,9 +1337,9 @@ section {
 }
 
 .back-btn {
-    width: 100px;
+    /* width: 100px;
     height: 100px;
-    background-color: blueviolet;
+    background-color: blueviolet; */
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -1302,15 +1347,20 @@ section {
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
-    position: absolute;
-    bottom: -100px;
+    /* position: absolute; */
+    /* bottom: -50px; */
+    margin: 0 auto;
+    margin-top: 20px;
+    display: none;
+    box-sizing: border-box;
+    border: 2px solid #fff;
 }
 
 .back-btn:hover {
-    background-color: rgb(174, 0, 255);
+    /* background-color: rgb(174, 0, 255); */
 }
 
 .sputnik {
@@ -1323,9 +1373,32 @@ section {
 }
 
 .sputnik01 {
-    top: 150px;
+    top: 80px;
+    right: 100px;
     z-index: 100;
-    animation: driftsputnik 55s linear infinite;
+    animation: driftsputnik2 55s linear infinite;
+}
+
+.rays {
+    position: absolute;
+    top: -15vh;
+    width: 100vw;
+    /* border: 1px solid red; */
+    overflow: hidden;
+    background-image: url("../../assets/underwater/rays.png");
+    background-position: center center;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@keyframes driftsputnik2 {
+    from {
+        transform: translateX(1250px);
+    }
+    to {
+        transform: translateX(-110px);
+    }
 }
 
 @keyframes driftsputnik {
@@ -1515,9 +1588,10 @@ section {
 
 .text_pop_up h2 {
     font-family: 'Quicksand', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     color: #ffffff;
+    margin-top: 0px;
 }
 
 #space_pop_up {
@@ -1531,7 +1605,9 @@ section {
 
 #sky_pop_up {
     background-image: url('../shape-02.svg');
-    top: 100px
+    top: 100px;
+    right: auto;
+    left: 200px;
 }
 
 #land_pop_up {
@@ -1589,7 +1665,7 @@ section {
     height: 30px;
     width: 340px;
     border-radius: 10px;
-    background: #9b2f00;
+    background: #555555;
     position: absolute;
     bottom: 0px;
     margin: 0 auto;
@@ -1819,8 +1895,8 @@ section {
     background-size: contain;
     background-position: bottom;
     /* background-repeat: no-repeat; */
-    background-size: 100vw;
-    background-position: bottom;
+    background-size: 90vw;
+    background-position: top;
     text-align: center;
     background-repeat-x: repeat;
 }
@@ -2158,7 +2234,7 @@ section {
 .sea-bg-img {
     background-image: url("../../assets/underwater/bgimage.svg");
     background-size: cover;
-    background-position: center center;
+    background-position: top center;
     width: 100vw;
     height: 100vh;
     z-index: 0;
@@ -2731,6 +2807,27 @@ button {
     z-index: 609;
 }
 
+.rays-top {
+    height: 300px;
+    position: absolute;
+    background-image: url('../underwater/top-rays.png');
+    background-position: bottom center;
+    /* border: 1px solid red; */
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.cricket {
+    position: absolute;
+    z-index: 620;
+    width: 80px;
+    margin-left: 75px;
+    top: 15px;
+    right: 30%;
+}
+
 .earthworm {
     position: absolute;
     z-index: 620;
@@ -2800,6 +2897,7 @@ button {
     /* background-image: url("../earth/pipe-bot.svg"); */
     background-repeat: no-repeat;
     background-position: center;
+    text-align: center;
 }
 
 .pipe img {
@@ -3113,4 +3211,19 @@ input:focus {
     top: 50%;
     position: absolute;
     z-index: 9999999;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.guideline {
+    position: fixed;
+    width: 1px;
+    /* background: rgb(255, 0, 0); */
+    height: 100vh;
+    left: 50%;
+    z-index: 99999;
+    top: 0px;
+    bottom: 0px;
 }
