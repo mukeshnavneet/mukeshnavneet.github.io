@@ -104,7 +104,13 @@ $(function() {
     window.addEventListener('scroll', (e) => {
         newValue = window.pageYOffset;
         if (oldValue < newValue) {
-            //console.log("scrolling page Up", newValue, WIH * 4);
+            // if (oldValue > WIH * 3) {
+            //     $('#rocket img').attr("src", './assets/medow/submarine.svg');
+            // } else {
+            //     $('#rocket img').attr("src", './assets/medow/rocket_red_down.svg');
+            // }
+            // $("#rocket").addClass('go-down');
+            // console.log("scrolling page Up", newValue, WIH * 4);
             if (newValue >= (WIH * 4 - 100)) {
                 $('.diractions button:nth-child(3)').hide();
             }
@@ -113,7 +119,19 @@ $(function() {
             }
 
         } else if (oldValue > newValue) {
-            //console.log("scrolling page Down", newValue);
+            // if (oldValue < WIH * 2.5) {
+            //     $('#rocket img').attr("src", './assets/medow/rocket_red.svg');
+            //     $('#rocket').addClass("addSmoke");
+            //     $('#rocket').removeClass("submarine");
+            // } else {
+            //     $('#rocket img').attr("src", './assets/medow/submarine.svg');
+            //     $('#rocket').removeClass("addSmoke");
+            //     $('#rocket').addClass("submarine");
+            // }
+
+            // $("#rocket").removeClass('go-down');
+            // console.log("scrolling page Down", newValue);
+
             if (newValue <= 100) {
                 $('.diractions button:nth-child(1)').hide();
             }
@@ -124,7 +142,6 @@ $(function() {
         }
         oldValue = newValue;
     });
-
 
     // ROCKET
     var controller_ROCKET = new ScrollMagic.Controller();
@@ -215,13 +232,13 @@ $(function() {
         .to("#space_btn", 0.5, {
             x: 120,
         });
+
     var scene_SPACE = new ScrollMagic.Scene({
             triggerElement: "#space",
             duration: "50%",
             offset: WIH / 4
         })
-        .setTween([tween_SPACE_btn, ])
-        // .setClassToggle("body", "overflowY_hide")
+        .setClassToggle(".space-cta", "visible")
         // .addIndicators({ name: "SPACE_NAV" })
         .addTo(controller_SPACE)
         .triggerHook(0.5);
@@ -603,6 +620,9 @@ $(function() {
         .addTo(controller_UNDERWATER)
         .triggerHook(1);
 
+    scene_UNDERWATER_ROCKET.on("start", function(event) {
+        // $('#rocket img').attr("src", './assets/medow/submarine.svg');
+    });
     scene_UNDERWATER.on("start", function(event) {
         $('#rocket').removeClass("addSmoke");
         $('#rocket').addClass("submarine");

@@ -9,6 +9,29 @@
          overflow-y: scroll;
          -webkit-overflow-scrolling: touch;
      }
+     .navs {
+         position: fixed;
+         top: 0;
+         z-index: 999;
+         /* display: none; */
+     }
+     .navs .move a {
+         font-size: 14px;
+         line-height: unset;
+         padding: 3px 6px;
+         border: 2px solid #343436;
+         margin: 10px;
+         letter-spacing: 1px;
+     }
+     .navs .move a span::first-letter {
+         font-size: 18px;
+         color: #020F35;
+     }
+     .navs .move a:hover {
+         background: #ffc200;
+         text-decoration: none;
+         border-radius: 50px;
+     }
  }
  
  @media only screen and (max-width: 480px) {

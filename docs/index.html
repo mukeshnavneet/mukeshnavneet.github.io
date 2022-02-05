@@ -210,7 +210,16 @@
                         scale: 1
                     })
                     .set($('#preloader'), {
-                        className: '+=is-hidden'
+                        className: '+=is-hidden',
+                        // onComplete: () => {
+                        //     $('html, body').animate({
+                        //         scrollTop: ($("#land").offset().top) + LAUNCHER_OFFSET
+                        //     }, 2000);
+                        //     setTimeout(() => {
+                        //         $('body').removeClass("is-loading");
+                        //         $('#preloader').addClass("is-hidden");
+                        //     }, 2000);
+                        // },
                     });
                 return preloaderOutTl;
             }
@@ -244,17 +253,16 @@
     <!-- <div id="preloader" class="pageloader">Loading...</div> -->
     <div class="navs">
         <form class="move">
-            <fieldset>
-                <legend>Anchor Links</legend>
-                <p><a href="#space">Space</a></p>
-                <p><a href="#sky">Sky</a></p>
-                <p><a href="#land">Land</a></p>
-                <p><a href="#earth">Earth</a></p>
-                <p><a href="#underwater">Sea</a></p>
-            </fieldset>
+            <!-- <fieldset> -->
+            <!-- <legend>Anchor Links</legend> -->
+            <a href="#space"> <span> Ample Space</span></a>
+            <a href="#sky"><span>Blue Sky</span> </a>
+            <a href="#land"><span>Calm Garden</span> </a>
+            <a href="#earth"><span>Deep Underground</span> </a>
+            <a href="#underwater"><span>Enchanting Sea</span> </a>
+            <!-- </fieldset>  -->
         </form>
     </div>
-    <!-- -->
     <div class="skip-btn">
         Skip
     </div>
@@ -276,7 +284,8 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    <img class="bcg" src="./assets/medow/rocket_red.svg" />
+                    <img class="bcg up" src="./assets/medow/rocket_red.svg" />
+                    <!-- <img class="bcg down" src="./assets/medow/rocket_red_down.svg" /> -->
                     <div class="smoke">
                         <!-- <div class="smoke-l"></div>
                     <div class="smoke-r"></div> -->
@@ -341,6 +350,10 @@
                     <button type="button" name="button"><div class="arrow"></div></button>
                     <button type="button" name="button"><div class="arrow "></div></button>
                 </div>
+                <nav class="space-cta cta">
+                    <a href="#land" class="replay-btn"> Land </a>
+                    <a href="#underwater" class="replay-btn"> Underwater </a>
+                </nav>
             </section>
             <section id="sky">
                 <div class="sky-img"></div>
@@ -389,44 +402,47 @@
                 </div>
             </section>
             <section id="land">
-                <div class="butterfly butterfly2">
-                    <div class="boxi b2"></div>
-                </div>
-                <div class="butterfly butterfly3">
-                    <div class="boxi b3"></div>
-                </div>
-                <div class="launcher-base2"></div>
-                <div class="launcher-base">
-                    <div class="smoke-to-left">
-                        <span><img src="./assets/medow/1.svg" /></span>
-                        <span><img src="./assets/medow/2.svg" /></span>
-                        <span><img src="./assets/medow/3.svg" /></span>
-                        <span><img src="./assets/medow/4.svg" /></span>
-                        <span><img src="./assets/medow/5.svg" /></span>
-                        <span><img src="./assets/medow/6.svg" /></span>
-                        <span><img src="./assets/medow/7.svg" /></span>
-                        <span><img src="./assets/medow/8.svg" /></span>
-                        <span><img src="./assets/medow/9.svg" /></span>
-                        <span><img src="./assets/medow/10.svg" /></span>
+                <div class="overflow-hidden-x">
+                    <div class="butterfly butterfly2">
+                        <div class="boxi b2"></div>
                     </div>
-                    <div class="smoke-to-right">
-                        <span><img src="./assets/medow/1.svg" /></span>
-                        <span><img src="./assets/medow/2.svg" /></span>
-                        <span><img src="./assets/medow/3.svg" /></span>
-                        <span><img src="./assets/medow/4.svg" /></span>
-                        <span><img src="./assets/medow/5.svg" /></span>
-                        <span><img src="./assets/medow/6.svg" /></span>
-                        <span><img src="./assets/medow/7.svg" /></span>
-                        <span><img src="./assets/medow/8.svg" /></span>
-                        <span><img src="./assets/medow/9.svg" /></span>
-                        <span><img src="./assets/medow/10.svg" /></span>
+                    <div class="butterfly butterfly3">
+                        <div class="boxi b3"></div>
+                    </div>
+                    <div class="launcher-base2"></div>
+                    <div class="launcher-base">
+                        <div class="smoke-to-left">
+                            <span><img src="./assets/medow/1.svg" /></span>
+                            <span><img src="./assets/medow/2.svg" /></span>
+                            <span><img src="./assets/medow/3.svg" /></span>
+                            <span><img src="./assets/medow/4.svg" /></span>
+                            <span><img src="./assets/medow/5.svg" /></span>
+                            <span><img src="./assets/medow/6.svg" /></span>
+                            <span><img src="./assets/medow/7.svg" /></span>
+                            <span><img src="./assets/medow/8.svg" /></span>
+                            <span><img src="./assets/medow/9.svg" /></span>
+                            <span><img src="./assets/medow/10.svg" /></span>
+                        </div>
+                        <div class="smoke-to-right">
+                            <span><img src="./assets/medow/1.svg" /></span>
+                            <span><img src="./assets/medow/2.svg" /></span>
+                            <span><img src="./assets/medow/3.svg" /></span>
+                            <span><img src="./assets/medow/4.svg" /></span>
+                            <span><img src="./assets/medow/5.svg" /></span>
+                            <span><img src="./assets/medow/6.svg" /></span>
+                            <span><img src="./assets/medow/7.svg" /></span>
+                            <span><img src="./assets/medow/8.svg" /></span>
+                            <span><img src="./assets/medow/9.svg" /></span>
+                            <span><img src="./assets/medow/10.svg" /></span>
+                        </div>
                     </div>
                 </div>
                 <div class="elm">
                     <div id="trigger_LOGO"></div>
                     <div id="logo" class="logo"><img src="./assets/medow/logo.svg" /></div>
                     <div id="land_pop_up" class="text_pop_up">
-                        <h2>Scroll to discover, <br/>What awaits your early-learner.</h2>
+                        <h2>Scroll to see what's in wait,
+                            <br/>For children aged between 0-8.</h2>
                     </div>
                     <div class="mountains-bg bcg"></div>
                     <div class="laun-bg bcg"></div>
@@ -436,12 +452,6 @@
                         <div class="cloud x7"><img src="./assets/medow/cloud7.svg" /></div>
                     </div>
                     <div class="tree-big"><img src="./assets/medow/tree.svg" /></div>
-                </div>
-                <div class="diractions in-land">
-                    <button type="button" name="button" class="active" onclick="goToSkyFun()"><div class="arrow animat-arrow"></div></button>
-                    <button type="button" name="button"><div class="arrow"></div></button>
-                    <button type="button" name="button"><div class="arrow"></div></button>
-                    <button type="button" name="button"><div class="arrow"></div></button>
                 </div>
             </section>
             <section id="earth">
