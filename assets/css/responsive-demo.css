@@ -237,6 +237,14 @@
  }
  
  @media only screen and (max-width: 480px) {
+     .cricket {
+         position: absolute;
+         z-index: 620;
+         width: 40px;
+         margin-left: 75px;
+         top: 15px;
+         right: 50px;
+     }
      .grass-bg {
          background-size: 180%;
      }

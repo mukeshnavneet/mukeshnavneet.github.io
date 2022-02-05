@@ -149,6 +149,20 @@ body {
     bottom: 0;
 }
 
+.sky-img {
+    /* border: 1px solid #00eeff; */
+    z-index: 0;
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/sky/bg-wave.svg");
+    background-size: 100vw;
+    background-position: top;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+}
+
 #land {
     background: -moz-linear-gradient(180deg, #588DB4 0%, #8AE4EF 30%, rgb(255, 255, 255) 100%);
     background: -webkit-linear-gradient(180deg, #588DB4 0%, #8AE4EF 30%, rgb(255, 255, 255) 100%);
@@ -1375,6 +1389,7 @@ section {
     background-position: center center;
     background-position: top center;
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 @keyframes driftsputnik2 {
@@ -1650,7 +1665,7 @@ section {
     height: 30px;
     width: 340px;
     border-radius: 10px;
-    background: #9b2f00;
+    background: #555555;
     position: absolute;
     bottom: 0px;
     margin: 0 auto;
@@ -1880,8 +1895,8 @@ section {
     background-size: contain;
     background-position: bottom;
     /* background-repeat: no-repeat; */
-    background-size: 100vw;
-    background-position: bottom;
+    background-size: 90vw;
+    background-position: top;
     text-align: center;
     background-repeat-x: repeat;
 }
@@ -2802,6 +2817,15 @@ button {
     width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
+}
+
+.cricket {
+    position: absolute;
+    z-index: 620;
+    width: 80px;
+    margin-left: 75px;
+    top: 15px;
+    right: 30%;
 }
 
 .earthworm {
