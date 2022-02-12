@@ -134,10 +134,10 @@
             var loadedCount = 0; //current number of images loaded
             var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
             var loadingProgress = 0; //timeline progress - starts at 0
-            var LAUNCHER_OFFSET = 20;
+            var LAUNCHER_OFFSET = 0;
 
             if (WIW < 530) {
-                LAUNCHER_OFFSET = 55;
+                LAUNCHER_OFFSET = 0;
             }
 
             $('.bcg').imagesLoaded({
@@ -255,11 +255,11 @@
         <form class="move">
             <!-- <fieldset> -->
             <!-- <legend>Anchor Links</legend> -->
-            <a href="#space"> <span> Ample Space</span></a>
-            <a href="#sky"><span>Blue Sky</span> </a>
-            <a href="#land"><span>Calm Garden</span> </a>
-            <a href="#earth"><span>Deep Underground</span> </a>
-            <a href="#underwater"><span>Enchanting Sea</span> </a>
+            <a id="space_link" href="#space"></a>
+            <a id="sky_link" href="#sky"></a>
+            <a id="land_link" href="#land" class="active"></a>
+            <a id="earth_link" href="#earth"></a>
+            <a id="underwater_link" href="#underwater"></a>
             <!-- </fieldset>  -->
         </form>
     </div>
@@ -267,7 +267,6 @@
         Skip
     </div>
     <div id="example-wrapper">
-
         <main id="scroll-container" class="scroll-container">
             <div class="diractions top-bottom">
                 <button type="button" name="button" class="active"><div class="arrow animat-arrow"></div></button>
@@ -410,7 +409,7 @@
                         <div class="boxi b3"></div>
                     </div>
                     <!-- <div class="launcher-base2"></div> -->
-                    <div class="launcher-base">
+                    <!-- <div class="launcher-base">
                         <div class="smoke-to-left">
                             <span><img src="./assets/medow/1.svg" /></span>
                             <span><img src="./assets/medow/2.svg" /></span>
@@ -435,7 +434,7 @@
                             <span><img src="./assets/medow/9.svg" /></span>
                             <span><img src="./assets/medow/10.svg" /></span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="elm">
                     <div id="trigger_LOGO"></div>

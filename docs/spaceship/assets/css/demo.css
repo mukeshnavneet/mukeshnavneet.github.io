@@ -67,9 +67,17 @@ body {
 
 .navs {
     position: fixed;
-    top: 0;
+    left: 20px;
     z-index: 999;
-    display: none;
+    height: 100%;
+    /* margin-top: -100px; */
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .go-down {
@@ -86,14 +94,14 @@ body {
     border-radius: 50px;
     /* width: 50px; */
     /* height: 50px; */
+    border: 2px solid #343436;
     margin: 0px;
     font-size: 16px;
     line-height: unset;
-    padding: 4px 8px;
+    padding: 6px 6px;
     font-weight: bold;
     color: #ffffff;
-    border: 4px solid #343436;
-    background: #ff619f;
+    background: #ff00bf;
     margin: 10px;
     -webkit-transition: all 1000ms ease;
     -moz-transition: all 1000ms ease;
@@ -101,6 +109,10 @@ body {
     -o-transition: all 1000ms ease;
     transition: all 1000ms ease;
     letter-spacing: 1px;
+}
+
+.navs .move a.active {
+    transform: scale(1.5);
 }
 
 .navs .move a span::first-letter {
@@ -298,7 +310,7 @@ section {
     /* width: 200px; */
     /* height: 369px;     */
     width: 150px;
-    height: 290px;
+    height: 160px;
     /* background-color: yellow; */
     /* background: yellow; */
     /* border: 1px solid red; */
@@ -1627,7 +1639,7 @@ section {
 
 .text_pop_up h2 {
     font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #ffffff;
     margin-top: 0px;
@@ -1908,7 +1920,7 @@ section {
 
 .laun-bg {
     z-index: 0;
-    bottom: 0;
+    bottom: -1px;
     position: absolute;
     width: 100%;
     height: 100vh;

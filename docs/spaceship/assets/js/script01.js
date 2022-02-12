@@ -13,7 +13,7 @@ $(function() {
     // let WIH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
     let Rocket_Width = 150;
-    let Rocket_Height = 290;
+    let Rocket_Height = 160;
     let launchpad_Height = 30;
     let rocket_base_offset = 0;
 
@@ -21,12 +21,12 @@ $(function() {
     var ELM = $(".elm")
     var EARTH_LAYER = $(".earth-layer")
     var PIPE = $(".pipe")
-    var LOGO_RES_Y_OFFSET = 100;
+    var LOGO_RES_Y_OFFSET = 0;
 
     if (WIW < 530) {
         Rocket_Height = 369 / 2;
         Rocket_Width = 200 / 2;
-        rocket_base_offset = 55
+        rocket_base_offset = 0
         LOGO_RES_Y_OFFSET = 100;
     }
 
@@ -501,30 +501,6 @@ $(function() {
     });
     //////////////////////////SMOKEEEEEEEEEEEEEEEEE/////////
 
-    // ------------------- PIPE MOVEMENT ----------------------
-    // TweenMax.set(".pipe-start", { x: 100 });
-    // var tween_PIPE_MOVE = new TimelineMax()
-    //     .to(".pipe-start", 1, {
-    //         x: 0,
-    //     })
-    //     .to(".pipe-start", 1, {
-    //         x: 0,
-    //     })
-    //     .to(".pipe", 1, {
-    //         x: -50,
-    //     });
-
-    // var scene_PIPE = new ScrollMagic.Scene({
-    //         triggerElement: "#earth",
-    //         // duration: 500,
-    //         duration: "100%",
-    //         offset: -(WIH / 2 - Rocket_Height)
-    //     })
-    //     .addIndicators({ name: "PIPE" })
-    //     .setTween([tween_PIPE_MOVE])
-    //     .addTo(controller_ROCKET)
-    //     .triggerHook(0.5);
-
     // ------------------- PIPE FOR ROCKET ----------------------
     // ------------------- EARTH NAV ----------------------
     var scene_SKY_NAV = new ScrollMagic.Scene({
@@ -905,29 +881,22 @@ $(function() {
 
     $(document).on("click", "a[href^='#']", function(e) {
         var id = $(this).attr("href");
+        $('.navs .move a').removeClass("active")
+        $(this).addClass("active")
+
         if ($(id).length > 0) {
-
-            // console.log(e.target.getAttribute("href"));
-
             e.preventDefault();
-            // TweenMax.to(window, {
-            //     duration: 1,
-            //     scrollTo: e.target.getAttribute("href")
-            // });
-
             let element = $(e.target.getAttribute("href"))
-            $(window).scrollTo(element, 1000);
-
-            // $('html, body').animate({
-            //     scrollTop: $(e.target.getAttribute("href")).offset().top
-            // }, 2000);
-
-            // trigger scroll
-            // controller_ROCKET.scrollTo(id);
+            $('html,body').scrollTo(element, 1000);
             // if supported by the browser we can even update the URL.
             if (window.history && window.history.pushState) {
                 history.pushState("", document.title, id);
             }
         }
     });
+
+    if (jQuery(window).width() <= 600) {
+
+    }
+
 });
