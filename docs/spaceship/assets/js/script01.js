@@ -953,7 +953,7 @@ $(function() {
         TweenMax.to(window, 0.5, {
             scrollTo: {
                 y: target,
-                autoKill: true // Allow scroll position to change outside itself
+                autoKill: false // Allow scroll position to change outside itself
             },
             ease: Cubic.easeInOut
         });
@@ -969,6 +969,7 @@ $(function() {
             if (id.length > 0) {
                 e.preventDefault();
                 window_controller.scrollTo(id);
+
                 if (window.history && window.history.pushState) {
                     history.pushState("", document.title, id);
                 }
@@ -977,20 +978,35 @@ $(function() {
     });
 
     if (jQuery(window).width() <= 600) {}
-    if (Modernizr.touch) {
-        alert('Touch Screen');
-    } else {
-        alert('No Touch Screen');
-    }
 
-    if (Modernizr.touch) { // when using iscroll
-        console.log("Modernizr.touch", Modernizr.touch);
-        //     controller.scrollTo(function(newpos) {
-        //         myScroll.scrollTo(0, -newpos - myScroll.y, 1000, IScroll.utils.ease.quadratic)
-        //     });
+
+    var myScroll = new IScroll('#example-wrapper', {
+        // don't scroll horizontal
+        scrollX: false,
+        // but do scroll vertical
+        scrollY: true,
+        // show scrollbars
+        scrollbars: true,
+        // deactivating -webkit-transform because pin wouldn't work because of a webkit bug: https://code.google.com/p/chromium/issues/detail?id=20574
+        // if you dont use pinning, keep "useTransform" set to true, as it is far better in terms of performance.
+        useTransform: false,
+        // deativate css-transition to force requestAnimationFrame (implicit with probeType 3)
+        useTransition: false,
+        // set to highest probing level to get scroll events even during momentum and bounce
+        // requires inclusion of iscroll-probe.js
+        probeType: 3,
+        // pass through clicks inside scroll container
+        click: true
+    });
+
+    if (Modernizr.touch && myScroll) { // when using iscroll
+        console.log("=======================>In MOBILE");
+        window_controller.scrollTo(function(newpos) {
+            myScroll.scrollTo(0, -newpos - myScroll.y, 1000, IScroll.utils.ease.quadratic)
+        });
     } else {
-        //     controller.scrollTo(function(newpos) {
-        //         TweenMax.to("#example-wrapper", 1, { scrollTo: { y: newpos } });
-        //     });
+        window_controller.scrollTo(function(newpos) {
+            TweenMax.to("#example-wrapper", 1, { scrollTo: { y: newpos } });
+        });
     }
 });
