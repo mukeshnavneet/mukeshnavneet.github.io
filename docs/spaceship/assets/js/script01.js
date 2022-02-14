@@ -21,7 +21,7 @@ $(function() {
     var ELM = $(".elm")
     var EARTH_LAYER = $(".earth-layer")
     var PIPE = $(".pipe")
-    var LOGO_RES_Y_OFFSET = 0;
+    var LOGO_RES_Y_OFFSET = 50;
 
     if (WIW < 530) {
         Rocket_Height = 369 / 2;
@@ -769,45 +769,6 @@ $(function() {
 
     let res_SIZE = (isMob == true) ? WIW * 2 : "200px";
 
-    // function over() {
-    //     $touch_me_not.addClass("hide-btn");
-    //     TweenMax.to($touch_me_not, 0.5, {
-    //         x: "-50%",
-    //         width: WIW,
-    //     })
-    //     TweenMax.to($touch_me_not_IMG, 0.5, {
-    //         x: "0%",
-    //         width: WIW,
-    //     })
-    //     TweenMax.to($cloud_text, 0.5, {
-    //         autoAlpha: 1,
-    //         scale: 1,
-    //     })
-    // }
-
-    // function out() {
-    //     $touch_me_not.removeClass("hide-btn");
-    //     TweenMax.to($touch_me_not, 0.5, {
-    //         x: "-50%",
-    //         width: "200px",
-    //     })
-    //     TweenMax.to($touch_me_not_IMG, 0.5, {
-    //         x: "0%",
-    //         width: "200px",
-    //     })
-    //     TweenMax.to($cloud_text, 0.5, {
-    //         autoAlpha: 1,
-    //         scale: 0
-    //     })
-    // }
-
-    // $back_btn.on("click", function name(params) {
-    //     $touch_me_not_popup.addClass("animate__bounceIn");
-    //     $touch_me_not_popup.hide();
-    //     $('html, body').animate({
-    //         scrollTop: $("#space").offset().top
-    //     }, 2000);
-    // })
 
     $land_btn.on("click", function name(params) {
         $land_pop_up.addClass("animate__bounceIn");
@@ -841,7 +802,7 @@ $(function() {
             $(this).removeClass('animate__wobble');
         }
     );
-    // scrollbar.addListener(() => { scene_ROCKET.refresh() })
+
     //////////////////////////// MODAL ////////////////////////////////
 
     $(".close-button").click(function() {
@@ -879,22 +840,6 @@ $(function() {
         });
     });
 
-    // $(document).on("click", "a[href^='#']", function(e) {
-    //     var id = $(this).attr("href");
-    //     $('.navs .move a').removeClass("active")
-    //     $(this).addClass("active")
-
-    //     if ($(id).length > 0) {
-    //         e.preventDefault();
-    //         let element = $(e.target.getAttribute("href"))
-    //         $('html,body').scrollTo(element, 1000);
-    //         // if supported by the browser we can even update the URL.
-    //         if (window.history && window.history.pushState) {
-    //             history.pushState("", document.title, id);
-    //         }
-    //     }
-    // });
-
     // Init controller
     var window_controller = new ScrollMagic.Controller({
         globalSceneOptions: {
@@ -904,17 +849,6 @@ $(function() {
         }
     });
 
-
-    /*
-    object to hold href values of links inside our nav with
-    the class '.anchor-nav'
-  
-    scene_object = {
-      '[scene-name]' : {
-        '[target-scene-id]' : '[anchor-href-value]'
-      }
-    }
-    */
     var scenes = {
         'scene1': {
             'space': 'space_link'
@@ -950,10 +884,10 @@ $(function() {
     // Change behaviour of controller
     // to animate scroll instead of jump
     window_controller.scrollTo(function(target) {
-        TweenMax.to(window, 0.5, {
+        TweenMax.to(window, 2, {
             scrollTo: {
                 y: target,
-                autoKill: false // Allow scroll position to change outside itself
+                autoKill: true // Allow scroll position to change outside itself
             },
             ease: Cubic.easeInOut
         });
@@ -961,52 +895,84 @@ $(function() {
 
     //  Bind scroll to anchor links using Vanilla JavaScript
     var anchor_nav = document.querySelector('.anchor-nav');
-    anchor_nav.addEventListener('click', function(e) {
-        var target = e.target,
-            id = target.getAttribute('href');
-        console.log("ID", id);
-        if (id !== null) {
-            if (id.length > 0) {
-                e.preventDefault();
-                window_controller.scrollTo(id);
+    // anchor_nav.addEventListener('click', function(e) {
+    //     var target = e.target,
+    //         id = target.getAttribute('href');
+    //     if (id !== null) {
+    //         if (id.length > 0) {
+    //             e.preventDefault();
+    //             window_controller.scrollTo(id);
+    //             if (window.history && window.history.pushState) {
+    //                 history.pushState("", document.title, id);
+    //             }
+    //         }
+    //     }
+    // });
 
-                if (window.history && window.history.pushState) {
-                    history.pushState("", document.title, id);
-                }
+    if (Modernizr.touch) {
+        console.log('Touch Screen');
+        if (typeof Modernizr != "undefined" && Modernizr.mq('(orientation: landscape)')) {
+            console.log('you are in landscape mode, please use Portrait Mode');
+            $(".orientationchange").addClass("show");
+        } else {
+            $(".orientationchange").removeClass("show");
+        }
+    } else {
+        console.log('No Touch Screen');
+    }
+
+    if (typeof Modernizr != "undefined" && Modernizr.mq('(orientation: portrait)')) {
+        console.log('portrait');
+    } else if (typeof Modernizr != "undefined" && Modernizr.mq('(orientation: landscape)')) {
+        console.log('landscape');
+    }
+
+    // Init controller
+    var win_controller = new ScrollMagic.Controller();
+
+    // Change behavior of controller
+    // to animate scroll instead of jump
+    win_controller.scrollTo(function(target) {
+
+        TweenMax.to(window, 2, {
+            scrollTo: {
+                y: target, // scroll position of the target along y axis
+                autoKill: true // allows user to kill scroll action smoothly
+            },
+            ease: Cubic.easeIn
+        });
+
+    });
+    //  Bind scroll to anchor links
+    //  Bind scroll to anchor links
+    $(document).on("click", ".navs a", function(e) {
+        var id = $(this).attr("href");
+
+        if ($(id).length > 0) {
+            e.preventDefault();
+
+            // trigger scroll
+            win_controller.scrollTo(id);
+
+            // If supported by the browser we can also update the URL
+            if (window.history && window.history.pushState) {
+                history.pushState("", document.title, id);
             }
         }
+
     });
 
-    if (jQuery(window).width() <= 600) {}
+    orientationChange();
+    windowResize();
 
+});
 
-    var myScroll = new IScroll('#example-wrapper', {
-        // don't scroll horizontal
-        scrollX: false,
-        // but do scroll vertical
-        scrollY: true,
-        // show scrollbars
-        scrollbars: true,
-        // deactivating -webkit-transform because pin wouldn't work because of a webkit bug: https://code.google.com/p/chromium/issues/detail?id=20574
-        // if you dont use pinning, keep "useTransform" set to true, as it is far better in terms of performance.
-        useTransform: false,
-        // deativate css-transition to force requestAnimationFrame (implicit with probeType 3)
-        useTransition: false,
-        // set to highest probing level to get scroll events even during momentum and bounce
-        // requires inclusion of iscroll-probe.js
-        probeType: 3,
-        // pass through clicks inside scroll container
-        click: true
-    });
-
-    if (Modernizr.touch && myScroll) { // when using iscroll
-        console.log("=======================>In MOBILE");
-        window_controller.scrollTo(function(newpos) {
-            myScroll.scrollTo(0, -newpos - myScroll.y, 1000, IScroll.utils.ease.quadratic)
-        });
-    } else {
-        window_controller.scrollTo(function(newpos) {
-            TweenMax.to("#example-wrapper", 1, { scrollTo: { y: newpos } });
+function orientationChange() {
+    if (window.addEventListener) {
+        window.addEventListener("orientationchange", function() {
+            location.reload();
         });
     }
-});
+}
+
+function windowResize() {}

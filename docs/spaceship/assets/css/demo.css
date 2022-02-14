@@ -103,16 +103,17 @@ body {
     color: #ffffff;
     background: #ff00bf;
     margin: 10px;
-    -webkit-transition: all 1000ms ease;
-    -moz-transition: all 1000ms ease;
-    -ms-transition: all 1000ms ease;
-    -o-transition: all 1000ms ease;
-    transition: all 1000ms ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     letter-spacing: 1px;
 }
 
 .navs .move a.active {
     transform: scale(1.5);
+    background: #ffc200;
 }
 
 .navs .move a span::first-letter {
@@ -3299,4 +3300,30 @@ input:focus {
     z-index: 99999;
     top: 0px;
     bottom: 0px;
+}
+
+.orientationchange {
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    opacity: 0;
+}
+
+.orientationchange p {
+    color: #fff;
+}
+
+.orientationchange.show {
+    z-index: 999;
+    opacity: 1;
 }
