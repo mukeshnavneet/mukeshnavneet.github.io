@@ -879,24 +879,118 @@ $(function() {
         });
     });
 
-    $(document).on("click", "a[href^='#']", function(e) {
-        var id = $(this).attr("href");
-        $('.navs .move a').removeClass("active")
-        $(this).addClass("active")
+    // $(document).on("click", "a[href^='#']", function(e) {
+    //     var id = $(this).attr("href");
+    //     $('.navs .move a').removeClass("active")
+    //     $(this).addClass("active")
 
-        if ($(id).length > 0) {
-            e.preventDefault();
-            let element = $(e.target.getAttribute("href"))
-            $('html,body').scrollTo(element, 1000);
-            // if supported by the browser we can even update the URL.
-            if (window.history && window.history.pushState) {
-                history.pushState("", document.title, id);
+    //     if ($(id).length > 0) {
+    //         e.preventDefault();
+    //         let element = $(e.target.getAttribute("href"))
+    //         $('html,body').scrollTo(element, 1000);
+    //         // if supported by the browser we can even update the URL.
+    //         if (window.history && window.history.pushState) {
+    //             history.pushState("", document.title, id);
+    //         }
+    //     }
+    // });
+
+    // Init controller
+    var window_controller = new ScrollMagic.Controller({
+        globalSceneOptions: {
+            duration: "100%",
+            triggerHook: .025,
+            reverse: true
+        }
+    });
+
+
+    /*
+    object to hold href values of links inside our nav with
+    the class '.anchor-nav'
+  
+    scene_object = {
+      '[scene-name]' : {
+        '[target-scene-id]' : '[anchor-href-value]'
+      }
+    }
+    */
+    var scenes = {
+        'scene1': {
+            'space': 'space_link'
+        },
+        'scene2': {
+            'sky': 'sky_link'
+        },
+        'scene3': {
+            'land': 'land_link'
+        },
+        'scene4': {
+            'earth': 'eart_link'
+        },
+        'scene4': {
+            'underwater': 'underwater_link'
+        }
+    }
+
+    for (var key in scenes) {
+        // skip loop if the property is from prototype
+        if (!scenes.hasOwnProperty(key)) continue;
+        var obj = scenes[key];
+        for (var prop in obj) {
+            // skip loop if the property is from prototype
+            if (!obj.hasOwnProperty(prop)) continue;
+
+            new ScrollMagic.Scene({ triggerElement: '#' + prop })
+                .setClassToggle('#' + obj[prop], 'active')
+                .addTo(window_controller);
+        }
+    }
+
+    // Change behaviour of controller
+    // to animate scroll instead of jump
+    window_controller.scrollTo(function(target) {
+        TweenMax.to(window, 0.5, {
+            scrollTo: {
+                y: target,
+                autoKill: true // Allow scroll position to change outside itself
+            },
+            ease: Cubic.easeInOut
+        });
+    });
+
+    //  Bind scroll to anchor links using Vanilla JavaScript
+    var anchor_nav = document.querySelector('.anchor-nav');
+    anchor_nav.addEventListener('click', function(e) {
+        var target = e.target,
+            id = target.getAttribute('href');
+        console.log("ID", id);
+        if (id !== null) {
+            if (id.length > 0) {
+                e.preventDefault();
+                window_controller.scrollTo(id);
+                if (window.history && window.history.pushState) {
+                    history.pushState("", document.title, id);
+                }
             }
         }
     });
 
-    if (jQuery(window).width() <= 600) {
-
+    if (jQuery(window).width() <= 600) {}
+    if (Modernizr.touch) {
+        alert('Touch Screen');
+    } else {
+        alert('No Touch Screen');
     }
 
+    if (Modernizr.touch) { // when using iscroll
+        console.log("Modernizr.touch", Modernizr.touch);
+        //     controller.scrollTo(function(newpos) {
+        //         myScroll.scrollTo(0, -newpos - myScroll.y, 1000, IScroll.utils.ease.quadratic)
+        //     });
+    } else {
+        //     controller.scrollTo(function(newpos) {
+        //         TweenMax.to("#example-wrapper", 1, { scrollTo: { y: newpos } });
+        //     });
+    }
 });
