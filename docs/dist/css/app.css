@@ -4313,6 +4313,81 @@ button.go-down {
   margin: 8px 0px;
 }
 
+@-webkit-keyframes up_anim {
+  0% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+}
+
+@keyframes up_anim {
+  0% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+}
+@-webkit-keyframes down_anim {
+  0% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+}
+@keyframes down_anim {
+  0% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+}
+button.go-up.animate img {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: up_anim;
+          animation-name: up_anim;
+}
+
+button.go-down.animate img {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: down_anim;
+          animation-name: down_anim;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     width: 100%;
@@ -4323,6 +4398,7 @@ button.go-down {
   }
 
   .navs {
+    display: none;
     position: fixed;
     top: 0;
     z-index: 999;
@@ -4337,17 +4413,32 @@ button.go-down {
   }
 
   .cta {
-    bottom: 20px;
+    bottom: 60px;
   }
 
   .cta a,
 .cta button {
     font-size: 16px;
+    bottom: 60px;
   }
 
   #land,
 #sky {
     overflow: hidden;
+  }
+
+  .swril_2 {
+    display: none;
+  }
+
+  .const6 {
+    top: 10%;
+  }
+
+  .const5 {
+    top: 65%;
+    left: 10%;
+    width: 262px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -4513,9 +4604,8 @@ button.go-down {
   }
 
   .const3 {
-    top: 43%;
     left: 5%;
-    width: 200px;
+    width: 125px;
   }
 
   .const6 {
@@ -4806,7 +4896,7 @@ button.go-down {
   }
 
   .up-down {
-    left: 40px;
+    left: 15px;
   }
 
   .up-down {
