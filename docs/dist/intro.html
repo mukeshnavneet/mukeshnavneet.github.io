@@ -164,7 +164,8 @@
 
         let x = getCookie("isValidated");
         if (!x) {
-            window.location.href = 'http://localhost:8000/';
+            console.log("INTRO W L O", window.location.origin);
+            window.location.href = window.location.origin + '/docs/dist/';
         }
     </script>
 <link rel="icon" href="favicon.ico"><script defer src="js/app.js"></script><link href="css/app.css" rel="stylesheet"></head>
