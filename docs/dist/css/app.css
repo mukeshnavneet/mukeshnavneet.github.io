@@ -2105,7 +2105,7 @@ section {
 }
 
 #earth_pop_up {
-  background-image: url(../images/design/shape-04.02d260.svg);
+  background-image: url(../images/design/shape-04.b02038.svg);
   top: 100px;
 }
 
@@ -4511,7 +4511,7 @@ button.go-down.animate img {
     font-size: 12px;
     font-weight: bold;
     padding: 0px 10px;
-    padding-bottom: 25px;
+    padding-bottom: 8px;
   }
 
   .diractions button {
@@ -4594,7 +4594,7 @@ button.go-down.animate img {
   }
 
   #earth_pop_up {
-    background-image: url(../images/design/shape-04.02d260.svg);
+    background-image: url(../images/design/shape-04.b02038.svg);
     top: 100px;
   }
 
