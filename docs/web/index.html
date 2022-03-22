@@ -13,6 +13,12 @@
 <link rel="icon" href="favicon.ico"><script defer src="js/app.js"></script><link href="css/app.css" rel="stylesheet"></head>
 
 <body>
+    <div class='loader df aic jcc'>
+        <div>
+            <h1>Loading</h1>
+            <h2 class='loader--text'>0%</h2>
+        </div>
+    </div>
 
     <header>
         <div class="container">
@@ -25,28 +31,35 @@
             <nav class="main-menu">
                 <ul class="nav ">
                     <li>
-                        <a href="#sec1">About</a>
+                        <a href="#about">About</a>
                     </li>
                     <li>
-                        <a href="#sec2">Features</a>
+                        <a href="#features">Features</a>
                     </li>
                     <li>
-                        <a href="#sec3">Purches</a>
+                        <a href="#product">Product</a>
                     </li>
                     <li>
-                        <a href="#sec4">Waves</a>
+                        <a href="#purches">Purches</a>
+                    </li>
+                    <li>
+                        <a href="#waves">Waves</a>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <button class="btn capsule">
+                        <button class="btn capsule login-btn">
                             <span class="btn-lable"> Login</span>
+                    </button>
+                        <button class="btn capsule logout-btn">
+                            <span class="btn-lable"> Logout</span>
+                            <span class="username"></span>
+                            <span class="profile-pic"> <img src="images/design/mascot-01.528b71.png" width="40" alt=""  ></span>
                     </button>
                     </li>
                 </ul>
             </nav>
         </div>
-
     </header>
 
     <!-- <div id="viewport">
@@ -64,9 +77,38 @@
         </div>
       </div> -->
 
+    <div class="login-rigester">
+        <div id="register" class="register">
+            <form action="" id="register-form">
+                <input id="name" name="name" type="text" placeholder="Name" />
+                <input id="email" name="email" type="text" placeholder="Email" />
+                <input id="mobile" name="mobile" type="text" placeholder="mobile" />
+                <input id="password" name="password" type="password" placeholder="password" />
+                <div class="btn-holder">
+                    <input class="inp-sub" type="submit" value="Sign Up" />
+                </div>
+            </form>
+            <br/>
+            <div class="already-have-ac">
+                <p>Already have account? <button class="btn link">Login</button></p>
+            </div>
+        </div>
+        <div id="login" class="login">
+            <form action="" id="login-form">
+                <input id="l_name" name="l_name" type="text" placeholder="Name" value="Nilesh" />
+                <input id="customSwitch" type="checkbox" name="keepLoggedIn">
+                <input id="l_password" name="l_password" type="password" placeholder="password" value="nil" />
+                <div class="btn-holder">
+                    <input class="inp-sub" type="submit" value="Sign In" />
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div id="viewport">
         <div id="scroll-container">
             <main>
+
                 <section id="sec0" class="full no-pad">
                     <div class="banner">
                         <div class="line-row">
@@ -75,7 +117,7 @@
                             </div>
                             <div class="line small left">
                                 <div class="char-img ">
-                                    <img src="images/design/huey.df36bd.jpg" alt="">
+                                    <img src="images/design/mascot-04.a59aec.png" alt="">
                                     <span class="char-name">Ollu <span>- the Owl</span></span>
                                 </div>
                             </div>
@@ -89,7 +131,7 @@
                             <div class="line small hide-mid"></div>
                             <div class="line large left">
                                 <div class="char-img">
-                                    <img src="images/design/dewey.7a503b.jpg" alt="">
+                                    <img src="images/design/mascot-05.cdb940.png" alt="">
                                     <span class="char-name left">Weenu <span>- the whale</span></span>
                                 </div>
                             </div>
@@ -98,7 +140,7 @@
                             <div class="line"></div>
                             <div class="line">
                                 <div class="char-img">
-                                    <img src="images/design/louie.48ca95.jpg" alt="">
+                                    <img src="images/design/mascot-01.528b71.png" alt="">
                                     <span class="char-name">Teena <span>- the tiger</span></span>
                                 </div>
                             </div>
@@ -119,32 +161,188 @@
                     </div>
                 </section>
 
-                <section id="sec6">
-                    <div class="ver-capsul"></div>
-                </section>
-
-                <section id="sec1" class="full no-pad">
-                    <div class="game-display-mob">
-                        <div class="game-info">
-                            <h1>Heading</h1>
-                            <h2>Heading</h2>
-                            <h3>Heading</h3>
-                            <h4>Heading</h4>
-                            <h5>Heading</h5>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo aspernatur non, velit perspiciatis excepturi nesciunt ea cumque reprehenderit, exercitationem delectus at. Voluptate explicabo ducimus sint quam doloremque tenetur
-                                quasi ullam!
-                            </p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo aspernatur non, velit perspiciatis excepturi nesciunt ea cumque reprehenderit, exercitationem delectus at. Voluptate explicabo ducimus sint quam doloremque tenetur
-                                quasi ullam!
-                            </p>
-                        </div>
-                        <div class="mob-frame">
-                            <div class="img-holder">
-                                <img src="images/design/mobile-mockup.1f62d8.png" alt="">
+                <section id="about" class="">
+                    <div class="about-bg">
+                        <div class="container">
+                            <div class="wrapper">
+                                <div class="img">
+                                    <img src="images/design/mascot-04.a59aec.png" alt="">
+                                </div>
+                                <div class="text">
+                                    <h1>Ollu - <span> the Owl</span></h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iste nobis dolorum accusantium explicabo repellat, non consequuntur cupiditate maxime laborum nostrum, vero distinctio molestiae officia, ipsum ea sapiente?
+                                        Consectetur, excepturi.</p>
+                                    <div class="cta">
+                                        <button class="btn capsule ollu-btn">View Games</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="about-bg teena">
+                        <div class="container">
+                            <div class="wrapper">
+                                <div class="text">
+                                    <h1>Teena - <span> the Tiger</span></h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iste nobis dolorum accusantium explicabo repellat, non consequuntur cupiditate maxime laborum nostrum, vero distinctio molestiae officia, ipsum ea sapiente?
+                                        Consectetur, excepturi.</p>
+                                    <div class="cta">
+                                        <button class="btn capsule teena-btn">View Games</button>
+                                    </div>
+                                </div>
+                                <div class="img">
+                                    <img src="images/design/mascot-01.528b71.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-bg weenu">
+                        <div class="container">
+                            <div class="wrapper">
+                                <div class="img">
+                                    <img src="images/design/mascot-05.cdb940.png" alt="">
+                                </div>
+                                <div class="text">
+                                    <h1>Ollu - <span> the Owl</span></h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iste nobis dolorum accusantium explicabo repellat, non consequuntur cupiditate maxime laborum nostrum, vero distinctio molestiae officia, ipsum ea sapiente?
+                                        Consectetur, excepturi.</p>
+                                    <div class="cta">
+                                        <button class="btn capsule ollu-btn">View Games</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
+                <section id="features" class="full no-pad">
+                    <div id="h-scroll" class="boxy-wrapper">
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-03.51d849.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Creative thinking</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Language</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-04.a59aec.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">
+                            <div class="subname">The Tiger</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Math</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-05.cdb940.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Social Emotation</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-06.59d5f2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="h-scroll2" class="boxy-wrapper">
+                        <div class="boxy">01</div>
+                        <!-- <div class="boxy">02</div> -->
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-01.528b71.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">04</div>
+                        <div class="boxy">
+                            <div class="name">Math</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-02.dc4e53.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">07</div>
+                        <div class="boxy">
+                            <div class="name">Language</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Social Emotation</div>
+                        </div>
+                    </div>
+                    <div id="h-scroll" class="boxy-wrapper">
+                        <div class="boxy">
+                            <div class="name">Language</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-04.a59aec.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Language</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-03.51d849.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Math</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-04.a59aec.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Creative Thinking</div>
+                        </div>
+                        <div class="boxy">06</div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-05.cdb940.png" alt="">
+                            </div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Language</div>
+                        </div>
+                        <div class="boxy">
+                            <div class="name">Meenu</div>
+                            <div class="subname">The Tiger</div>
+                            <div class="mascot">
+                                <img src="images/design/mascot-06.59d5f2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="sec2">
@@ -166,7 +364,7 @@
                             <div class="cont">
                                 <h4>Card Title</h4>
                                 <div class="img">
-                                    <img src="images/design/huey.df36bd.jpg " alt="">
+                                    <img src="images/design/mascot-01.528b71.png" alt="">
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sunt cum impedit iusto necessitatibus a placeat at quaerat, inventore quas quod,</p>
                                 <div class="cta">
@@ -182,7 +380,7 @@
 
                                 <h4>Card Title</h4>
                                 <div class="img">
-                                    <img src="images/design/louie.48ca95.jpg" alt="">
+                                    <img src="images/design/mascot-02.dc4e53.png" alt="">
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sunt cum impedit iusto necessitatibus a placeat at quaerat, inventore quas quod,</p>
                                 <div class="cta">
@@ -198,7 +396,7 @@
 
                                 <h4>Card Title</h4>
                                 <div class="img">
-                                    <img src="images/design/dewey.7a503b.jpg" alt="">
+                                    <img src="images/design/mascot-03.51d849.png" alt="">
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sunt cum impedit iusto necessitatibus a placeat at quaerat, inventore quas quod,</p>
                                 <div class="cta">
@@ -257,6 +455,7 @@
                         </div>
                     </div>
                 </section>
+
             </main>
             <footer></footer>
         </div>
