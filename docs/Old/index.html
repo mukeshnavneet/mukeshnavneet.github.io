@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Leapbridge-demo-08</title>
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Standard favicon -->
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+
+    <!-- Microsoft Tiles -->
+    <!-- <meta name="msapplication-config" content="browserconfig.xml" /> -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://Leapbridge.com/index.html">
+    <meta property="og:title" content="Leapbridge by Navneet">
+    <meta property="og:image" content="http://Leapbridge.com/img/image.jpg">
+    <meta property="og:description" content="Leapbridge by Navneet">
+    <meta property="og:site_name" content="Leapbridge by Navneet">
+    <meta property="og:locale" content="en_US">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@site_account">
+    <meta name="twitter:creator" content="@individual_account">
+    <meta name="twitter:url" content="http://Leapbridge.com/index.html">
+    <meta name="twitter:title" content="Mukesh Thankar-portfoli">
+    <meta name="twitter:description" content="Leapbridge by Navneet">
+    <meta name="twitter:image" content="http://Leapbridge.com/image.jpg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#ff660" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Josefin+Slab:400,700italic" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/demo.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/responsive-demo.css" type="text/css">
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <!-- <script type="text/javascript" src="./assets/js/lib/jquery.min.js"></script> -->
+    <script type="text/javascript" src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+
+    <style media="screen">
+        .pageloader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(images/yourLoaderImage.gif) 50% 50% no-repeat rgb(0, 0, 0);
+            background: rgb(0, 0, 0);
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #preloader .txt-perc {
+            font-size: 35px;
+            color: aliceblue;
+            opacity: 1;
+            margin: 0 0 6px 0;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        #preloader .progress {
+            width: 100px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 15px auto;
+        }
+        
+        .is-loading {
+            overflow: hidden;
+        }
+        
+        .bcg {
+            /* transition: transform 4s ease-out; */
+            /* transform: scale(1.05); */
+            /* transform-origin: top center; */
+        }
+        
+        .is-loaded.bcg {
+            transform: scale(1);
+        }
+        
+        #preloader.is-hidden {
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        // jQuery("body").prepend('<div id="preloader" class="pageloader">Loading...</div>');
+        jQuery(document).ready(function() {
+            let WIW = verge.viewportW();
+            let WIH = verge.viewportH();
+
+            // number of loaded images for preloader progress
+            var loadedCount = 0; //current number of images loaded
+            var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
+            var loadingProgress = 0; //timeline progress - starts at 0
+            var LAUNCHER_OFFSET = 20;
+
+            if (WIW < 530) {
+                LAUNCHER_OFFSET = 55;
+            }
+
+            $('.bcg').imagesLoaded({
+                background: true
+            }).progress(function(instance, image) {
+                loadProgress();
+            });
+
+            function loadProgress(imgLoad, image) {
+                //one more image has been loaded
+                loadedCount++;
+                loadingProgress = (loadedCount / imagesToLoad);
+                //console.log(loadingProgress);
+                // GSAP timeline for our progress bar
+                TweenLite.to(progressTl, 0.7, {
+                    progress: loadingProgress,
+                    ease: Linear.easeNone
+                });
+            }
+
+            //progress animation instance. the instance's time is irrelevant, can be anything but 0 to void  immediate render
+            var progressTl = new TimelineMax({
+                paused: true,
+                onUpdate: progressUpdate,
+                onComplete: loadComplete
+            });
+
+            progressTl
+            //tween the progress bar width
+                .to($('.progress span'), 1, {
+                width: 100,
+                ease: Linear.easeNone
+            });
+
+            function progressUpdate() {
+                //the percentage loaded based on the tween's progress
+                loadingProgress = Math.round(progressTl.progress() * 100);
+                //we put the percentage in the screen
+                $(".txt-perc").text(loadingProgress + '%');
+
+            }
+
+            function loadComplete() {
+                // preloader out
+                var preloaderOutTl = new TimelineMax();
+                preloaderOutTl
+                    .to($('.progress'), 0.3, {
+                        y: 100,
+                        autoAlpha: 0,
+                        ease: Back.easeIn
+                    })
+                    .to($('.txt-perc'), 0.3, {
+                        y: 100,
+                        autoAlpha: 0,
+                        ease: Back.easeIn
+                    }, 0.1)
+                    .set($('body'), {
+                        className: '-=is-loading',
+                        onComplete: () => {
+                            $('html, body').animate({
+                                scrollTop: ($("#land").offset().top) + LAUNCHER_OFFSET
+                            }, 2000);
+                        },
+                    })
+                    .to($('#preloader'), 0.7, {
+                        yPercent: 100,
+                        ease: Power4.easeInOut
+                    })
+                    .set($('#rocket'), {
+                        scale: 1
+                    })
+                    .set($('#preloader'), {
+                        className: '+=is-hidden',
+                        // onComplete: () => {
+                        //     $('html, body').animate({
+                        //         scrollTop: ($("#land").offset().top) + LAUNCHER_OFFSET
+                        //     }, 2000);
+                        //     setTimeout(() => {
+                        //         $('body').removeClass("is-loading");
+                        //         $('#preloader').addClass("is-hidden");
+                        //     }, 2000);
+                        // },
+                    });
+                return preloaderOutTl;
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+
+    <script type="text/javascript" src="./assets/js/lib/highlight.pack.js"></script>
+    <script type="text/javascript" src="./assets/js/lib/modernizr.custom.min.js"></script>
+    <script type="text/javascript" src="./scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="./assets/js/lib/greensock/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="./scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="./scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+    <script type="text/javascript" src="./assets/js/lib/greensock/plugins/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript" src="./assets/js/lib/gsap3/MotionPathPlugin.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/smooth-scrollbar@8.7.4/dist/smooth-scrollbar.js"></script>
+    <script type="text/javascript" src="./assets/js/verge.js"></script>
+    <script type="text/javascript" src="./assets/js/lib/iscroll-probe.js"></script>
+    <script type="text/javascript" src="./assets/js/script01.js"></script>
+    <script type="text/javascript" src="./assets/js/smooth.js"></script>
+</head>
+
+<body class="is-loading">
+    <div id="preloader" class="pageloader">
+        <div class="txt">
+            <p class="txt-perc">0%</p>
+            <div class="progress"><span></span></div>
+        </div>
+    </div>
+    <!-- <div id="preloader" class="pageloader">Loading...</div> -->
+    <div class="navs">
+        <form class="move">
+            <!-- <fieldset> -->
+            <!-- <legend>Anchor Links</legend> -->
+            <a href="#space"> <span> Ample Space</span></a>
+            <a href="#sky"><span>Blue Sky</span> </a>
+            <a href="#land"><span>Calm Garden</span> </a>
+            <a href="#earth"><span>Deep Underground</span> </a>
+            <a href="#underwater"><span>Enchanting Sea</span> </a>
+            <!-- </fieldset>  -->
+        </form>
+    </div>
+    <div class="skip-btn">
+        Skip
+    </div>
+    <div id="example-wrapper">
+
+        <main id="scroll-container" class="scroll-container">
+            <div class="diractions top-bottom">
+                <button type="button" name="button" class="active"><div class="arrow animat-arrow"></div></button>
+                <button type="button" name="button" class=""><div class="arrow"></div></button>
+                <button type="button" name="button" class="active"><div class="arrow animat-arrow"></div></button>
+                <button type="button" name="button" class=""><div class="arrow"></div></button>
+            </div>
+            <div id="rocket-container">
+                <div id="rocket_trigger" class=""></div>
+                <div id="rocket" class="">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <img class="bcg up" src="./assets/medow/rocket_red.svg" />
+                    <!-- <img class="bcg down" src="./assets/medow/rocket_red_down.svg" /> -->
+                    <div class="smoke">
+                        <!-- <div class="smoke-l"></div>
+                    <div class="smoke-r"></div> -->
+                        <!-- <img class="eye-animation" src="./assets/medow/flame-1.svg" alt="blinking eye animation" /> -->
+                        <!-- <img src="./assets/Space/smoke 1.svg" /> -->
+                    </div>
+                </div>
+            </div>
+            <section id="space">
+                <div class="space-bg-img bcg"></div>
+                <div class="elm">
+                    <div id="space_pop_up" class="text_pop_up">
+                        <h2>In this safe space,<br/> Children learn at their own pace.</h2>
+                    </div>
+                    <div id="comets">
+                        <i><img class="bcg" src="./assets/Space/comet-2.svg" /></i>
+                        <i><img class="bcg" src="./assets/Space/comet-1.svg" /></i>
+                        <i><img class="bcg" src="./assets/Space/comet-3.svg" /></i>
+                    </div>
+                    <div class="const swril_1">
+                        <img class="bcg" src="./assets/Space/swril_1.svg" />
+                    </div>
+                    <div class="const swril_2">
+                        <img class="bcg" src="./assets/Space/swirl_2.svg" />
+                    </div>
+                    <div class="const const1">
+                        <img class="bcg" src="./assets/Space/constelation_1.svg" />
+                    </div>
+                    <div class="const const2">
+                        <img class="bcg" src="./assets/Space/constelation_2.svg" />
+                    </div>
+                    <div class="const const3">
+                        <img class="bcg" src="./assets/Space/constelation_3.svg" />
+                    </div>
+                    <div class="const const4">
+                        <img class="bcg" src="./assets/Space/constelation_4.svg" />
+                    </div>
+                    <div class="const const5">
+                        <img class="bcg" src="./assets/Space/constelation_5.svg" />
+                    </div>
+                    <div class="const const6">
+                        <img class="bcg" src="./assets/Space/constelation_6.svg" />
+                    </div>
+                    <div class="meteors meteor1">
+                        <img class="bcg" src="./assets/Space/asteroids_bot.svg" />
+                    </div>
+                    <div class="meteors meteor2">
+                        <img class="bcg" src="./assets/Space/asteroids_left.svg" />
+                    </div>
+                    <div class="star s1"></div>
+                    <div class="star s2"></div>
+                    <div class="star s3"></div>
+                    <div class="star s4"></div>
+                    <div class="star s5"></div>
+                    <div class="planet-top-right"><img class="bcg" src="./assets/Space/plante-top-right.svg" /></div>
+                    <div class="planet-bot"><img class="bcg" src="./assets/Space/planet-bot.svg" /></div>
+                    <div class="planet-left"><img class="bcg" src="./assets/Space/planet-left.svg" /></div>
+                </div>
+                <div class="diractions in-space">
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                    <button type="button" name="button" class="active" onclick="goToSpaceRightFun()"><div class="arrow animat-arrow"></div></button>
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                    <button type="button" name="button"><div class="arrow "></div></button>
+                </div>
+                <nav class="space-cta cta">
+                    <a href="#land" class="replay-btn"> Land </a>
+                    <a href="#underwater" class="replay-btn"> Underwater </a>
+                </nav>
+            </section>
+            <section id="sky">
+                <div class="sky-img"></div>
+                <div id="touch-me-not" class="touch-me-not">
+                    <!-- <div class="text">Touch me not!</div> -->
+                    <div class="cloud-text">
+                        <div>
+                            <h2>What's all this confusion?</h2>
+                            <h2>Just one wrong click caused all this pollution!</h2>
+                            <h2> But don't worry,</h2>
+                            <h2> We'll clean it up, if you say you're sorry.</h2>
+                        </div>
+                        <button class="back-btn">I'm sorry!</button>
+                    </div>
+                    <img src="./assets/sky/black-cloude.svg" alt="">
+                </div>
+                <div class="elm">
+                    <div id="sky_pop_up" class="text_pop_up">
+                        <h2>We teach children, <br/> To wonder why, <br/>The rocket can fly.
+                        </h2>
+                    </div>
+                    <div id="sputnik" class="sputnik sputnik01">
+                        <img src="./assets/sky/sputnik.svg" />
+                    </div>
+                    <div id="clouds">
+                        <div class="cloud x1"><img src="./assets/sky/cloud-left-1.svg" /></div>
+                        <div class="cloud x2"><img src="./assets/sky/cloud-left-2.svg" /></div>
+                        <div class="cloud x3"><img src="./assets/sky/cloud-left-3.svg" /></div>
+                        <div class="cloud x4"><img src="./assets/sky/cloud-left-4.svg" /></div>
+                    </div>
+                    <div id="plane" class="plane plane01">
+                        <img src="./assets/sky/aeroplane.svg" />
+                    </div>
+                    <div id="plane" class="plane plane02">
+                        <img src="./assets/sky/aeroplane2.svg" />
+                    </div>
+                    <div id="plane" class="plane plane03">
+                        <img src="./assets/sky/cloud-left-new.svg" />
+                    </div>
+                </div>
+                <div class="diractions in-sky">
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                    <button type="button" name="button" class="active" onclick="goToSpaceFun()"><div class="arrow animat-arrow"></div></button>
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                </div>
+            </section>
+            <section id="land">
+                <div class="overflow-hidden-x">
+                    <div class="butterfly butterfly2">
+                        <div class="boxi b2"></div>
+                    </div>
+                    <div class="butterfly butterfly3">
+                        <div class="boxi b3"></div>
+                    </div>
+                    <div class="launcher-base2"></div>
+                    <div class="launcher-base">
+                        <div class="smoke-to-left">
+                            <span><img src="./assets/medow/1.svg" /></span>
+                            <span><img src="./assets/medow/2.svg" /></span>
+                            <span><img src="./assets/medow/3.svg" /></span>
+                            <span><img src="./assets/medow/4.svg" /></span>
+                            <span><img src="./assets/medow/5.svg" /></span>
+                            <span><img src="./assets/medow/6.svg" /></span>
+                            <span><img src="./assets/medow/7.svg" /></span>
+                            <span><img src="./assets/medow/8.svg" /></span>
+                            <span><img src="./assets/medow/9.svg" /></span>
+                            <span><img src="./assets/medow/10.svg" /></span>
+                        </div>
+                        <div class="smoke-to-right">
+                            <span><img src="./assets/medow/1.svg" /></span>
+                            <span><img src="./assets/medow/2.svg" /></span>
+                            <span><img src="./assets/medow/3.svg" /></span>
+                            <span><img src="./assets/medow/4.svg" /></span>
+                            <span><img src="./assets/medow/5.svg" /></span>
+                            <span><img src="./assets/medow/6.svg" /></span>
+                            <span><img src="./assets/medow/7.svg" /></span>
+                            <span><img src="./assets/medow/8.svg" /></span>
+                            <span><img src="./assets/medow/9.svg" /></span>
+                            <span><img src="./assets/medow/10.svg" /></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="elm">
+                    <div id="trigger_LOGO"></div>
+                    <div id="logo" class="logo"><img src="./assets/medow/logo.svg" /></div>
+                    <div id="land_pop_up" class="text_pop_up">
+                        <h2>Scroll to see what's in wait,
+                            <br/>For children aged between 0-8.</h2>
+                    </div>
+                    <div class="mountains-bg bcg"></div>
+                    <div class="laun-bg bcg"></div>
+                    <div class="land-clouds">
+                        <div class="cloud x5"><img src="./assets/medow/cloud5.svg" /></div>
+                        <div class="cloud x6"><img src="./assets/medow/cloud6.svg" /></div>
+                        <div class="cloud x7"><img src="./assets/medow/cloud7.svg" /></div>
+                    </div>
+                    <div class="tree-big"><img src="./assets/medow/tree.svg" /></div>
+                </div>
+            </section>
+            <section id="earth">
+                <img id="rocket2" class="subm bcg" src="./assets/medow/submarine.svg" />
+                <div id="earth_btn" class="text_btn">!</div>
+                <div id="earth_pop_up" class="text_pop_up">
+                    <h2>We care about the quality,<br/> So we made the lessons multisensory.</h2>
+                </div>
+                <div class="elm">
+                    <div class="grass-bg bcg"></div>
+
+                    <div class="cricket" style="--x:80px;">
+                        <img class="bcg" src="./assets/earth/cricket.svg" alt="">
+                    </div>
+                    <div class="earthworm" style="--x:80px;">
+                        <img class="bcg" src="./assets/earth/earthworm.svg" alt="">
+                    </div>
+                    <div class="earthworm2">
+                        <img class="bcg" src="./assets/earth/earthworm.svg" alt="">
+                    </div>
+                    <div class="pipe-start">
+                        <!--<img class="bcg" src="./assets/earth/pipe-top.svg" alt="">-->
+                    </div>
+                    <div class="pipe">
+                        <img class="bcg" id="pipe-sequence" src="./assets/earth/pipe-bot.svg" alt="">
+                        <div id="pipe-end"></div>
+                    </div>
+                    <div class="earth-layer">
+                        <!-- <img class="bcg" src="./assets/earth/earth-layer-no-tunnel.svg" alt=""> -->
+                    </div>
+                    <div class="rays-top"></div>
+                </div>
+                <div class="diractions in-earth">
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                    <button type="button" name="button" class="active" onclick="goToUnderwaterFun()"><div class="arrow animat-arrow"></div></button>
+                    <button type="button" name="button"><div class="arrow"></div></button>
+                </div>
+            </section>
+            <section id="underwater">
+                <div class="rays">
+                </div>
+                <div class="overflow-hidden">
+                    <div class="sea-bg-img bcg"></div>
+                    <div id="sea_pop_up" class="text_pop_up">
+                        <h2>Immersive lessons are<br/> What we offer,<br/> Don't miss out, just register.</h2>
+                    </div>
+                    <!-- <div class="submarine-two">
+                <img class="bcg" src="./assets/medow/submarine.svg" alt="">
+            </div> -->
+                    <div class="elm">
+                        <div class="stons"></div>
+                        <div class="bubbles"></div>
+                        <div class="fish crab-left">
+                            <img class="bcg" src="./assets/underwater/crab-left.svg" alt="">
+                        </div>
+                        <div class="fish crab-right">
+                            <img class="bcg" src="./assets/underwater/crab-left.svg" alt="">
+                        </div>
+                        <div class="puff-fish-top-left">
+                            <img class="bcg" src="./assets/underwater/puff-fish-top-left.svg" alt="">
+                        </div>
+                        <div class="fish fish-left-bot">
+                            <img class="bcg" src="./assets/underwater/fish-left-bot.svg" alt="">
+                        </div>
+                        <div class="fish shell">
+                            <img class="bcg" src="./assets/underwater/shell.svg" alt="">
+                        </div>
+                        <div class="fish fish-center-top">
+                            <img class="bcg" src="./assets/underwater/fish-left-bot.svg" alt="">
+                        </div>
+                        <div class="fish jellyfish-left1">
+                            <img class="bcg head" src="./assets/underwater/01jellyfish-head.svg" alt="">
+                            <img class="bcg tail" src="./assets/underwater/01jellyfish-tail.svg" alt="">
+                        </div>
+                        <div class="fish jellyfish-right2">
+                            <img class="bcg head" src="./assets/underwater/02jellyfish-head.svg" alt="">
+                            <img class="bcg tail" src="./assets/underwater/02jellyfish-tail.svg" alt="">
+                        </div>
+                        <!-- <div class="fish jellyfish-left">
+                    <img src="./assets/underwater/jellyfish-left.svg" alt="">
+                </div>
+                <div class="fish jellyfish-right">
+                    <img src="./assets/underwater/jellyfish-right.svg" alt="">
+                </div>-->
+                        <div class="fish pink-fish-bot">
+                            <img class="bcg" src="./assets/underwater/pink-fish-bot.svg" alt="">
+                        </div>
+                        <div class="fish turtle">
+                            <img class="bcg" src="./assets/underwater/turtle.svg" alt="">
+                        </div>
+                        <div class="plant-left">
+                            <img class="bcg" src="./assets/underwater/plant-left.svg" alt="">
+                        </div>
+                        <div class="plant-right">
+                            <img class="bcg" src="./assets/underwater/plant-right.svg" alt="">
+                        </div>
+                        <div class="plant-mid-bot-1">
+                            <img class="bcg" src="./assets/underwater/plant-mid-bot-1.svg" alt="">
+                        </div>
+                        <div class="plant-mid-bot-2">
+                            <img class="bcg" src="./assets/underwater//plant-mid-bot-2.svg" alt="">
+                        </div>
+                    </div>
+                    <nav class="cta">
+                        <button class="register-btn"> Register now! </button>
+                        <a href="#land" class="replay-btn"> Replay </a>
+                    </nav>
+                </div>
+            </section>
+            <div>
+                <span class="test"></span>
+                <!-------------------------------------------------------------->
+                <!------------------------ MODAL & POP UP ---------------------->
+                <!-------------------------------------------------------------->
+                <div class="modal">
+                    <div class="message-container">
+                        <div class="actual-message">
+                            <div class="modal-logo">
+                                <img src="./assets/medow/logo.svg" />
+                            </div>
+                            <div class="modal-text">
+                                <h3>Thank you for considering Leapbridge</h3>
+                                <p>A good education, <br/>Is a brilliant decision.<br/> Fill in the form below<br/> To receive updates and more.</p>
+                            </div>
+                            <form action="">
+                                <div class="input-holder">
+                                    <input type="text" required placeholder="Full Name" />
+                                </div>
+                                <div class="input-holder">
+                                    <input type="email" required placeholder="Email" />
+                                </div>
+                                <div class="input-holder">
+                                    <input type="phone" required placeholder="Contact No." />
+                                </div>
+                                <div class="input-holder">
+                                    <input type="number" required placeholder="Child's Age" />
+                                </div>
+                                <div class="btn-holder">
+                                    <button>SUBMIT</button>
+                                </div>
+                            </form>
+                            <div class="close-button">X</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="guideline"></div>
+        </main>
+    </div>
+    <!-- ///////////////////// END SEA SEC -->
+</body>
+
+</html>
