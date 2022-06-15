@@ -247,6 +247,7 @@ pre {
 
 html {
   background: #ffffff;
+  overflow: hidden;
 }
 
 body {
